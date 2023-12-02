@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "garbage-codes-season-02"
+version = "0.1.0"
+description = "Garbage Codes Season 02"
+authors = ["ashwinPy <ashwinam31@gmail.com>"]
+license = "SELF"
+readme = "README.md"
+packages = [{include = "garbage_codes_season_02"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
