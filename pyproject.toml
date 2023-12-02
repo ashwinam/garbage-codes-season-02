@@ -9,6 +9,8 @@ packages = [{include = "garbage_codes_season_02"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+django = "^4.2.7"
+djangorestframework = "^3.14.0"
 
 
 [build-system]
