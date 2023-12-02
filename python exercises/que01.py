@@ -10,3 +10,12 @@ Hints: Consider use range(#begin, #end) method
 for num in range(2000, 3201):
     if num % 7 == 0 and num % 5 != 0:
         print(num, end=',')
+
+
+# Other solution
+l=[]
+for i in range(2000, 3201):
+    if (i%7==0) and (i%5!=0):
+        l.append(str(i))
+
+print(','.join(l))
