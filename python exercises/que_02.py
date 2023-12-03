@@ -18,3 +18,13 @@ if __name__ == '__main__':
     usr_inp = int(input("Enter the number: "))
     ans = calculate_factorial(usr_inp)
     print(ans, '*-*')
+
+
+# Solution using recursion
+def fact(x):
+    if x == 0:
+        return 1
+    return x * fact(x - 1)
+
+x=int(input())
+print(fact(x))
