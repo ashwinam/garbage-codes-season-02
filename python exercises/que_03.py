@@ -16,6 +16,14 @@ def print_dict(inp):
 def print_dict2(inpt):
     return {e_nu: e_nu * e_nu for e_nu in range(1, inpt+1)}
 
+# Other solution
+n=int(input())
+d=dict()
+for i in range(1,n+1):
+    d[i]=i*i
+
+print(d)
+
 if __name__ == '__main__':
     user_inp = int(input("Please, Enter the number of your choice: "))
     output = print_dict2(user_inp)
