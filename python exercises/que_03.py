@@ -11,6 +11,12 @@ def print_dict(inp):
     final_op = []
     for e_num in range(1, inp + 1):
         final_op.append((e_num, e_num * e_num))
-    print(dict(final_op))
+    return dict(final_op)
 
-print_dict(8)
+def print_dict2(inpt):
+    return {e_nu: e_nu * e_nu for e_nu in range(1, inpt+1)}
+
+if __name__ == '__main__':
+    user_inp = int(input("Please, Enter the number of your choice: "))
+    output = print_dict2(user_inp)
+    print(output, 'soln')
