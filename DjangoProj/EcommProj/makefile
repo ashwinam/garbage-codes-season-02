@@ -6,3 +6,6 @@ makemigrations:
 
 migrate:
 	poetry run python manage.py migrate
+
+shell:
+	poetry run python manage.py shell
