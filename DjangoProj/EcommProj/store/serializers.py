@@ -19,7 +19,11 @@ class ProductSerializer(serializers.ModelSerializer):
     # title = serializers.CharField(max_length=255)
     # price = serializers.DecimalField(max_digits=6, decimal_places=2, source='unit_price')
     price_with_tax = serializers.SerializerMethodField(method_name='calculate_tax')
-    collection = serializers.HyperlinkedRelatedField(view_name='collection-details', queryset=Collection.objects.all())
+    # collection = serializers.HyperlinkedRelatedField(view_name='collection-details', queryset=Collection.objects.all())
 
     def calculate_tax(self, product: Product):
         return product.unit_price * Decimal(1.1)
+    
+    def validate(self, attrs):
+        print(attrs, 'data')
+        return super().validate(attrs)
