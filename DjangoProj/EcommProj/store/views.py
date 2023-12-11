@@ -27,7 +27,7 @@ def product_details(request, id):
     return Response(serializer.data)
     
 @api_view()
-def collectio_details(request, pk):
+def collection_details(request, pk):
     collection = get_object_or_404(Collection, pk=pk)
     serializer = CollectionSerializer(collection)
     return Response(serializer.data)
