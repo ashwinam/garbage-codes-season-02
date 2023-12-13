@@ -1,9 +1,14 @@
 from django.db import models
 
 class StudentMainModel(models.Model):
-    naasme = models.CharField(max_length=255)
-    daasta_of_birth = models.DateField()
-    geasnder = models.CharField(max_length=1, choices=[("M", "Male"), ("F", "Female"), ("O", "Other")])
+    GENDER = [
+        ("Male", "Male"),
+        ("Female", "Female"),
+        ("Other", "Other")
+    ]
+    name = models.CharField(max_length=255)
+    data_of_birth = models.DateField()
+    gender = models.CharField(max_length=50, choices=GENDER)
     image = models.ImageField(blank=True, null=True)
 
     def __str__(self) -> str:
