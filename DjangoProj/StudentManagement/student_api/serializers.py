@@ -4,7 +4,7 @@ from .models import StudentMainModel, StudentMarksMainModel, StudentMarksModel
 class StudentSerializer(serializers.ModelSerializer):
     class Meta:
         model = StudentMainModel
-        fields = ['id', 'name', 'data_of_birth', 'gender', 'image']
+        fields = ['id', 'name', 'date_of_birth', 'gender', 'image']
 
 class StudentMarksMainSerializer(serializers.ModelSerializer):
     class Meta:
@@ -19,6 +19,8 @@ class StudentMarksSerializer(serializers.ModelSerializer):
     class Meta:
         model = StudentMarksModel
         fields = ['student', 'marks', 'semester']
+
+    # student = StudentSerializer()
 
     def validate(self, data):
         if self.Meta.model.objects.filter(**dict(data)).exists():

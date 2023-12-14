@@ -7,7 +7,7 @@ class StudentMainModel(models.Model):
         ("Other", "Other")
     ]
     name = models.CharField(max_length=255)
-    data_of_birth = models.DateField()
+    date_of_birth = models.DateField()
     gender = models.CharField(max_length=50, choices=GENDER)
     image = models.ImageField(blank=True, null=True)
 
@@ -41,7 +41,7 @@ class StudentMarksMainModel(models.Model):
         ('CIVIL', 'CIVIL'),
     ]
     student = models.OneToOneField(StudentMainModel, primary_key=True, on_delete=models.CASCADE, related_name='student_marks')
-    marks = models.ManyToManyField(StudentMainModel)
+    marks = models.ManyToManyField(StudentMarksModel, blank=True)
     branch = models.CharField(max_length=50, choices=BRANCH)
 
     def __str__(self) -> str:
