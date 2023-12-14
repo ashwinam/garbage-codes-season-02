@@ -2,8 +2,9 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
+
 from .models import StudentMainModel
-from .serializers import StudentMarksMainSerializer, StudentSerializer
+from .serializers import StudentMarksMainSerializer, StudentSerializer, StudentMarksSerializer
 
 
 @api_view(['GET', 'POST'])
@@ -24,3 +25,12 @@ def student_list(request):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+@api_view(['GET', 'POST'])
+def student_marks(request):
+    if request.method == 'POST':
+        serializer = StudentMarksSerializer(data=request.data) # type: ignore
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    return Response({'message': "Only Post Method Allowed"}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
