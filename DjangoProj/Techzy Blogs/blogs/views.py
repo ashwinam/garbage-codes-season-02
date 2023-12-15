@@ -18,3 +18,18 @@ def blog_list(request):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+@api_view(['GET', 'PUT', 'DELETE'])
+def blog_detail(request, pk):
+    blog = get_object_or_404(BlogModel, pk=pk)
+    if request.method == 'GET':
+        serializer = BlogSerializer(blog)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    elif request.method == 'PUT':
+        serializer = BlogSerializer(data=request.data, instance=blog)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    elif request.method == 'DELETE':
+        blog.delete()
+        return Response({'message': 'Blog deleted successfully.'}, status=status.HTTP_204_NO_CONTENT)

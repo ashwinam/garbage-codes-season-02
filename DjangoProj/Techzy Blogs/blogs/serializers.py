@@ -7,7 +7,7 @@ from .models import BlogModel
 class BlogSerializer(serializers.ModelSerializer):
     class Meta:
         model = BlogModel
-        fields = ('title', 'content', 'publication_date', 'author')
+        fields = ('id', 'title', 'content', 'publication_date', 'author')
     
     publication_date = serializers.SerializerMethodField(method_name='format_date')
 
