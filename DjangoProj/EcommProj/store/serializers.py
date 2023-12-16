@@ -9,9 +9,9 @@ class CollectionSerializer(serializers.ModelSerializer):
         model = Collection
         fields = ['id', 'title', 'product_count']
     
-    product_count = serializers.SerializerMethodField(method_name='collection_count')
+    product_count = serializers.IntegerField(read_only=True)
 
-    def collection_count(self, collection: Collection):
+    def collection_count(self, collection: Collection): # this method user for serializermethodoption
         return collection.product_set.count() #type: ignore
 
 class ProductSerializer(serializers.ModelSerializer):
