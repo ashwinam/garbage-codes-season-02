@@ -1,4 +1,5 @@
 from django.shortcuts import get_object_or_404
+from django.db.models import Count
 
 from rest_framework import status
 from rest_framework.decorators import api_view
@@ -36,4 +37,9 @@ def blog_detail(request, pk):
     
 @api_view()
 def post_like(request, pk):
-    return Response(pk)
+    blog = get_object_or_404(BlogModel, pk=pk)
+    if request.user in blog.likes.all():
+        blog.likes.remove(request.user)
+    else:
+        blog.likes.add(request.user)
+    return Response({'details':'Post is liked/Unliked it.'}, status=status.HTTP_200_OK)
