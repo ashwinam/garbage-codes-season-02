@@ -30,7 +30,6 @@ class ProductSerializer(serializers.ModelSerializer):
         return product.unit_price * Decimal(1.1)
     
     def validate(self, attrs): # for validating data
-        print(attrs, 'data')
         return super().validate(attrs)
     
     def create(self, validated_data):
