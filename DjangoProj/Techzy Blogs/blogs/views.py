@@ -33,3 +33,7 @@ def blog_detail(request, pk):
     elif request.method == 'DELETE':
         blog.delete()
         return Response({'message': 'Blog deleted successfully.'}, status=status.HTTP_204_NO_CONTENT)
+    
+@api_view()
+def post_like(request, pk):
+    return Response(pk)
