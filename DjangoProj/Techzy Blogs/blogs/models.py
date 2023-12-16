@@ -10,3 +10,11 @@ class BlogModel(models.Model):
 
     def __str__(self) -> str:
         return self.title
+    
+class Comments(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    comment = models.TextField()
+    blog = models.ForeignKey(BlogModel, on_delete=models.CASCADE, null=True, blank=True)
+
+    def __str__(self) -> str:
+        return self.user.username
