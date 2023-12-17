@@ -61,3 +61,12 @@ class Address(models.Model):
     zip = models.CharField(max_length=255, null=True)
     # In relationship think as a in child class specify the parent class so every customer has a address so customer is parent class and address is child class
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+
+class Review(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+    date = models.DateField(auto_now_add=True)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='reviews')
+
+    def __str__(self) -> str:
+        return self.name

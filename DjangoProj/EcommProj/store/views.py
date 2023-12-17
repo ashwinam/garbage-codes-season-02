@@ -1,5 +1,5 @@
-from .models import Product, Collection, OrderItem
-from .serializers import CollectionSerializer, ProductSerializer
+from .models import Product, Collection, OrderItem, Review
+from .serializers import CollectionSerializer, ProductSerializer, ReviewSerializer
 
 from django.db.models import Count
 from django.shortcuts import get_object_or_404
@@ -32,6 +32,15 @@ class CollectionViewSet(ModelViewSet):
             return Response({'error': 'The collection cannot be deleted because it is associated with existing products.'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
         return super().destroy(request, *args, **kwargs)
 
+class ReviewViewSet(ModelViewSet):
+    serializer_class = ReviewSerializer
+
+    def get_queryset(self):
+        product_id = self.kwargs.get('product_pk')
+        return Review.objects.filter(product_id=product_id)
+
+    def get_serializer_context(self):
+        return {'product_pk': self.kwargs.get('product_pk')}
 
 # class ProductList(ListCreateAPIView):
 #     queryset = Product.objects.select_related('collection').all()

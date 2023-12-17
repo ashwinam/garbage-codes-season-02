@@ -1,5 +1,4 @@
-from unittest.util import _MAX_LENGTH
-from .models import Collection, Product
+from .models import Collection, Product, Review
 from decimal import Decimal
 from rest_framework import serializers
 
@@ -37,3 +36,14 @@ class ProductSerializer(serializers.ModelSerializer):
     
     def update(self, instance, validated_data):
         return super().update(instance, validated_data)
+    
+
+class ReviewSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Review
+        fields = ['id', 'name', 'description', 'date']
+    
+    def create(self, validated_data):
+        product_id = self.context.get('product_pk')
+        instance = Review.objects.create(product_id=product_id, **validated_data)
+        return instance
