@@ -13,7 +13,7 @@ class BlogSerializer(serializers.ModelSerializer):
         model = BlogModel
         fields = ['id', 'title', 'content', 'publication_date', 'author', 'likes', 'likes_count', 'comments']
     
-    likes_count = serializers.IntegerField(source='likes.count')
+    likes_count = serializers.IntegerField(read_only=True)
     comments = serializers.SerializerMethodField(method_name='comment_list')
     
     publication_date = serializers.SerializerMethodField(method_name='format_date')
