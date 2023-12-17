@@ -23,6 +23,6 @@ class StudentMarksSerializer(serializers.ModelSerializer):
     # student = StudentSerializer()
 
     def validate(self, data):
-        if self.Meta.model.objects.filter(**dict(data)).exists():
+        if self.Meta.model.objects.filter(student=data['student'], semester=data['semester']).exists():
             raise serializers.ValidationError('This student marks is already exists.')
         return super().validate(data)
