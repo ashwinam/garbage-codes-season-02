@@ -17,6 +17,9 @@ class Product(models.Model):
     last_update = models.DateTimeField(auto_now=True)
     collection = models.ForeignKey(Collection, on_delete=models.PROTECT)
 
+    class Meta:
+        ordering = ['title']
+
 class Customer(models.Model):
     MEMBERSHIP_CHOICES = [
         ('B', 'Bronze'),
