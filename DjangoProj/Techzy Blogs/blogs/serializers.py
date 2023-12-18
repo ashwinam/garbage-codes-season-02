@@ -22,13 +22,19 @@ class BlogSerializer(serializers.ModelSerializer):
     class Meta:
         model = BlogModel
         fields = ['id', 'title', 'content', 'publication_date', 'author', 'likes', 'likes_count', 'comments']
-    
+    author = serializers.CharField(read_only=True)
+    likes = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
     likes = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
 
     likes_count = serializers.IntegerField(read_only=True)
     comments = serializers.SerializerMethodField(method_name='comment_list')
     
     publication_date = serializers.SerializerMethodField(method_name='format_date')
+
+    def create(self, validated_data):
+        user = self.context.get('current_user')
+        instance = BlogModel.objects.create(author=user, **validated_data)
+        return instance
 
     def format_date(self, object):
         return object.publication_date.strftime("%B %d, %Y")

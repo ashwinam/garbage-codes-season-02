@@ -15,6 +15,9 @@ class BlogViewSet(ModelViewSet):
     queryset = BlogModel.objects.annotate(likes_count = Count('likes'))
     serializer_class = BlogSerializer
 
+    def get_serializer_context(self):
+        return {'current_user': self.request.user}
+
 class CommentViewSet(ModelViewSet):
     serializer_class = CommentSerializer
     def get_queryset(self):
