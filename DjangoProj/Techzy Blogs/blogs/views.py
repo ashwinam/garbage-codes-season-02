@@ -5,19 +5,34 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView, RetrieveAPIView
 from rest_framework.response import Response
+from rest_framework.viewsets import ModelViewSet
 
 from .models import BlogModel, Comments
 from .serializers import BlogSerializer, CommentSerializer
 
+''' Class Based Viewsets Views '''
+class BlogViewSet(ModelViewSet):
+    queryset = BlogModel.objects.annotate(likes_count = Count('likes'))
+    serializer_class = BlogSerializer
 
+class CommentViewSet(ModelViewSet):
+    serializer_class = CommentSerializer
+    def get_queryset(self):
+        pk = self.kwargs.get('blog_pk')
+        return Comments.objects.filter(blog_id=pk)
+    
+    def get_serializer_context(self):
+        blog_pk = self.kwargs.get('blog_pk')
+        return {'blog_pk': blog_pk, 'current_user': self.request.user}
+    
 ''' Class Based Generic Views '''
-class BlogListView(ListCreateAPIView):
-    queryset = BlogModel.objects.annotate(likes_count = Count('likes'))
-    serializer_class = BlogSerializer
+# class BlogListView(ListCreateAPIView):
+#     queryset = BlogModel.objects.annotate(likes_count = Count('likes'))
+#     serializer_class = BlogSerializer
 
-class BlogDetailView(RetrieveUpdateDestroyAPIView):
-    queryset = BlogModel.objects.annotate(likes_count = Count('likes'))
-    serializer_class = BlogSerializer
+# class BlogDetailView(RetrieveUpdateDestroyAPIView):
+#     queryset = BlogModel.objects.annotate(likes_count = Count('likes'))
+#     serializer_class = BlogSerializer
 
 class PostLike(RetrieveAPIView):
     queryset = BlogModel.objects.annotate(likes_count = Count('likes'))
@@ -27,28 +42,28 @@ class PostLike(RetrieveAPIView):
             blog.likes.remove(request.user)
         else:
             blog.likes.add(request.user)
-        return Response({'details':'Post is liked/Unliked it.'}, status=status.HTTP_200_OK)
+        return Response({'details':'Post is liked/Unliked By User.'}, status=status.HTTP_200_OK)
 
-class CommentListView(ListCreateAPIView):
-    serializer_class = CommentSerializer
+# class CommentListView(ListCreateAPIView):
+#     serializer_class = CommentSerializer
 
-    def get_queryset(self):
-        pk = self.kwargs.get('pk')
-        blog = get_object_or_404(BlogModel, pk=pk)
-        return blog.comments_set.all() #type: ignore
+#     def get_queryset(self):
+#         pk = self.kwargs.get('pk')
+#         blog = get_object_or_404(BlogModel, pk=pk)
+#         return blog.comments_set.all() #type: ignore
 
-class CommentDetailView(RetrieveUpdateDestroyAPIView):
-    serializer_class = CommentSerializer
+# class CommentDetailView(RetrieveUpdateDestroyAPIView):
+#     serializer_class = CommentSerializer
 
-    def get_queryset(self):
-        pk = self.kwargs.get('pk')
-        blog = get_object_or_404(BlogModel, pk=pk)
-        return blog.comments_set.all() #type: ignore
+#     def get_queryset(self):
+#         pk = self.kwargs.get('pk')
+#         blog = get_object_or_404(BlogModel, pk=pk)
+#         return blog.comments_set.all() #type: ignore
     
-    def get_object(self):
-        id = self.kwargs.get('id')
-        object = get_object_or_404(self.get_queryset(), pk=id)
-        return object
+#     def get_object(self):
+#         id = self.kwargs.get('id')
+#         object = get_object_or_404(self.get_queryset(), pk=id)
+#         return object
     
 ''' Function Based Views '''
 
