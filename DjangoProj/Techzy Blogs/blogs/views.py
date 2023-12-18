@@ -9,9 +9,48 @@ from rest_framework.response import Response
 from .models import BlogModel, Comments
 from .serializers import BlogSerializer, CommentSerializer
 
+
+''' Class Based Generic Views '''
 class BlogListView(ListCreateAPIView):
     queryset = BlogModel.objects.annotate(likes_count = Count('likes'))
     serializer_class = BlogSerializer
+
+class BlogDetailView(RetrieveUpdateDestroyAPIView):
+    queryset = BlogModel.objects.annotate(likes_count = Count('likes'))
+    serializer_class = BlogSerializer
+
+class PostLike(RetrieveAPIView):
+    queryset = BlogModel.objects.annotate(likes_count = Count('likes'))
+    def retrieve(self, request, *args, **kwargs):
+        blog = self.get_object()
+        if request.user in blog.likes.all():
+            blog.likes.remove(request.user)
+        else:
+            blog.likes.add(request.user)
+        return Response({'details':'Post is liked/Unliked it.'}, status=status.HTTP_200_OK)
+
+class CommentListView(ListCreateAPIView):
+    serializer_class = CommentSerializer
+
+    def get_queryset(self):
+        pk = self.kwargs.get('pk')
+        blog = get_object_or_404(BlogModel, pk=pk)
+        return blog.comments_set.all() #type: ignore
+
+class CommentDetailView(RetrieveUpdateDestroyAPIView):
+    serializer_class = CommentSerializer
+
+    def get_queryset(self):
+        pk = self.kwargs.get('pk')
+        blog = get_object_or_404(BlogModel, pk=pk)
+        return blog.comments_set.all() #type: ignore
+    
+    def get_object(self):
+        id = self.kwargs.get('id')
+        object = get_object_or_404(self.get_queryset(), pk=id)
+        return object
+    
+''' Function Based Views '''
 
 # @api_view(['GET', 'POST'])
 # def blog_list(request):
@@ -24,10 +63,6 @@ class BlogListView(ListCreateAPIView):
 #         serializer.is_valid(raise_exception=True)
 #         serializer.save()
 #         return Response(serializer.data, status=status.HTTP_201_CREATED)
-    
-class BlogDetailView(RetrieveUpdateDestroyAPIView):
-    queryset = BlogModel.objects.annotate(likes_count = Count('likes'))
-    serializer_class = BlogSerializer
 
 # @api_view(['GET', 'PUT', 'DELETE'])
 # def blog_detail(request, pk):
@@ -44,16 +79,6 @@ class BlogDetailView(RetrieveUpdateDestroyAPIView):
 #         blog.delete()
 #         return Response({'message': 'Blog deleted successfully.'}, status=status.HTTP_204_NO_CONTENT)
 
-class PostLike(RetrieveAPIView):
-    queryset = BlogModel.objects.annotate(likes_count = Count('likes'))
-    def retrieve(self, request, *args, **kwargs):
-        blog = self.get_object()
-        if request.user in blog.likes.all():
-            blog.likes.remove(request.user)
-        else:
-            blog.likes.add(request.user)
-        return Response({'details':'Post is liked/Unliked it.'}, status=status.HTTP_200_OK)
-
 
 # @api_view()
 # def post_like(request, pk):
@@ -64,13 +89,7 @@ class PostLike(RetrieveAPIView):
 #         blog.likes.add(request.user)
 #     return Response({'details':'Post is liked/Unliked it.'}, status=status.HTTP_200_OK)
 
-class CommentListView(ListCreateAPIView):
-    serializer_class = CommentSerializer
 
-    def get_queryset(self):
-        pk = self.kwargs.get('pk')
-        blog = get_object_or_404(BlogModel, pk=pk)
-        return blog.comments_set.all() #type: ignore
 
 
 
@@ -88,18 +107,7 @@ class CommentListView(ListCreateAPIView):
 #         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
-class CommentDetailView(RetrieveUpdateDestroyAPIView):
-    serializer_class = CommentSerializer
 
-    def get_queryset(self):
-        pk = self.kwargs.get('pk')
-        blog = get_object_or_404(BlogModel, pk=pk)
-        return blog.comments_set.all() #type: ignore
-    
-    def get_object(self):
-        id = self.kwargs.get('id')
-        object = get_object_or_404(self.get_queryset(), pk=id)
-        return object
 
 # @api_view(['GET', 'PUT', 'DELETE'])
 # def comment_detail(request, pk, id):
