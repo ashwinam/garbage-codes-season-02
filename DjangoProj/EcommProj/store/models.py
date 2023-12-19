@@ -40,6 +40,9 @@ class Customer(models.Model):
     birth_date = models.DateTimeField(null=True)
     membership = models.CharField(max_length=10, choices=MEMBERSHIP_CHOICES, default='B')
 
+    class Meta:
+        ordering = ['first_name', 'last_name']
+
 class Order(models.Model):
     PAYMENT_STATUS = [
         ('P', 'Pending'),
