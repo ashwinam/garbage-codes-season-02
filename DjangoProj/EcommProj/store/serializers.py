@@ -1,3 +1,6 @@
+from itertools import product
+
+from django.forms import ValidationError
 from .models import Cart, CartItem, Collection, Product, Review
 from decimal import Decimal
 from rest_framework import serializers
@@ -75,3 +78,31 @@ class CartSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cart
         fields = ['id', 'items', 'total_price']
+
+class AddItemsSerializer(serializers.ModelSerializer):
+    product_id = serializers.IntegerField()
+
+    def validate_product_id(self, value):
+        if CartItem.objects.filter(product_id=value).exists():
+            return value
+        raise ValidationError('This product does not exists in our products.')
+        
+
+    def save(self, **kwargs):
+        cart_id = self.context.get('cart_pk')
+        product_id = self.initial_data.get('product_id') # type: ignore
+        quantity = self.initial_data.get('quantity') # type: ignore
+        if not CartItem.objects.filter(cart_id=cart_id, product_id=product_id).exists():
+            # Create items
+            instance = CartItem.objects.create(cart_id=cart_id, **self.initial_data) # type: ignore
+            return instance
+        else:
+            # Update items
+            cart_item = CartItem.objects.get(cart_id=cart_id, product_id=product_id)
+            cart_item.quantity += quantity
+            cart_item.save()
+            return cart_item
+
+    class Meta:
+        model = CartItem
+        fields = ['id', 'product_id', 'quantity']
