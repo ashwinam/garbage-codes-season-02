@@ -9,3 +9,9 @@ migrate:
 
 shell:
 	poetry run python manage.py shell
+
+createsuperuser:
+	poetry run python manage.py createsuperuser
+
+changepassword:
+	poetry run python manage.py changepassword admin
