@@ -94,14 +94,14 @@ class AddItemsSerializer(serializers.ModelSerializer):
         quantity = self.initial_data.get('quantity') # type: ignore
         if not CartItem.objects.filter(cart_id=cart_id, product_id=product_id).exists():
             # Create items
-            instance = CartItem.objects.create(cart_id=cart_id, **self.initial_data) # type: ignore
-            return instance
+            self. instance = CartItem.objects.create(cart_id=cart_id, **self.initial_data) # type: ignore
         else:
             # Update items
             cart_item = CartItem.objects.get(cart_id=cart_id, product_id=product_id)
             cart_item.quantity += quantity
             cart_item.save()
-            return cart_item
+            self. instance = cart_item
+        return self.instance
 
     class Meta:
         model = CartItem
