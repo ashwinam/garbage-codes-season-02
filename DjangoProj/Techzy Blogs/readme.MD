@@ -19,4 +19,4 @@ You are tasked with developing a simple Blog REST API using Django REST Framewor
 3. Implement validation to ensure that only one like per user is allowed for each post.
 4. Add a feature to allow users to edit or delete their own comments.
 
-This project will provide you with a hands-on experience in building a comprehensive REST API for a blog, incorporating features like likes and comments. It covers Django models, serializers, views, URL patterns, and additional functionalities such as authentication and pagination.
+This project will provide you with a hands-on experience in building a comprehensive REST API for a blog, incorporating features like likes and comments. It covers Django models, serializers, views, URL patterns, and additional functionalities such as authentication and pagination..
