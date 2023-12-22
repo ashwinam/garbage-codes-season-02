@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'blogs',
     'likes',
-    'comments'
+    'comments',
+    'accounts'
 ]
 
 MIDDLEWARE = [
