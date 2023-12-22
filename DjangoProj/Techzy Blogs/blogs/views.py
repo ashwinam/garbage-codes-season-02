@@ -4,16 +4,19 @@ from django.db.models import Count
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView, RetrieveAPIView
+from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
 from .models import BlogModel, Comments
 from .serializers import BlogSerializer, CommentSerializer
+from .paginations import PaginationConf
 
 ''' Class Based Viewsets Views '''
 class BlogViewSet(ModelViewSet):
     queryset = BlogModel.objects.annotate(likes_count = Count('likes'))
     serializer_class = BlogSerializer
+    pagination_class = PaginationConf
 
     def get_serializer_context(self):
         return {'current_user': self.request.user}
