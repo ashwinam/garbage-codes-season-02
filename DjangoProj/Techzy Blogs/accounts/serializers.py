@@ -1,10 +1,15 @@
-from djoser.serializers import UserCreateSerializer as BaseUserSerializer
+from djoser.serializers import UserCreateSerializer as BaseUserSerializer, UserSerializer as BaseUserSerializer
 from rest_framework import serializers
 from .models import UserProfile
 
 class UserCreateSerializer(BaseUserSerializer):
     class Meta(BaseUserSerializer.Meta):
         fields = ['id', 'username', 'email', 'password', 'first_name', 'last_name']
+
+class UserSerializer(BaseUserSerializer):
+    class Meta(BaseUserSerializer.Meta):
+        fields = ['id', 'username', 'email', 'first_name', 'last_name']
+
 
 class UserProfileSerializer(serializers.ModelSerializer):
     user_id = serializers.IntegerField()
