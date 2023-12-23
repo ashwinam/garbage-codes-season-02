@@ -7,6 +7,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from django.db.models import Count
 from django.shortcuts import get_object_or_404
 
+from rest_framework.decorators import action
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.filters import SearchFilter, OrderingFilter
 from rest_framework.mixins import CreateModelMixin, RetrieveModelMixin, DestroyModelMixin, UpdateModelMixin
@@ -81,6 +82,18 @@ class ItemViewSet(ModelViewSet):
 class CustomerViewset(CreateModelMixin, RetrieveModelMixin, UpdateModelMixin, GenericViewSet):
     queryset = Customer.objects.all()
     serializer_class = CustomerSerializer
+
+    @action(detail=False, methods=['GET', 'PUT'])
+    def me(self, request):
+        customer, is_created = Customer.objects.get_or_create(user_id=request.user.id)
+        if request.method == 'GET':
+            serializer = CustomerSerializer(customer)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        elif request.method == 'PUT':
+            serializer = CustomerSerializer(customer, data=request.data)
+            serializer.is_valid(raise_exception=True)
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
 
 # class ProductList(ListCreateAPIView):
 #     queryset = Product.objects.select_related('collection').all()
