@@ -1,7 +1,7 @@
 from itertools import product
 
 from django.forms import ValidationError
-from .models import Cart, CartItem, Collection, Product, Review
+from .models import Cart, CartItem, Collection, Customer, Product, Review
 from decimal import Decimal
 from rest_framework import serializers
 
@@ -111,3 +111,9 @@ class UpdateItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = CartItem
         fields = ['quantity']
+
+class CustomerSerializer(serializers.ModelSerializer):
+    user_id = serializers.IntegerField()
+    class Meta:
+        model = Customer
+        fields = ['id', 'user_id', 'phone', 'birth_date', 'membership']
