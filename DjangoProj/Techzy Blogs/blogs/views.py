@@ -2,7 +2,7 @@ from django.shortcuts import get_object_or_404
 from django.db.models import Count
 
 from rest_framework import status
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, action
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView, RetrieveAPIView
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
@@ -20,6 +20,15 @@ class BlogViewSet(ModelViewSet):
 
     def get_serializer_context(self):
         return {'current_user': self.request.user}
+    
+    @action(detail=True)
+    def like(self, request, pk=None):
+        blog = self.get_object()
+        if request.user in blog.likes.all():
+            blog.likes.remove(request.user)
+        else:
+            blog.likes.add(request.user)
+        return Response({'details':'Post is liked/Unliked By User.'}, status=status.HTTP_200_OK)
 
 class CommentViewSet(ModelViewSet):
     serializer_class = CommentSerializer
