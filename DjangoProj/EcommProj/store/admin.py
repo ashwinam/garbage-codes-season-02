@@ -58,7 +58,7 @@ class OrderAdmin(admin.ModelAdmin):
     list_select_related = ['customer']
 
     def customer_full_name(self, order):
-        return str(order.customer.first_name) + ' ' + str(order.customer.last_name)
+        return str(order.customer.user.first_name) + ' ' + str(order.customer.user.last_name)
 
 @admin.register(models.Collection)
 class CollectionAdmin(admin.ModelAdmin):
