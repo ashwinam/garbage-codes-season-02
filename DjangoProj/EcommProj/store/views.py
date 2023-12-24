@@ -1,7 +1,7 @@
 from .permissions import IsAdminOrReadOnly, ViewCustomerHistoryPermission
 from .pagination import ProductPagination
 from .models import Cart, CartItem, Customer, Order, Product, Collection, OrderItem, Review
-from .serializers import AddItemsSerializer, CartItemSerializer, CartSerializer, CollectionSerializer, CustomerSerializer, OrderSerializer, ProductSerializer, ReviewSerializer, UpdateItemSerializer
+from .serializers import AddItemsSerializer, CartItemSerializer, CartSerializer, CollectionSerializer, CreateOrderSerializer, CustomerSerializer, OrderSerializer, ProductSerializer, ReviewSerializer, UpdateItemSerializer
 from .filters import ProductFilter
 
 from django_filters.rest_framework import DjangoFilterBackend
@@ -112,8 +112,16 @@ class CustomerViewset(ModelViewSet):
 
 
 class OrderViewSet(ModelViewSet):
-    serializer_class = OrderSerializer
     permission_classes = [IsAuthenticated]
+
+    def get_serializer_class(self):
+        if self.request.method == 'GET':
+            return OrderSerializer
+        elif self.request.method == 'POST':
+            return CreateOrderSerializer
+    
+    def get_serializer_context(self):
+        return {'user_id': self.request.user.id} # type: ignore
 
     def get_queryset(self):
         user = self.request.user

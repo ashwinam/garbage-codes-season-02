@@ -1,6 +1,4 @@
-from itertools import product
-
-from django.forms import ValidationError
+from django.db import transaction
 from .models import Cart, CartItem, Collection, Customer, Order, OrderItem, Product, Review
 from decimal import Decimal
 from rest_framework import serializers
@@ -83,9 +81,9 @@ class AddItemsSerializer(serializers.ModelSerializer):
     product_id = serializers.IntegerField()
 
     def validate_product_id(self, value):
-        if CartItem.objects.filter(product_id=value).exists():
+        if Product.objects.filter(id=value).exists():
             return value
-        raise ValidationError('This product does not exists in our products.')
+        raise serializers.ValidationError('This product does not exists in our products.')
         
 
     def save(self, **kwargs):
@@ -130,3 +128,36 @@ class OrderSerializer(serializers.ModelSerializer):
         fields = ['id', 'customer', 'placed_at', 'items', 'payment_status']
 
     items = OrderItemSerializer(many=True)
+
+class CreateOrderSerializer(serializers.Serializer):
+    cart_id = serializers.UUIDField()
+
+    def save(self, **kwargs):
+
+        with transaction.atomic(): # transaction is help to rollback if anything wrong happens
+            cart_id = self.validated_data.get('cart_id') # type: ignore
+            customer, is_created = Customer.objects.get_or_create(user_id=self.context['user_id'])
+
+            order = Order.objects.create(customer=customer)
+
+            cart_items = CartItem.objects \
+                .select_related('product') \
+                .filter(cart_id=cart_id)
+
+            print(order, 'order')
+
+            order_items = \
+            [
+                OrderItem(
+                    order=order, 
+                    product=item.product, 
+                    quantity=item.quantity, 
+                    unit_price=item.product.unit_price
+                    ) 
+                for item in cart_items
+                ]
+            
+
+            OrderItem.objects.bulk_create(order_items)
+            Cart.objects.filter(id=cart_id).delete()
+
