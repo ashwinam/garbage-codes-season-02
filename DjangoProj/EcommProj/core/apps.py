@@ -6,4 +6,4 @@ class CoreConfig(AppConfig):
     name = 'core'
 
     def ready(self) -> None:
-        import signals.handlers
+        import core.signals.handlers
