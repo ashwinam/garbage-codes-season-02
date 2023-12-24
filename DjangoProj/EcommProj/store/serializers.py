@@ -149,7 +149,7 @@ class CreateOrderSerializer(serializers.Serializer):
     def save(self, **kwargs):
         with transaction.atomic(): # transaction is help to rollback if anything wrong happens
             cart_id = self.validated_data.get('cart_id') # type: ignore
-            customer, is_created = Customer.objects.get_or_create(user_id=self.context['user_id'])
+            customer = Customer.objects.get(user_id=self.context['user_id'])
 
             order = Order.objects.create(customer=customer)
 
