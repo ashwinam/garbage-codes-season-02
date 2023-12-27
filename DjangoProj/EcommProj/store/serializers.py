@@ -16,11 +16,23 @@ class CollectionSerializer(serializers.ModelSerializer):
     def collection_count(self, collection: Collection): # this method user for serializermethodoption
         return collection.product_set.count() #type: ignore
 
+class ProductImageSerializer(serializers.ModelSerializer):
+
+    def create(self, validated_data):
+        product_id = self.context.get('product_id')
+        return ProductImage.objects.create(product_id=product_id, **validated_data)
+
+    class Meta:
+        model = ProductImage
+        fields = ['id', 'image']
+
 class ProductSerializer(serializers.ModelSerializer):
+
+    images = ProductImageSerializer(many=True, read_only=True)
 
     class Meta:
         model = Product
-        fields = ['id', 'title', 'slug', 'description', 'inventory', 'unit_price', 'price_with_tax', 'collection']
+        fields = ['id', 'title', 'slug', 'description', 'inventory', 'unit_price', 'price_with_tax', 'collection', 'images']
 
     # id = serializers.IntegerField()
     # title = serializers.CharField(max_length=255)
@@ -178,14 +190,3 @@ class CreateOrderSerializer(serializers.Serializer):
             order_created.send_robust(self.__class__, order=order)
 
             return order
-
-
-class ProductImageSerializer(serializers.ModelSerializer):
-
-    def create(self, validated_data):
-        product_id = self.context.get('product_id')
-        return ProductImage.objects.create(product_id=product_id, **validated_data)
-
-    class Meta:
-        model = ProductImage
-        fields = ['id', 'image']
