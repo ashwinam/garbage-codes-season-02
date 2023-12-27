@@ -1,7 +1,7 @@
 from .permissions import IsAdminOrReadOnly, ViewCustomerHistoryPermission
 from .pagination import ProductPagination
-from .models import Cart, CartItem, Customer, Order, Product, Collection, OrderItem, Review
-from .serializers import AddItemsSerializer, CartItemSerializer, CartSerializer, CollectionSerializer, CreateOrderSerializer, CustomerSerializer, OrderSerializer, ProductSerializer, ReviewSerializer, UpdateItemSerializer, UpdateOrderSerializer
+from .models import Cart, CartItem, Customer, Order, Product, Collection, OrderItem, ProductImage, Review
+from .serializers import AddItemsSerializer, CartItemSerializer, CartSerializer, CollectionSerializer, CreateOrderSerializer, CustomerSerializer, OrderSerializer, ProductImageSerializer, ProductSerializer, ReviewSerializer, UpdateItemSerializer, UpdateOrderSerializer
 from .filters import ProductFilter
 
 from django_filters.rest_framework import DjangoFilterBackend
@@ -143,6 +143,14 @@ class OrderViewSet(ModelViewSet):
         return Order.objects.filter(customer=customer)
 
 
+class ProductImageViewSet(ModelViewSet):
+    serializer_class = ProductImageSerializer
+
+    def get_serializer_context(self):
+        return {'product_id': self.kwargs.get('product_pk')}
+
+    def get_queryset(self):
+        return ProductImage.objects.filter(product_id=self.kwargs.get('product_pk'))
 
 # class ProductList(ListCreateAPIView):
 #     queryset = Product.objects.select_related('collection').all()
