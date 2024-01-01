@@ -1,3 +1,5 @@
+appname ?= ''
+
 runserver:
 	poetry run python manage.py runserver
 
@@ -9,3 +11,6 @@ migrate:
 
 superuser:
 	poetry run python manage.py createsuperuser
+
+createapp:
+	poetry run python manage.py startapp $(appname)
