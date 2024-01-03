@@ -12,3 +12,14 @@ class UserProfile(models.Model):
 
     def __str__(self) -> str:
         return self.user.username
+    
+class Follow(models.Model):
+    following = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="followings")
+    follower = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="followers")
+    created_at = models.DateField(auto_now_add=True)
+
+    class Meta:
+        unique_together = [['following', 'follower']]
+    
+    def __str__(self) -> str:
+        return f'{self.follower} follows {self.following}'
