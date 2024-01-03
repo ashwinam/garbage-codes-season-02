@@ -8,7 +8,7 @@ from .models import Follow
 
 class UserViewSet(BaseUserViewSet):
     
-    @action(['GET'], detail=True)
+    @action(['POST'], detail=True)
     def follow(self, request, pk=None):
         queryset = Follow.objects.filter(following_id=request.user.id, follower_id=pk)
         if queryset.exists():

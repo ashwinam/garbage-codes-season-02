@@ -6,7 +6,7 @@ class UserCreateSerializer(BaseUserCreateSerializer):
         fields = ['username', 'email', 'password', 'first_name', 'last_name']
 
 class UserSerializer(BaseUserSerializer):
-
+    profiles = serializers.PrimaryKeyRelatedField(read_only=True)
     followers_count = serializers.SerializerMethodField()
     following_count = serializers.SerializerMethodField()
 
