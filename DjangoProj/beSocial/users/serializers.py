@@ -6,5 +6,15 @@ class UserCreateSerializer(BaseUserCreateSerializer):
         fields = ['username', 'email', 'password', 'first_name', 'last_name']
 
 class UserSerializer(BaseUserSerializer):
+
+    followers_count = serializers.SerializerMethodField()
+    following_count = serializers.SerializerMethodField()
+
+    def get_following_count(self, obj):
+        return obj.followings.count()
+    
+    def get_followers_count(self, obj):
+        return obj.followers.count()
+
     class Meta(BaseUserSerializer.Meta):
-        fields = ['id', 'username', 'email', 'first_name', 'last_name', 'profiles']
+        fields = ['id', 'username', 'email', 'first_name', 'last_name', 'profiles', 'followers_count', 'following_count']
