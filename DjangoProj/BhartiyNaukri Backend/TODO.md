@@ -3,7 +3,7 @@
 ## Feature Backlog
 
 ### User Authentication
-- [ ] Create an Core app(Managing Users from this app)
+- [x] Create an Core app(Managing Users from this app)
 - [ ] Setup a model for Authentication(understand the difference between AbstractUser and AbstractBaseUser).
 - [ ] Setup serializers
 - Endpoints for API
