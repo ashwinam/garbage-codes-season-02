@@ -21,9 +21,17 @@ class User(AbstractUser):
             self.user_type = self.base_type
         return super().save(*args, **kwargs)
 
+""" Managers for different user types """
+
 class EmployerManager(models.Manager):
     def get_queryset(self):
         return super().get_queryset().filter(user_type=User.Types.EMPLOYER)
+
+class CandidateManager(models.Manager):
+    def get_queryset(self) -> QuerySet:
+        return super().get_queryset().filter(user_type=User.Types.CANDIDATE)
+    
+""" Proxy Models for different users types """
 
 class Employer(User):
     base_type = User.Types.EMPLOYER
@@ -32,3 +40,10 @@ class Employer(User):
     class Meta:
         proxy = True
 
+
+class Candidate(User):
+    base_type = User.Types.CANDIDATE
+    objects = CandidateManager()
+
+    class Meta:
+        proxy = True
