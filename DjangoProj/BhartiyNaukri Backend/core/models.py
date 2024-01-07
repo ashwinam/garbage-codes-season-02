@@ -1,9 +1,9 @@
 from collections.abc import Iterable
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.db.models.query import QuerySet
 from django.utils.translation import gettext_lazy as _
 
-# Create your models here.
 
 class User(AbstractUser):
 
@@ -20,4 +20,15 @@ class User(AbstractUser):
         if not self.pk:
             self.user_type = self.base_type
         return super().save(*args, **kwargs)
+
+class EmployerManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(user_type=User.Types.EMPLOYER)
+
+class Employer(User):
+    base_type = User.Types.EMPLOYER
+    objects = EmployerManager()
+
+    class Meta:
+        proxy = True
 
