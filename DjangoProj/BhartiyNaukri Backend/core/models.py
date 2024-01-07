@@ -5,7 +5,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 class User(AbstractUser):
-
+    # issue: Create a one type for admin, for admins purposes(superuser also usertype are candidate due to base_type)
     class Types(models.TextChoices): #ENUM for types
         EMPLOYER = "EMPLOYER", "Employer"
         CANDIDATE = "CANDIDATE", "Candidate"
