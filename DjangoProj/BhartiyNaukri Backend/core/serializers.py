@@ -6,8 +6,8 @@ from django.contrib.auth.password_validation import validate_password
 from django.core import exceptions
 
 from .models import Candidate, Employer
-import djoser.serializers
-User = get_user_model()
+
+User = get_user_model() # get the user model from which we are set
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -40,3 +40,34 @@ class EditUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['first_name', 'last_name']
+
+class SetPasswordSerializer(serializers.Serializer):
+    new_password = serializers.CharField(style={'input_type': 'password'})
+    confirm_password = serializers.CharField(style={'input_type': 'password'})
+
+    def validate(self, attrs):
+        new_password = attrs['new_password']
+        confirm_password = attrs['confirm_password']
+        user = self.context['current_user']
+        
+        if user:
+            if new_password == confirm_password:
+                try:
+                    validate_password(new_password, user)
+                except exceptions.ValidationError as e:
+                    serializer_error = serializers.as_serializer_error(e)
+                    raise serializers.ValidationError(
+                        {"password": serializer_error[api_settings.NON_FIELD_ERRORS_KEY]}
+                    )
+            else:
+                raise serializers.ValidationError("Password Mismatch!")
+        else:
+            raise serializers.ValidationError("User must be a logged in")
+        return attrs
+    
+    def save(self, **kwargs):
+        password = self.validated_data['new_password']
+        user = self.context['current_user']
+        user.set_password(password)
+        user.save()
+        return user
