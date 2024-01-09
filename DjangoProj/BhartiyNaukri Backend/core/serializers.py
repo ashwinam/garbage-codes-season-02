@@ -3,14 +3,14 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.hashers import make_password
 
 from .models import Candidate, Employer
-
+import djoser.serializers
 User = get_user_model()
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['url', 'username', 'email', 'password', 'first_name', 'last_name', 'user_type']
-        extra_kwargs = {'password': {"write_only": True}}
+        extra_kwargs = {'password': {"write_only": True, 'style': {"input_type": "password"}}}
     
     def create(self, validated_data):
         user_type = validated_data['user_type'].lower()
