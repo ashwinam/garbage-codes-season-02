@@ -35,3 +35,8 @@ class UserSerializer(serializers.ModelSerializer):
         elif user_type == "employer":
             user = Employer.objects.create(password=make_password(password),**validated_data)
         return user
+    
+class EditUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name']

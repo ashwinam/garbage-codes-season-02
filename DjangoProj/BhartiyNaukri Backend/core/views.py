@@ -1,6 +1,6 @@
 from rest_framework.viewsets import ModelViewSet
  
-from .serializers import UserSerializer
+from .serializers import EditUserSerializer, UserSerializer
 from .permissions import UserPermission
 from .models import User
  
@@ -14,4 +14,10 @@ class UserViewSet(ModelViewSet):
         if not user.is_staff: # type: ignore
             return super().get_queryset().filter(id=user.id) # type: ignore
         return super().get_queryset()
+    
+    def get_serializer_class(self):
+        user_serializer = super().get_serializer_class()
+        if self.action in ['update', 'partial_update']:
+            return EditUserSerializer
+        return user_serializer
         
