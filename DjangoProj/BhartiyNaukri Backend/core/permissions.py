@@ -10,7 +10,6 @@ class UserPermission(permissions.BasePermission):
     """
  
     def has_permission(self, request: Request, view) -> bool:
-         
         if view.action == "create":
             return True # anyone can create user, no additional checks needed.
         if view.action == "list":
@@ -26,7 +25,6 @@ class UserPermission(permissions.BasePermission):
  
         if not request.user.is_authenticated:
             return False
- 
         if view.action in ["retrieve", "update", "partial_update", "list"]:
             return obj == request.user or request.user.is_staff
         elif view.action == "destroy":
