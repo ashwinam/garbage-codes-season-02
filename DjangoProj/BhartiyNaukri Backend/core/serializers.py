@@ -1,6 +1,9 @@
 from rest_framework import serializers
+from rest_framework.settings import api_settings
 from django.contrib.auth import get_user_model
 from django.contrib.auth.hashers import make_password
+from django.contrib.auth.password_validation import validate_password
+from django.core import exceptions
 
 from .models import Candidate, Employer
 import djoser.serializers
@@ -11,6 +14,18 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = ['url', 'username', 'email', 'password', 'first_name', 'last_name', 'user_type']
         extra_kwargs = {'password': {"write_only": True, 'style': {"input_type": "password"}}}
+
+    def validate_password(self, password):
+        try:
+            validate_password(password)
+        except exceptions.ValidationError as e:
+            serializer_error = serializers.as_serializer_error(e)
+            raise serializers.ValidationError(
+                {"password": serializer_error[api_settings.NON_FIELD_ERRORS_KEY]}
+            )
+        
+        return password
+
     
     def create(self, validated_data):
         user_type = validated_data['user_type'].lower()
