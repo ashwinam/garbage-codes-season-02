@@ -5,14 +5,15 @@
 ### User Authentication
 - [x] Create an Core app(Managing Users from this app)
 - [x] Setup a model for Authentication(understand the difference between AbstractUser and AbstractBaseUser).
-- [ ] Setup serializers
+- [x] Setup serializers
 - Endpoints for API
-    - [ ] user/registration
-    - [ ] user/login
-    - [ ] user/logout
-    - [ ] user/reset-password
+    - [x] POST user/
+    - [x] GET user/
+    - [x] POST user/login -- uses simpleJWT
+    - [x] user/logout
+    - [x] POST user/set_password
 - [x] Checkout resources for how to build multiple types of users.
-- [ ] Develop user login and logout system using JWT Authentication.
+- [x] Develop user login and logout system using JWT Authentication.
 
 ### Dashboard
 - [ ] Create a user dashboard layout
