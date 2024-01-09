@@ -9,7 +9,7 @@ class UserPermission(permissions.BasePermission):
     source: https://stackoverflow.com/questions/19313314/django-rest-framework-viewset-per-action-permissions
     """
  
-    def has_permission(self, request: Request, view: GenericAPIView) -> bool:
+    def has_permission(self, request: Request, view) -> bool:
          
         if view.action == "create":
             return True # anyone can create user, no additional checks needed.
@@ -21,7 +21,7 @@ class UserPermission(permissions.BasePermission):
             return False
  
     def has_object_permission(
-        self, request: Request, view: GenericAPIView, obj: models.Model
+        self, request: Request, view, obj: models.Model
     ) -> bool:
  
         if not request.user.is_authenticated:
