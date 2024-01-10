@@ -16,9 +16,9 @@
 - [x] Develop user login and logout system using JWT Authentication.
 
 ### ViewSet For Employer and Candidate
-- [ ] Create Serializer
-- [ ] Create ViewSet
-- [ ] set up a router
+- [x] Create Serializer
+- [x] Create ViewSet
+- [x] set up a router
 - [ ] Give the admin permission (Only admin can see)
 
 ### Dashboard

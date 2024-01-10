@@ -3,9 +3,9 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework import status
  
-from .serializers import EditUserSerializer, SetPasswordSerializer, UserSerializer
+from .serializers import CandidateSerializer, EditUserSerializer, EmployerSerializer, SetPasswordSerializer, UserSerializer
 from .permissions import SetPasswordPermission, UserPermission
-from .models import User
+from .models import Candidate, Employer, User
  
 class UserViewSet(ModelViewSet):
     serializer_class = UserSerializer
@@ -42,4 +42,12 @@ class UserViewSet(ModelViewSet):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response({"message": "Password changed successfully"}, status=status.HTTP_200_OK)
-        
+    
+class EmployerViewSet(ModelViewSet):
+    queryset = Employer.objects.all()
+    serializer_class = EmployerSerializer
+
+
+class CandidateViewSet(ModelViewSet):
+    queryset = Candidate.objects.all()
+    serializer_class = CandidateSerializer

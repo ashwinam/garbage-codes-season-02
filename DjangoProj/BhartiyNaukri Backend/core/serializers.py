@@ -75,10 +75,12 @@ class SetPasswordSerializer(serializers.Serializer):
 class EmployerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Employer
-        fields = ['first_name', 'last_name', 'email', 'user_type']
+        fields = ['url', 'username', 'password', 'first_name', 'last_name', 'email', 'user_type']
+        extra_kwargs = {'user_type': {'read_only': True}, 'password': {'write_only': True}}
 
 
 class CandidateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Candidate
-        fields = ['first_name', 'last_name', 'email', 'user_type']
+        fields = ['url', 'username', 'password', 'first_name', 'last_name', 'email', 'user_type']
+        extra_kwargs = {'user_type': {'read_only': True}, 'password': {'write_only': True}}
