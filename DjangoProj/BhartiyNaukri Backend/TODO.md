@@ -22,7 +22,7 @@
 - [x] Give the admin permission (Only admin can see)
 
 ### Profiles for Employer and Candidate
-- [ ] Gather Attributes
+- [x] Gather Attributes
 - [ ] set-up the models in core app
 - [ ] create a serializers for profile
 - Endpoints:
