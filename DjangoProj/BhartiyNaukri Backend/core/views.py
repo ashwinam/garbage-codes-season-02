@@ -1,7 +1,8 @@
-from rest_framework.viewsets import ModelViewSet
 from rest_framework.decorators import action
+from rest_framework.permissions import IsAdminUser
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.viewsets import ModelViewSet
  
 from .serializers import CandidateSerializer, EditUserSerializer, EmployerSerializer, SetPasswordSerializer, UserSerializer
 from .permissions import SetPasswordPermission, UserPermission
@@ -43,11 +44,14 @@ class UserViewSet(ModelViewSet):
         serializer.save()
         return Response({"message": "Password changed successfully"}, status=status.HTTP_200_OK)
     
+    
 class EmployerViewSet(ModelViewSet):
     queryset = Employer.objects.all()
     serializer_class = EmployerSerializer
+    permission_classes = [IsAdminUser]
 
 
 class CandidateViewSet(ModelViewSet):
     queryset = Candidate.objects.all()
     serializer_class = CandidateSerializer
+    permission_classes = [IsAdminUser]

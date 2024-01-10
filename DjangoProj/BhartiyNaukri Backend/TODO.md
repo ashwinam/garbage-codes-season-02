@@ -19,7 +19,7 @@
 - [x] Create Serializer
 - [x] Create ViewSet
 - [x] set up a router
-- [ ] Give the admin permission (Only admin can see)
+- [x] Give the admin permission (Only admin can see)
 
 ### Dashboard
 - [ ] Create a user dashboard layout
