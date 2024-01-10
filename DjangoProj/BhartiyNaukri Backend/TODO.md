@@ -21,6 +21,15 @@
 - [x] set up a router
 - [x] Give the admin permission (Only admin can see)
 
+### Profiles for Employer and Candidate
+- [ ] Gather Attributes
+- [ ] set-up the models in core app
+- [ ] create a serializers for profile
+- Endpoints:
+    - [ ] 
+- [ ] Create a viewsets
+- [ ] set-up routers
+
 ### Dashboard
 - [ ] Create a user dashboard layout
 - [ ] Display relevant user information on the dashboard
