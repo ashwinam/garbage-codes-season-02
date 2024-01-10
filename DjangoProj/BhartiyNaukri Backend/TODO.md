@@ -15,6 +15,12 @@
 - [x] Checkout resources for how to build multiple types of users.
 - [x] Develop user login and logout system using JWT Authentication.
 
+### ViewSet For Employer and Candidate
+- [ ] Create Serializer
+- [ ] Create ViewSet
+- [ ] set up a router
+- [ ] Give the admin permission (Only admin can see)
+
 ### Dashboard
 - [ ] Create a user dashboard layout
 - [ ] Display relevant user information on the dashboard
