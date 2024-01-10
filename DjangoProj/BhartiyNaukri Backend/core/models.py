@@ -94,7 +94,7 @@ class CandidateProfile(models.Model):
     languages = models.ManyToManyField(KnownLanguage, blank=True)
     about = models.TextField(null=True, blank=True)
     social_network = models.ManyToManyField(SocialNetwork, blank=True)
-    resume = models.ForeignKey(MyResume, on_delete=models.CASCADE, related_name='resumes')
+    resume = models.ForeignKey(MyResume, on_delete=models.CASCADE, related_name='resumes', null=True)
     education_details = models.ManyToManyField(EducationDetails, related_name='educations', blank=True)
     experience_details = models.ManyToManyField(ExperienceDetails, related_name='experience', blank=True)
     awards = models.ManyToManyField(Awards, related_name='awards', blank=True)
