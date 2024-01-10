@@ -71,3 +71,14 @@ class SetPasswordSerializer(serializers.Serializer):
         user.set_password(password)
         user.save()
         return user
+    
+class EmployerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Employer
+        fields = ['first_name', 'last_name', 'email', 'user_type']
+
+
+class CandidateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Candidate
+        fields = ['first_name', 'last_name', 'email', 'user_type']
