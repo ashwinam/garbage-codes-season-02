@@ -23,7 +23,8 @@
 
 ### Profiles for Employer and Candidate
 - [x] Gather Attributes
-- [ ] set-up the models in core app
+- [x] set-up the models in core app
+- [ ] set-up the signals for auto-populating the candidate profiles. 
 - [ ] create a serializers for profile
 - Endpoints:
     - [ ] 
