@@ -55,10 +55,7 @@ class UserViewSet(ModelViewSet):
     
     @action(methods=['GET', 'PUT'], detail=False)
     def profile(self, request):
-        try:
-            self.get_object = self.get_profile_instance
-        except Exception as e:
-            return Response({'message': 'Something went wrong!'}, status=status.HTTP_204_NO_CONTENT)
+        self.get_object = self.get_profile_instance
         if request.method == 'GET':
             return self.retrieve(request)
         elif request.method == 'PUT':
