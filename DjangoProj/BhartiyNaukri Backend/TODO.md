@@ -28,8 +28,10 @@
 - [x] create a serializers for profile
 - Endpoints:
     - [x] GET users/profile/ 
-    - [ ] PUT users/profile/ 
-- [ ] Create a action viewset
+    - [x] PUT users/profile/ 
+    - [ ] PUT users/my-resume/
+- [x] Create a action viewset
+- [ ] let make resume, qualification, experience & awards to be seperated
 
 ### Dashboard
 - [ ] Create a user dashboard layout

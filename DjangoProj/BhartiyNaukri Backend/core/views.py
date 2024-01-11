@@ -41,6 +41,9 @@ class UserViewSet(ModelViewSet):
             return CandidateProfileSerializer
         return user_serializer
 
+    def get_profile_instance(self):
+        return self.request.user.candidate_profile
+
     @action(methods=['POST'], detail=False, permission_classes=[SetPasswordPermission])
     def set_password(self, request):
         serializer = self.get_serializer(data=request.data)
@@ -50,9 +53,11 @@ class UserViewSet(ModelViewSet):
     
     @action(methods=['GET', 'PUT'], detail=False)
     def profile(self, request):
-        user_profile = request.user.candidate_profile
-        serializer = CandidateProfileSerializer(user_profile)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        self.get_object = self.get_profile_instance
+        if request.method == 'GET':
+            return self.retrieve(request)
+        elif request.method == 'PUT':
+            return self.update(request)
     
     
 class EmployerViewSet(ModelViewSet):
