@@ -9,3 +9,7 @@ cpu_count = multiprocessing.cpu_count()
 
 # Print the number of CPU cores available on the system.
 print(cpu_count)
+
+import os
+
+print(os.cpu_count())
