@@ -5,7 +5,7 @@ from django.contrib.auth.hashers import make_password
 from django.contrib.auth.password_validation import validate_password
 from django.core import exceptions
 
-from .models import Candidate, Employer
+from .models import Candidate, CandidateProfile, Employer
 
 User = get_user_model() # get the user model from which we are set
 
@@ -84,3 +84,8 @@ class CandidateSerializer(serializers.ModelSerializer):
         model = Candidate
         fields = ['url', 'username', 'password', 'first_name', 'last_name', 'email', 'user_type']
         extra_kwargs = {'user_type': {'read_only': True}, 'password': {'write_only': True}}
+
+class CandidateProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CandidateProfile
+        fields = ['user', 'profile_pic', 'date_of_birth', 'gender', 'mobile_number', 'languages', 'about', 'social_network', 'resume', 'education_details', 'experience_details', 'awards']
