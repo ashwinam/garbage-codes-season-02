@@ -25,11 +25,11 @@
 - [x] Gather Attributes
 - [x] set-up the models in core app
 - [x] set-up the signals for auto-populating the candidate profiles. 
-- [ ] create a serializers for profile
+- [x] create a serializers for profile
 - Endpoints:
-    - [ ] 
-- [ ] Create a viewsets
-- [ ] set-up routers
+    - [x] GET users/profile/ 
+    - [ ] PUT users/profile/ 
+- [ ] Create a action viewset
 
 ### Dashboard
 - [ ] Create a user dashboard layout

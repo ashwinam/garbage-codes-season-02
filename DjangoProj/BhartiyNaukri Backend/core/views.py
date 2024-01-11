@@ -1,10 +1,10 @@
 from rest_framework.decorators import action
-from rest_framework.permissions import IsAdminUser
+from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.viewsets import ModelViewSet
- 
-from .serializers import CandidateSerializer, EditUserSerializer, EmployerSerializer, SetPasswordSerializer, UserSerializer
+
+from .serializers import CandidateProfileSerializer, CandidateSerializer, EditUserSerializer, EmployerSerializer, SetPasswordSerializer, UserSerializer
 from .permissions import SetPasswordPermission, UserPermission
 from .models import Candidate, Employer, User
  
@@ -16,6 +16,8 @@ class UserViewSet(ModelViewSet):
     def get_permissions(self):
         if self.action == 'set_password':
             return [SetPasswordPermission()]
+        elif self.action == 'profile':
+            return [IsAuthenticated()]
         return super().get_permissions()
     
     def get_serializer_context(self):
@@ -35,14 +37,22 @@ class UserViewSet(ModelViewSet):
             return EditUserSerializer
         elif self.action == 'set_password':
             return SetPasswordSerializer
+        elif self.action == 'profile':
+            return CandidateProfileSerializer
         return user_serializer
-    
+
     @action(methods=['POST'], detail=False, permission_classes=[SetPasswordPermission])
     def set_password(self, request):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response({"message": "Password changed successfully"}, status=status.HTTP_200_OK)
+    
+    @action(methods=['GET', 'PUT'], detail=False)
+    def profile(self, request):
+        user_profile = request.user.candidate_profile
+        serializer = CandidateProfileSerializer(user_profile)
+        return Response(serializer.data, status=status.HTTP_200_OK)
     
     
 class EmployerViewSet(ModelViewSet):
