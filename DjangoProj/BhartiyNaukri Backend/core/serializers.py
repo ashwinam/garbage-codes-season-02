@@ -1,11 +1,14 @@
 from rest_framework import serializers
 from rest_framework.settings import api_settings
+
 from django.contrib.auth import get_user_model
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.password_validation import validate_password
 from django.core import exceptions
 
 from .models import Candidate, CandidateProfile, Employer
+
+from datetime import datetime
 
 User = get_user_model() # get the user model from which we are set
 
@@ -86,6 +89,14 @@ class CandidateSerializer(serializers.ModelSerializer):
         extra_kwargs = {'user_type': {'read_only': True}, 'password': {'write_only': True}}
 
 class CandidateProfileSerializer(serializers.ModelSerializer):
+    age = serializers.SerializerMethodField()
+
+    def get_age(self, obj):
+        current_date = datetime.date(datetime.now())
+        year = (current_date - obj.date_of_birth).days
+        computed_year = year // 365
+        return computed_year
+
     class Meta:
         model = CandidateProfile
-        fields = ['user', 'profile_pic', 'date_of_birth', 'gender', 'mobile_number', 'languages', 'about', 'social_network', 'resume', 'education_details', 'experience_details', 'awards']
+        fields = ['profile_pic', 'date_of_birth', 'age', 'gender', 'mobile_number', 'languages', 'about', 'social_network', 'resume', 'education_details', 'experience_details', 'awards']

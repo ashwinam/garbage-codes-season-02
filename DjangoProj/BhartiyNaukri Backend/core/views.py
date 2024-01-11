@@ -1,3 +1,5 @@
+from django.core import exceptions
+
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
@@ -27,8 +29,8 @@ class UserViewSet(ModelViewSet):
 
     def get_queryset(self):
         user = self.request.user
-        if not user.is_staff: # type: ignore
-            return super().get_queryset().filter(id=user.id) # type: ignore
+        if not user.is_staff:
+            return super().get_queryset().filter(id=user.id)
         return super().get_queryset()
     
     def get_serializer_class(self):
@@ -53,7 +55,10 @@ class UserViewSet(ModelViewSet):
     
     @action(methods=['GET', 'PUT'], detail=False)
     def profile(self, request):
-        self.get_object = self.get_profile_instance
+        try:
+            self.get_object = self.get_profile_instance
+        except Exception as e:
+            return Response({'message': 'Something went wrong!'}, status=status.HTTP_204_NO_CONTENT)
         if request.method == 'GET':
             return self.retrieve(request)
         elif request.method == 'PUT':
