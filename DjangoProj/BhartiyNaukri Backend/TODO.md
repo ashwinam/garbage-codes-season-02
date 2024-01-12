@@ -31,7 +31,8 @@
     - [x] PUT users/profile/ 
     - [ ] PUT users/my-resume/
 - [x] Create a action viewset
-- [ ] let make resume, qualification, experience & awards to be seperated
+- [x] let make resume, qualification, experience & awards to be seperated
+- [ ] create a logic for many-to-many or many-to-one relations in profile handling, because data we are getting at once(internally we are getting data so we have to crreate it object and then pass it to the relational attributes).
 
 ### Dashboard
 - [ ] Create a user dashboard layout

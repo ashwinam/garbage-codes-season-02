@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.viewsets import ModelViewSet
 
-from .serializers import CandidateProfileSerializer, CandidateSerializer, EditUserSerializer, EmployerSerializer, SetPasswordSerializer, UserSerializer
+from .serializers import CandidateProfileSerializer, CandidateSerializer, EditUserSerializer, EmployerSerializer, MyResumeSerializer, SetPasswordSerializer, UserSerializer
 from .permissions import SetPasswordPermission, UserPermission
 from .models import Candidate, Employer, User
  
@@ -19,6 +19,8 @@ class UserViewSet(ModelViewSet):
         if self.action == 'set_password':
             return [SetPasswordPermission()]
         elif self.action == 'profile':
+            return [IsAuthenticated()]
+        elif self.action == 'my_resume':
             return [IsAuthenticated()]
         return super().get_permissions()
     
@@ -41,6 +43,8 @@ class UserViewSet(ModelViewSet):
             return SetPasswordSerializer
         elif self.action == 'profile':
             return CandidateProfileSerializer
+        elif self.action == 'my_resume':
+            return MyResumeSerializer
         return user_serializer
 
     def get_profile_instance(self):
@@ -61,6 +65,13 @@ class UserViewSet(ModelViewSet):
         elif request.method == 'PUT':
             return self.update(request)
     
+    @action(methods=['GET', 'PUT'], detail=False, url_path="my-resume")
+    def my_resume(self, request):
+        self.get_object = self.get_profile_instance
+        if request.method == 'GET':
+            return self.retrieve(request)
+        elif request.method == 'PUT':
+            return self.update(request)
     
 class EmployerViewSet(ModelViewSet):
     queryset = Employer.objects.all()
