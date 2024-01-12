@@ -21,7 +21,7 @@
 - [x] set up a router
 - [x] Give the admin permission (Only admin can see)
 
-### Profiles for Employer and Candidate
+### Profiles for Candidate.
 - [x] Gather Attributes
 - [x] set-up the models in core app
 - [x] set-up the signals for auto-populating the candidate profiles. 
@@ -29,9 +29,21 @@
 - Endpoints:
     - [x] GET users/profile/ 
     - [x] PUT users/profile/ 
-    - [ ] PUT users/my-resume/
+    - [x] GET,PUT users/my-resume/
 - [x] Create a action viewset
 - [x] let make resume, qualification, experience & awards to be seperated
+- [ ] create a logic for many-to-many or many-to-one relations in profile handling, because data we are getting at once(internally we are getting data so we have to crreate it object and then pass it to the relational attributes).
+
+### Profiles for Employer.
+- [ ] Gather Attributes
+- [ ] set-up the models in core app
+- [ ] set-up the signals for auto-populating the employer profiles. 
+- [ ] create a serializers for profile
+- Endpoints:
+    - [ ] GET users/profile/ 
+    - [ ] PUT users/profile/ 
+    - [ ] PUT users/my-resume/
+- [ ] Create a action viewset
 - [ ] create a logic for many-to-many or many-to-one relations in profile handling, because data we are getting at once(internally we are getting data so we have to crreate it object and then pass it to the relational attributes).
 
 ### Dashboard
