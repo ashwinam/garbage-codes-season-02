@@ -99,4 +99,9 @@ class CandidateProfileSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = CandidateProfile
-        fields = ['profile_pic', 'date_of_birth', 'age', 'gender', 'mobile_number', 'languages', 'about', 'social_network', 'resume', 'education_details', 'experience_details', 'awards']
+        fields = ['profile_pic', 'date_of_birth', 'age', 'gender', 'mobile_number', 'languages', 'about', 'social_network']
+
+class MyResumeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CandidateProfile
+        fields = ['resume', 'education_details', 'experience_details', 'awards']
