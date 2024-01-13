@@ -87,7 +87,7 @@ class CandidateProfile(models.Model):
     ]
 
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='candidate_profile')
-    profile_pic = models.ImageField(upload_to='candidate/profile_pictures/', null=True, blank=True)
+    profile_pic = models.ImageField(upload_to='candidates/profile_pictures/', null=True, blank=True)
     date_of_birth = models.DateField(null=True, blank=True)
     gender = models.CharField(max_length=100, choices=GENDERS, null=True, blank=True)
     mobile_number = models.CharField(max_length=11, null=True, blank=True)
@@ -98,6 +98,20 @@ class CandidateProfile(models.Model):
     education_details = models.ManyToManyField(EducationDetails, related_name='educations', blank=True)
     experience_details = models.ManyToManyField(ExperienceDetails, related_name='experience', blank=True)
     awards = models.ManyToManyField(Awards, related_name='awards', blank=True)
+
+    def __str__(self) -> str:
+        return self.user.get_full_name() if self.user.get_full_name() else self.user.username
+    
+class EmployerProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='employer_profile')
+    company_logo = models.ImageField(upload_to='employers/pictures/', null=True, blank=True)
+    mobile_number = models.CharField(max_length=11, null=True, blank=True)
+    company_name = models.CharField(max_length=255, null=True, blank=True)
+    company_website = models.URLField(null=True, blank=True)
+    founded_date = models.DateField(null=True, blank=True)
+    company_size = models.CharField(max_length=50, null=True, blank=True)
+    about_company = models.TextField(null=True, blank=True)
+    social_network = models.ManyToManyField(SocialNetwork, blank=True)
 
     def __str__(self) -> str:
         return self.user.get_full_name() if self.user.get_full_name() else self.user.username

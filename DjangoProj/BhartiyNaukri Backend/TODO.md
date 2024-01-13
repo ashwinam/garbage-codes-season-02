@@ -35,7 +35,7 @@
 - [ ] create a logic for many-to-many or many-to-one relations in profile handling, because data we are getting at once(internally we are getting data so we have to crreate it object and then pass it to the relational attributes).
 
 ### Profiles for Employer.
-- [ ] Gather Attributes
+- [x] Gather Attributes
 - [ ] set-up the models in core app
 - [ ] set-up the signals for auto-populating the employer profiles. 
 - [ ] create a serializers for profile
