@@ -11,6 +11,6 @@ def create_profile_for_new_candidate(sender, **kwargs):
         CandidateProfile.objects.create(user=kwargs['instance'])
 
 @receiver(post_save, sender=Employer)
-def create_profile_for_new_candidate(sender, **kwargs):
+def create_profile_for_new_employer(sender, **kwargs):
     if kwargs['created'] and kwargs['instance'].user_type == "EMPLOYER":
         EmployerProfile.objects.create(user=kwargs['instance'])
