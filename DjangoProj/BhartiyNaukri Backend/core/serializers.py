@@ -6,7 +6,7 @@ from django.contrib.auth.hashers import make_password
 from django.contrib.auth.password_validation import validate_password
 from django.core import exceptions
 
-from .models import Candidate, CandidateProfile, Employer
+from .models import Candidate, CandidateProfile, Employer, EmployerProfile
 
 from datetime import datetime
 
@@ -105,3 +105,8 @@ class MyResumeSerializer(serializers.ModelSerializer):
     class Meta:
         model = CandidateProfile
         fields = ['resume', 'education_details', 'experience_details', 'awards']
+
+class EmployerProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = EmployerProfile
+        fields = ['company_logo', 'mobile_number', 'company_name', 'company_website', 'founded_date', 'company_size', 'about_company', 'social_network']

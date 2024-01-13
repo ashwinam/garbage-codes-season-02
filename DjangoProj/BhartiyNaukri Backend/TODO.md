@@ -37,8 +37,8 @@
 ### Profiles for Employer.
 - [x] Gather Attributes
 - [x] set-up the models in core app
-- [ ] set-up the signals for auto-populating the employer profiles. 
-- [ ] create a serializers for profile
+- [x] set-up the signals for auto-populating the employer profiles. 
+- [x] create a serializers for profile
 - Endpoints:
     - [ ] GET users/profile/ 
     - [ ] PUT users/profile/ 
