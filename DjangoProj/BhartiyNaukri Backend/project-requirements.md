@@ -7,10 +7,10 @@ BhartiyNaukri is a Platform where job givers and seekers are met and discuss abo
 
 ### Global Search
 - Search using Job keyword, Postings with City or postal code.
-### [x] User Authentication
+### User Authentication
 - User either can register as a Candidate or as a Employer.
 - Login using Email and password at the runtime find out which type(Candiate or Employer) user is this.
-### [x] User Profile(Based on User types)
+### User Profile(Based on User types)
 - Before proceeding take a look at app for better understanding.
 ### Notification
 - Action events send on Notifications

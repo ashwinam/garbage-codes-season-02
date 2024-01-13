@@ -59,6 +59,9 @@ class SocialNetwork(models.Model):
 class MyResume(models.Model):
     resume = models.FileField(upload_to="candidates/resumes/", null=True, blank=True)
 
+    def __str__(self) -> str:
+        return self.resume.name
+
 class EducationDetails(models.Model):
     title = models.CharField(max_length=100, null=True)
     institute_name = models.CharField(max_length=255, null=True)
