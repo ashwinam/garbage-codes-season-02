@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.viewsets import ModelViewSet
 
-from .serializers import CandidateProfileSerializer, CandidateSerializer, EditUserSerializer, EmployerSerializer, MyResumeSerializer, SetPasswordSerializer, UserSerializer
+from .serializers import CandidateProfileSerializer, CandidateSerializer, EditUserSerializer, EmployerProfileSerializer, EmployerSerializer, MyResumeSerializer, SetPasswordSerializer, UserSerializer
 from .permissions import SetPasswordPermission, UserPermission
 from .models import Candidate, Employer, User
  
@@ -42,13 +42,19 @@ class UserViewSet(ModelViewSet):
         elif self.action == 'set_password':
             return SetPasswordSerializer
         elif self.action == 'profile':
-            return CandidateProfileSerializer
+            if self.request.user.user_type == 'CANDIDATE':
+                return CandidateProfileSerializer
+            elif self.request.user.user_type == 'EMPLOYER':
+                return EmployerProfileSerializer
         elif self.action == 'my_resume':
             return MyResumeSerializer
         return user_serializer
 
     def get_profile_instance(self):
-        return self.request.user.candidate_profile
+        if self.request.user.user_type == 'CANDIDATE':
+            return self.request.user.candidate_profile
+        elif self.request.user.user_type == 'EMPLOYER':
+            return self.request.user.employer_profile
 
     @action(methods=['POST'], detail=False, permission_classes=[SetPasswordPermission])
     def set_password(self, request):

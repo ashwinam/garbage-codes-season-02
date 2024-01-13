@@ -40,9 +40,9 @@
 - [x] set-up the signals for auto-populating the employer profiles. 
 - [x] create a serializers for profile
 - Endpoints:
-    - [ ] GET users/profile/ 
-    - [ ] PUT users/profile/
-- [ ] Create a action viewset
+    - [x] GET users/profile/ 
+    - [x] PUT users/profile/
+- [x] Create a action viewset
 - [ ] create a logic for many-to-many or many-to-one relations in profile handling, because data we are getting at once(internally we are getting data so we have to crreate it object and then pass it to the relational attributes).
 
 ### Dashboard
