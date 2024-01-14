@@ -45,7 +45,10 @@
 - [x] Create a action viewset
 - [ ] create a logic for many-to-many or many-to-one relations in profile handling, because data we are getting at once(internally we are getting data so we have to crreate it object and then pass it to the relational attributes).
 
-### Dashboard
+### JobPosting
+- [] 
+
+### User Dashboard
 - [ ] Create a user dashboard layout
 - [ ] Display relevant user information on the dashboard
 - [ ] Implement a notification system
