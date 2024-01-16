@@ -48,7 +48,7 @@
 ### JobPosting
 - [x] gather attributes
 - [x] create a app jobs
-- [ ] create a model
+- [x] create a model
 - [ ] create a serializer
 - [ ] look for the permissions(authorized person)
 - [ ] create a viewset 
