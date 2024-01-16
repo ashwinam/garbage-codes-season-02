@@ -46,7 +46,7 @@
 - [ ] create a logic for many-to-many or many-to-one relations in profile handling, because data we are getting at once(internally we are getting data so we have to crreate it object and then pass it to the relational attributes).
 
 ### JobPosting
-- [ ] gather attributes
+- [x] gather attributes
 - [ ] create a app jobs
 - [ ] create a model
 - [ ] create a serializer
