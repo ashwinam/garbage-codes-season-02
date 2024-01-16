@@ -45,7 +45,7 @@
 - [x] Create a action viewset
 - [ ] create a logic for many-to-many or many-to-one relations in profile handling, because data we are getting at once(internally we are getting data so we have to crreate it object and then pass it to the relational attributes).
 
-### JobPosting
+### JobPosting by Employer
 - [x] gather attributes
 - [x] create a app jobs
 - [x] create a model
@@ -53,6 +53,9 @@
 - [ ] look for the permissions(authorized person)
 - [ ] create a viewset 
 - [ ] set up the router
+
+### JobApply by candidate
+- []
 
 ### User Dashboard
 - [ ] Create a user dashboard layout
