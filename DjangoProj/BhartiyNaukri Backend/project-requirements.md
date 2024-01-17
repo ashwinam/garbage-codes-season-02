@@ -16,7 +16,7 @@ BhartiyNaukri is a Platform where job givers and seekers are met and discuss abo
 - Action events send on Notifications
 ### Job Postings
 - Job List, Details, creating jobs.
-- Include filters and search functionality.
+- Include filters and search functionality.(remaining)
 ### Blogs
 - Blog Functionality
 ### Chat/Messages
@@ -26,4 +26,4 @@ BhartiyNaukri is a Platform where job givers and seekers are met and discuss abo
 - includes reschedule and delete appointments as well.
 ### Jobs/Candidate Alerts
 - Received the list of Jobs/Candidates on Dashboard, Notifications and Emails.
-
+### Go through backend testing one more time after finishing ui
