@@ -4,7 +4,7 @@ class JobsPermission(permissions.BasePermission):
     def has_permission(self, request, view):
         if view.action in ['list', 'retrieve']:
             return True
-        if view.action in ['create', 'update', 'partial_update']:
+        elif view.action in ['create', 'update', 'partial_update']:
             return request.user.is_authenticated and request.user.user_type == 'EMPLOYER'
         return super().has_permission(request, view)
     
