@@ -55,8 +55,8 @@
 - [x] look for the permissions(authorized person)
 
 ### JobApply by candidate
-- [ ] gather attributes
-- [ ] create a model
+- [x] gather attributes
+- [x] create a model
 - [ ] create a serializer
 - [ ] work on viewsets
 - [ ] set up the router

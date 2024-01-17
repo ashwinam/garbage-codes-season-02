@@ -33,3 +33,13 @@ class Jobs(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class JobApplication(models.Model):
+    applicant = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='applicant')
+    job = models.ForeignKey(Jobs, on_delete=models.CASCADE, related_name='applied_job')
+    resume = models.FileField(upload_to='job_appliction/resumes/')
+    message = models.TextField(null=True, blank=True)
+
+    def __str__(self) -> str:
+        return self.job.title
