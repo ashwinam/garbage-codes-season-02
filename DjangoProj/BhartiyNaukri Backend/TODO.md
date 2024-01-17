@@ -51,7 +51,7 @@
 - [x] create a model
 - [x] create a serializer
 - [x] create a viewset
-- [ ] set up the router
+- [x] set up the router
 - [ ] look for the permissions(authorized person)
 
 ### JobApply by candidate

@@ -4,5 +4,5 @@ from .models import Jobs
 from .serializers import JobsSerializer
 
 class JobsViewSet(ModelViewSet):
-    queryet = Jobs.objects.all()
+    queryset = Jobs.objects.all()
     serializer_class = JobsSerializer
