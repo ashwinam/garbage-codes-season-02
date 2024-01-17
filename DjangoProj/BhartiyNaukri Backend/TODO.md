@@ -52,7 +52,7 @@
 - [x] create a serializer
 - [x] create a viewset
 - [x] set up the router
-- [ ] look for the permissions(authorized person)
+- [x] look for the permissions(authorized person)
 
 ### JobApply by candidate
 - []
