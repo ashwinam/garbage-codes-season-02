@@ -58,9 +58,9 @@
 - [x] gather attributes
 - [x] create a model
 - [x] create a serializer
-- [ ] work on viewsets
-- [ ] set up the router
-- [ ] look for the permissions(authorized person)
+- [x] work on viewsets
+- [x] set up the router(uses apply action)
+- [x] look for the permissions(authorized person)
 
 ### User Dashboard
 - [ ] Create a user dashboard layout

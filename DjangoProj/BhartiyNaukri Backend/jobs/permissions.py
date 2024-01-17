@@ -4,7 +4,7 @@ class JobsPermission(permissions.BasePermission):
     def has_permission(self, request, view):
         if view.action in ['list', 'retrieve']:
             return True
-        if view.action == 'create':
+        if view.action in ['create', 'update', 'partial_update']:
             return request.user.is_authenticated and request.user.user_type == 'EMPLOYER'
         return super().has_permission(request, view)
     
@@ -12,3 +12,9 @@ class JobsPermission(permissions.BasePermission):
         if view.action in ['update', 'partial_update', 'destroy']:
             return obj.user == request.user
         return super().has_object_permission(request, view, obj)
+    
+class JobApplicationPermission(permissions.IsAuthenticated):
+    def has_permission(self, request, view):
+        if view.action == 'apply':
+            return request.user.is_authenticated and request.user.user_type == 'CANDIDATE'
+        return super().has_permission(request, view)
