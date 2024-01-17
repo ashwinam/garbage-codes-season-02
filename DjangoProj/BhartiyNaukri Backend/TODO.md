@@ -55,7 +55,12 @@
 - [x] look for the permissions(authorized person)
 
 ### JobApply by candidate
-- []
+- [ ] gather attributes
+- [ ] create a model
+- [ ] create a serializer
+- [ ] work on viewsets
+- [ ] set up the router
+- [ ] look for the permissions(authorized person)
 
 ### User Dashboard
 - [ ] Create a user dashboard layout
