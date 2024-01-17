@@ -50,10 +50,9 @@
 - [x] create a app jobs
 - [x] create a model
 - [x] create a serializer
-- [ ] Endpoints
-- [ ] look for the permissions(authorized person)
-- [ ] create a viewset 
+- [x] create a viewset
 - [ ] set up the router
+- [ ] look for the permissions(authorized person)
 
 ### JobApply by candidate
 - []
