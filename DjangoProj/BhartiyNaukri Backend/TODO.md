@@ -57,7 +57,7 @@
 ### JobApply by candidate
 - [x] gather attributes
 - [x] create a model
-- [ ] create a serializer
+- [x] create a serializer
 - [ ] work on viewsets
 - [ ] set up the router
 - [ ] look for the permissions(authorized person)
