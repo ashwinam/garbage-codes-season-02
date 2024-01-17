@@ -14,7 +14,7 @@ class Jobs(models.Model):
     featured_images = models.ImageField(upload_to='jobs/featured_images/', null=True, blank=True)
     title = models.CharField(max_length=255)
     deescription = models.TextField()
-    categories = models.ForeignKey(Categories, on_delete=models.PROTECT, related_name='categories')
+    categories = models.ForeignKey(Categories, on_delete=models.PROTECT, related_name='categories', null=True, blank=True)
     type = models.CharField(max_length=50, choices=JobTypes.choices)
     gender = models.CharField(max_length=10, choices=Gender.choices)
     apply_type = models.CharField(max_length=50, choices=JobApplyTypes.choices)
