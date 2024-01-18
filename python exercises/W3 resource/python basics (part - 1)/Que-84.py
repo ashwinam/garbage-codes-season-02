@@ -15,3 +15,10 @@ for each_char in string:
         occurances[each_char] = 1
 
 print(occurances[char])
+
+# using collection module
+
+from collections import Counter
+
+
+print(Counter(string)[char])
