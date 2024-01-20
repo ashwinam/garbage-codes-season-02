@@ -30,6 +30,8 @@ a[target="_blank"] {
   color: black;
 }
 
+/* : pseudo class selector */
+
 /* article :first-child {
     color: violet;
 } */
@@ -55,4 +57,30 @@ a:link {
 a:hover,
 a:focus {
   color: chocolate;
+}
+
+/* :: pseudo element selector */
+
+p {
+  color: black;
+}
+
+section p::first-letter {
+  font-size: 140%;
+  font-weight: bold;
+}
+
+::selection {
+  background-color: crimson;
+}
+
+
+section p::before {
+    content: '---';
+    display: block;
+}
+
+section p::after {
+    content: '---';
+    display: block;
 }
