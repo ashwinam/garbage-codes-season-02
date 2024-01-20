@@ -84,3 +84,16 @@ section p::after {
     content: '---';
     display: block;
 }
+
+/* inheritance */
+
+#para {
+    color: darkorchid;
+    border: 1px solid grey;
+}
+
+strong {
+    color: initial;
+    border: inherit;
+    border-collapse: collapse;
+}
