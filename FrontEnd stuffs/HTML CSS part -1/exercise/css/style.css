@@ -31,3 +31,13 @@ body {
   tfoot {
     text-align: left;
   }
+
+  .box {
+    margin-top: 100px;
+    width: 300px;
+    height: 300px;
+    background-color: tomato;
+    border-radius: 10px;
+    box-shadow: 10px 10px lightgray;
+    margin-bottom: 100px;
+  }
