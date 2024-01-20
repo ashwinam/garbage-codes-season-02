@@ -5,3 +5,27 @@ body {
 p {
     color: cadetblue;
 }
+
+/* Selectors */
+/* 
+1. Type -->  elements
+2. ID --> #product
+3. class --> .products
+4. attributes --> target="_blank"
+*/
+
+a /* Type selector */{
+    color: violet;
+}
+
+.products /* class selector */ {
+    background-color: blueviolet;
+}
+
+#products /* ID selector */ {
+    background-color: brown;
+}
+
+a[target='_blank'] {
+    color: black;
+}
