@@ -1,9 +1,9 @@
 body {
-    margin: 10px;
+  margin: 10px;
 }
 
 p {
-    color: cadetblue;
+  color: cadetblue;
 }
 
 /* Selectors */
@@ -14,18 +14,45 @@ p {
 4. attributes --> target="_blank"
 */
 
-a /* Type selector */{
-    color: violet;
+a /* Type selector */ {
+  color: violet;
 }
 
 .products /* class selector */ {
-    background-color: blueviolet;
+  background-color: blueviolet;
 }
 
 #products /* ID selector */ {
-    background-color: brown;
+  background-color: brown;
 }
 
-a[target='_blank'] {
-    color: black;
+a[target="_blank"] {
+  color: black;
+}
+
+/* article :first-child {
+    color: violet;
+} */
+
+article p:first-of-type {
+  color: violet;
+}
+
+article :last-child {
+  color: dodgerblue;
+  font-weight: bold;
+}
+
+nav ul li:nth-child(2n) {
+  color: brown;
+}
+
+a:visited,
+a:link {
+  color: blueviolet;
+}
+
+a:hover,
+a:focus {
+  color: chocolate;
 }
