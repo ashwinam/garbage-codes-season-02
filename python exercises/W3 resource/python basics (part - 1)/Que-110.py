@@ -8,4 +8,6 @@ an_fun = lambda a : a % 15 == 0
 for i in an_lst:
     print(an_fun(i))
 
+# using filter
 
+print(list(filter(an_fun, an_lst)))
