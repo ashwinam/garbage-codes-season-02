@@ -4,5 +4,6 @@
     background-color: gold;
     padding: 10px 20px 10px 20px;
     border: 5px solid orange;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
+    overflow: auto;
 }
