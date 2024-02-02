@@ -1,37 +1,53 @@
 <!-- 4h Pagination -->
 
 <style>
-    .back-btn, .next-btn {
-        padding-top: 10px;
-        padding-right: 5px;
-        padding-bottom: 10px;
-        padding-left: 5px;
-    }
+  .back-btn,
+  .next-btn {
+    padding-top: 10px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+  }
 
-    .back-btn {
-        margin-right: 10px;
-    }
+  .back-btn {
+    margin-right: 10px;
+  }
 
-    .next-btn {
-        margin-left: 10px;
-    }
+  .next-btn {
+    margin-left: 10px;
+  }
 
-    .pages{
-        margin-right: 5px;
-    }
+  .pages {
+    margin-right: 5px;
+  }
 
-    .stretch {
-        background-color: green;
-        color: white;
-        border: none;
-        padding: 4px 12px;
-        transition: padding 1s;
-        cursor: pointer;
-    }
+  .stretch {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 4px 12px;
+    transition: padding 1s;
+    cursor: pointer;
+  }
 
-    .stretch:hover {
-        padding: 15px 30px;
-    }
+  .stretch:hover {
+    padding: 15px 30px;
+  }
+
+  .shadow {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.15);
+    transition: margin 0.15s, box-shadow 0.15s;
+  }
+
+  .shadow:active {
+    margin: 3px 3px;
+    box-shadow: none;
+  }
 </style>
 
 <button class="back-btn">Back</button>
@@ -45,3 +61,8 @@
 <!-- 4i Stretch -->
 <p></p>
 <button class="stretch">Stretch</button>
+
+<!-- 4j 3D click -->
+<p></p>
+
+<button class="shadow">Shadow</button>
