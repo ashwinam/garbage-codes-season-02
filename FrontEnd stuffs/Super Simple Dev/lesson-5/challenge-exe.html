@@ -3,7 +3,6 @@
     font-family: Arial;
     margin-top: 0;
     margin-bottom: 0;
-    text-align: center;
   }
 
   hr {
@@ -12,31 +11,38 @@
   }
 
   .product-type {
+    text-align: center;
     color: brown;
     margin-bottom: 3px;
     font-size: 10px;
   }
 
   .product-name {
+    text-align: center;
     font-weight: bold;
     font-size: 15px;
     margin-bottom: 3px;
   }
 
   .product-desc {
+    text-align: center;
     font-weight: bold;
     font-size: 25px;
     margin-bottom: 3px;
   }
 
   .product-price {
+    text-align: center;
     font-size: 12px;
     color: rgb(80, 80, 80);
     margin-bottom: 15px;
   }
 
-  .buy-btn {
+  .center-text {
     text-align: center;
+  }
+
+  .buy-btn {
     background-color: rgb(94, 135, 238);
     padding: 5px 12px;
     border-radius: 14px;
@@ -45,6 +51,32 @@
     cursor: pointer;
     font-weight: bold;
   }
+
+  .stock-price {
+    font-size: 30px;
+    margin-bottom: 5px;
+  }
+
+  .country{
+    font-size: 15px;
+    color: gray;
+  }
+
+  .price-changes {
+    color: rgb(5, 131, 5);
+    margin-bottom: 5px;
+    font-size: 15px;
+  }
+
+  .price-end {
+    color: gray;
+    font-size: 15px;
+  }
+
+  .price-change {
+    color: rgb(201, 5, 5);
+  }
+
 </style>
 
 <!-- 5e -->
@@ -53,8 +85,21 @@
 <p class="product-name">MacBook Pro</p>
 <p class="product-desc">Supercharged for pros.</p>
 <p class="product-price">From $1999</p>
-<p>
+<p class="center-text">
   <span class="buy-btn"> Buy </span>
+</p>
+
+<hr>
+
+<!-- 5f -->
+
+<p class="stock-price">1,049.61 <span class="country">USD</span></p>
+<p class="price-changes">+18.05 (1.75%) today</p>
+<p class="price-end">
+  After hours 1,048.00 
+  <span class="price-change">
+    -1.61 (0.15%)
+  </span>
 </p>
 
 <hr>
