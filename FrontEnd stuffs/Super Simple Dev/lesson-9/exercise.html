@@ -3,6 +3,12 @@
   <head>
     <title>Lesson 9 | Exercise</title>
     <style>
+      hr {
+        height: 3px;
+        background-color: red;
+        border: none;
+      }
+
       p {
         margin-top: 0;
         margin-bottom: 0;
@@ -57,16 +63,51 @@
       .subtitle {
         color: rgba(255, 255, 255, 0.426);
       }
-      
 
+      .tweeter-container {
+        border: none;
+        padding: 10px;
+        width: 400px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        border-radius: 5px;
+      }
+
+      .tweet-cat {
+        height: 50px;
+        width: 50px;
+        object-fit: cover;
+        border-radius: 25px;
+        vertical-align: middle;
+      }
+      
+      .tweet-post {
+        border: none;
+        width: 250px;
+        padding: 10px;
+      }
+
+      .tweet-btn {
+        background-color: rgba(4, 54, 189, 0.71);
+        border: none;
+        padding-top: 8px;
+        padding-right: 12px;
+        padding-bottom: 8px;
+        padding-left: 12px;
+        border-radius: 20px;
+        cursor: pointer;
+        color: white;
+        font-weight: bold;
+      }
     </style>
   </head>
   <body>
     <!-- 9a -->
     <div class="square"></div>
+    <hr>
 
     <!-- 9b -->
     <div class="circle"></div>
+    <hr>
 
     <!-- 9c -->
     <div class="feedback-container">
@@ -74,11 +115,21 @@
       <button class="yes">Yes</button>
       <button class="no">No</button>
     </div>
+    <hr>
 
     <!-- 9d -->
     <div class="youtube-container">
       <p class="title">Install YouTube Music</p>
       <p class="subtitle">Add YouTube Music to your desktop for quick and easy access.</p>
     </div>
+    <hr>
+
+    <!-- 9e -->
+    <div class="tweeter-container">
+      <img src="../lesson-7/images/cat-1.jpg" alt="cat-1" class="tweet-cat">
+      <input type="text" class="tweet-post" placeholder="What's happening?">
+      <button class="tweet-btn">Tweet</button>
+    </div>
+    <hr>
   </body>
 </html>
