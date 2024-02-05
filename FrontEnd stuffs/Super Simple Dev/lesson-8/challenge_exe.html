@@ -3,7 +3,6 @@
   <head>
     <title>Lesson 08 | Challenge exercise</title>
     <style>
-
       hr {
         height: 5px;
         background-color: red;
@@ -40,6 +39,48 @@
         border-radius: 5px;
         cursor: pointer;
       }
+
+      p {
+        font-family: Arial;
+        font-size: 30px;
+        margin: 0;
+      }
+
+      .heading {
+        margin-bottom: 20px;
+      }
+
+      .pickup,
+      .destination {
+        margin-bottom: 5px;
+        width: 300px;
+        display: block;
+        padding-top: 10px;
+        padding-right: 12px;
+        padding-bottom: 10px;
+        padding-left: 12px;
+        border: none;
+        background-color: rgba(128, 128, 128, 0.15);
+      }
+
+      .destination {
+        margin-bottom: 10px;
+      }
+
+      .request-btn,
+      .schedule-btn {
+        width: 160px;
+        padding: 10px;
+        border: none;
+        background-color: black;
+        color: white;
+        cursor: pointer;
+      }
+
+      .schedule-btn {
+        background-color: rgba(128, 128, 128, 0.15);
+        color: black;
+      }
     </style>
   </head>
   <body>
@@ -48,6 +89,15 @@
     <input type="text" placeholder="Last Name" class="last-name" />
     <input type="email" placeholder="Email" class="email-field" />
     <button class="signup-btn">Sign Up</button>
-    <hr>
+    <hr />
+
+    <!-- 8e -->
+    <p class="heading">Request a ride now</p>
+    <input type="text" class="pickup" placeholder="Enter pickup location" />
+    <input type="text" class="destination" placeholder="Enter destination" />
+
+    <button class="request-btn">Request Now</button>
+    <button class="schedule-btn">Schedule for later</button>
+    <hr />
   </body>
 </html>
