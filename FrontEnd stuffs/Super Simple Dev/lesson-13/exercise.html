@@ -3,9 +3,31 @@
   <head>
     <title>Lesson 13 | Exercise</title>
     <style>
+      hr {
+        height: 5px;
+        background-color: red;
+        border: none;
+      }
+
       .first-container {
         display: flex;
         height: 50px;
+      }
+
+      .second-container {
+        display: flex;
+      }
+
+      .innerflex {
+        display: flex;
+        justify-content: space-between;
+        height: 50px;
+        align-items: center;
+      }
+
+      .black {
+        background-color: black;
+        color: white;
       }
     </style>
   </head>
@@ -15,7 +37,20 @@
       <div style="background-color: lightpink; width: 100px; display: flex; align-items: center; justify-content: center;">
         <div style="background-color: black; color: white;">item 1</div>
       </div>
-      <div style="background-color: lightblue; width: 200px;">item2</div>
+      <div style="background-color: lightblue; width: 200px;"></div>
+    </div>
+    <hr>
+
+    <!-- 13b -->
+    <div class="second-container">
+      <div style="background-color: lightpink; width: 100px;"></div>
+      <div style="background-color: lightblue; width: 200px;">
+        <div>row1</div>
+        <div class="innerflex">
+          <div class="black">row2</div>
+          <div class="black">row2</div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
