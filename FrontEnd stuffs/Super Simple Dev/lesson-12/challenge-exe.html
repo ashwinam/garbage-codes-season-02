@@ -41,6 +41,49 @@
         font-weight: bold;
         font-size: 15px;
       }
+
+      .second-container {
+        background-color: rgb(151, 20, 251);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px;
+      }
+
+      .home {
+        font-weight: bold;
+        color: white;
+        width: 150px;
+      }
+
+      .inner-flex {
+        width: 500px;
+        flex: 1;
+      }
+
+      .search-box {
+        width: 450px;
+        padding-top: 7px;
+        padding-right: 15px;
+        padding-bottom: 7px;
+        padding-left: 15px;
+        border-radius: 20px;
+        border: none;
+      }
+
+      .download-btn {
+        border: 1px solid white;
+        font-weight: bold;
+        background-color: transparent;
+        color: white;
+        padding-top: 7px;
+        padding-right: 12px;
+        padding-bottom: 7px;
+        padding-left: 12px;
+        border-radius: 3px;
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
@@ -60,6 +103,17 @@
       </div>
     </div>
 
-    <hr>
+    <hr />
+
+    <!-- 12f -->
+    <div class="second-container">
+      <div class="home">Home</div>
+      <div class="inner-flex">
+        <input type="text" placeholder="Search" class="search-box"/>
+      </div>
+      <div class="download-box">
+        <button class="download-btn">Download</button>
+      </div>
+    </div>
   </body>
 </html>
