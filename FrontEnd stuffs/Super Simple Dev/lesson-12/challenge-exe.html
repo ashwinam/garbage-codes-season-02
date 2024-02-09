@@ -3,10 +3,12 @@
   <head>
     <title>Lesson 12 | Challenge Exercise</title>
     <style>
-      body {
+      body, p {
         font-family: Arial;
         margin-top: 0;
         margin-bottom: 0;
+        font-weight: bold;
+        font-size: 14px;
       }
 
       hr {
@@ -84,6 +86,54 @@
         border-radius: 3px;
         cursor: pointer;
       }
+
+      .third-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        width: 300px;
+        margin-bottom: 10px;
+      }
+
+      .image-container {
+        width: 50px;
+        margin-right: 10px;
+      }
+
+      .cat-img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+
+      .category, 
+      .tag {
+        color: gray;
+        font-weight: normal;
+      }
+
+      .text {
+        line-height: 18px;
+      }
+
+      .btn {
+        margin-left: auto;
+      }
+
+      .follow-btn {
+        border: none;
+        background-color: rgb(0, 98, 255);
+        padding-top: 7px;
+        padding-right: 12px;
+        padding-bottom: 7px;
+        padding-left: 12px;
+        font-weight: bold;
+        color: white;
+        border-radius: 3px;
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
@@ -109,11 +159,69 @@
     <div class="second-container">
       <div class="home">Home</div>
       <div class="inner-flex">
-        <input type="text" placeholder="Search" class="search-box"/>
+        <input type="text" placeholder="Search" class="search-box" />
       </div>
       <div class="download-box">
         <button class="download-btn">Download</button>
       </div>
     </div>
+
+    <hr />
+
+    <!-- 12g -->
+    <div>
+      <div class="third-container">
+        <div class="image-container">
+          <img
+            src="../lesson-7/images/cat-1.jpg"
+            alt="cat-image"
+            class="cat-img"
+          />
+        </div>
+        <div class="text">
+          <p class="name">Oliver</p>
+          <p class="category">the cat</p>
+          <p class="tag">Popular</p>
+        </div>
+        <div class="btn">
+          <button class="follow-btn">Follow</button>
+        </div>
+      </div>
+      <div class="third-container">
+        <div class="image-container">
+          <img
+            src="../lesson-7/images/cat-1.jpg"
+            alt="cat-image"
+            class="cat-img"
+          />
+        </div>
+        <div class="text">
+          <p class="name">Mimi</p>
+          <p class="category">Sleepy cat</p>
+          <p class="tag">Popular</p>
+        </div>
+        <div class="btn">
+          <button class="follow-btn">Follow</button>
+        </div>
+      </div>
+      <div class="third-container">
+        <div class="image-container">
+          <img
+            src="../lesson-7/images/cat-1.jpg"
+            alt="cat-image"
+            class="cat-img"
+          />
+        </div>
+        <div class="text">
+          <p class="name">Rex</p>
+          <p class="category">Happy bulldog</p>
+          <p class="tag">Popular</p>
+        </div>
+        <div class="btn">
+          <button class="follow-btn">Follow</button>
+        </div>
+      </div>
+    </div>
+    <hr>
   </body>
 </html>
