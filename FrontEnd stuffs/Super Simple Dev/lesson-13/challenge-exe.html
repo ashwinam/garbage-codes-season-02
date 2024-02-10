@@ -3,6 +3,11 @@
   <head>
     <title>Lesson 13 | Challenge Exercise</title>
     <style>
+
+      body {
+        padding-bottom: 1000px;
+      }
+
       hr {
         height: 5px;
         border: none;
@@ -13,6 +18,10 @@
         font-family: Arial;
         margin-top: 0;
         margin-bottom: 0;
+      }
+
+      div {
+        font-family: Arial;
       }
 
       .c13 {
@@ -77,6 +86,72 @@
         color: gray;
         margin-bottom: 5px;
       }
+
+      .main-container {
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        width: 400px;
+      }
+
+      .profile-picture-container {
+        margin-right: 10px;
+      }
+
+      .profile-picture {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 25px;
+      }
+
+      .profile-id {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .user-id {
+        color: gray;
+        font-weight: normal;
+      }
+
+      .post-detail {
+        line-height: 20px;
+        margin-bottom: 15px;
+        font-size: 14px;
+      }
+
+      .link-container {
+        display: flex;
+        flex-direction: row;
+        border: 1px solid rgb(230, 230, 230);
+        border-radius: 11px;
+        width: 300px;
+      }
+
+      .color-effect {
+        background-color: rgb(230, 230, 230);
+        width: 80px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+
+      .given-link {
+        width: 200px;
+        padding-top: 7px;
+        padding-left: 10px;
+        padding-bottom: 7px;
+      }
+
+      .website-name {
+        color: gray;
+        font-size: 12px;
+        margin-bottom: 5px;
+      }
+
+      .video-title {
+        font-size: 14px;
+      }
     </style>
   </head>
   <body>
@@ -97,13 +172,13 @@
         </div>
         <div>
           <div class="inner-flexbox">
-            <p class="marketing-title">
-              Chewy Promotions
-            </p>
-            <p class="time"> 4.58 PM </p>
+            <p class="marketing-title">Chewy Promotions</p>
+            <p class="time">4.58 PM</p>
           </div>
           <p class="marketing-subtitle">Biggest sales of the year!</p>
-          <p class="marketing-slogan">Hey there! We're writting to tell you about our...</p>
+          <p class="marketing-slogan">
+            Hey there! We're writting to tell you about our...
+          </p>
         </div>
       </div>
       <div class="flexbox">
@@ -116,13 +191,13 @@
         </div>
         <div>
           <div class="inner-flexbox">
-            <p class="marketing-title">
-              Best Buy
-            </p>
-            <p class="time"> 12.32 PM </p>
+            <p class="marketing-title">Best Buy</p>
+            <p class="time">12.32 PM</p>
           </div>
           <p class="marketing-subtitle">Your Best Buy eReceipt</p>
-          <p class="marketing-slogan">Thank you for shopping at Best Buy, here is...</p>
+          <p class="marketing-slogan">
+            Thank you for shopping at Best Buy, here is...
+          </p>
         </div>
       </div>
       <div class="flexbox">
@@ -135,20 +210,49 @@
         </div>
         <div>
           <div class="inner-flexbox">
-            <p class="marketing-title">
-              Netflix
-            </p>
-            <p class="time"> 9.00 AM </p>
+            <p class="marketing-title">Netflix</p>
+            <p class="time">9.00 AM</p>
           </div>
           <p class="marketing-subtitle">Here's what's coming soon to Netflix</p>
-          <p class="marketing-slogan">Brand new movies and show, old favourites...</p>
+          <p class="marketing-slogan">
+            Brand new movies and show, old favourites...
+          </p>
         </div>
       </div>
     </div>
 
-    <hr>
+    <hr />
     <!-- 13f -->
-    <img src="13f.svg" alt="13f image" class="c13">
-    <hr>
+    <img src="13f.svg" alt="13f image" class="c13" />
+    <hr />
+
+    <!-- 13g -->
+
+    <div class="main-container">
+      <div class="profile-picture-container">
+        <img
+          src="../lesson-7/images/cat-1.jpg"
+          alt="profile picture"
+          class="profile-picture"
+        />
+      </div>
+      <div class="user-post-container">
+        <div class="profile-id">
+          supersimple.dev <span class="user-id">@SuperSimpleDev</span>
+        </div>
+        <div class="post-detail">
+          What is backend web development? A complete overview. New video is up!
+        </div>
+        <div class="link-container">
+          <div class="color-effect"></div>
+          <div class="given-link">
+            <div class="website-name">youtube.com</div>
+            <div class="video-title">
+              Backend web development - a complete overview (2021)
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
