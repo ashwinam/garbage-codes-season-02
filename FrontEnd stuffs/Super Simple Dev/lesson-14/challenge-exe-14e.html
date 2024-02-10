@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson 14 | 14e</title>
+    <style>
+      body {
+        padding-bottom: 1000px;
+      }
+
+      div {
+        font-family: Arial;
+      }
+
+      .flexbox {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        position: fixed;
+        top: 10px;
+        left: 0;
+        right: 0;
+        box-shadow: 0 7px 5px rgba(0, 0, 0, 0.059);
+      }
+
+      .profile-image-container {
+        margin-right: 10px;
+        margin-left: 40px;
+      }
+
+      .profile-image {
+        width: 30px;
+        height: 30px;
+        object-fit: cover;
+        border-radius: 15px;
+      }
+
+      .profile-name {
+        font-weight: bold;
+        flex: 1;
+        font-size: 14px;
+      }
+
+      .add-friend-btn {
+        padding-top: 7px;
+        padding-right: 10px;
+        padding-bottom: 7px;
+        padding-left: 10px;
+        font-size: 10px;
+        background-color: rgba(0, 102, 255, 0.76);
+        border: none;
+        border-radius: 3px;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        margin-right: 5px;
+      }
+
+      .message-btn-container {
+        margin-right: 40px;
+      }
+
+      .message-btn {
+        padding-top: 7px;
+        padding-right: 10px;
+        padding-bottom: 7px;
+        padding-left: 10px;
+        font-size: 10px;
+        font-weight: bold;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flexbox">
+      <div class="profile-image-container">
+        <img
+          src="../lesson-7/images/cat-1.jpg"
+          alt="user image"
+          class="profile-image"
+        />
+      </div>
+      <div class="profile-name">Oliver Cat</div>
+      <div class="add-friend-container">
+        <button class="add-friend-btn">Add Friend</button>
+      </div>
+      <div class="message-btn-container">
+        <button class="message-btn">Message</button>
+      </div>
+    </div>
+  </body>
+</html>
