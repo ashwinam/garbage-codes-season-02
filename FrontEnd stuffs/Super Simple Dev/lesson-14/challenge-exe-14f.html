@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson 14 | 14f</title>
+    <style>
+      body {
+        margin: 0;
+        padding-bottom: 1000px;
+        font-family: Arial;
+      }
+
+      .first-sidebar {
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.8);
+        align-items: center;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        width: 60px;
+      }
+
+      .image-resize {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 20px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+      }
+
+      .second-sidebar {
+        background-color: rgba(0, 0, 0, 0.7);
+        position: fixed;
+        left: 60px;
+        top: 0;
+        bottom: 0;
+        width: 120px;
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+      }
+
+      .flexbox {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .info {
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+        flex: 1;
+      }
+
+      .plus-sign {
+        color: rgb(202, 202, 202);
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      .hashtags {
+        color: rgb(202, 202, 202);
+        font-size: 14px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="first-sidebar">
+      <img src="images/dog-1.jpg" alt="" class="image-resize" />
+      <img src="images/cat-2.jpg" alt="" class="image-resize" />
+      <img src="images/dog-2.jpg" alt="" class="image-resize" />
+    </div>
+
+    <div class="second-sidebar">
+      <div class="flexbox">
+        <div class="info">INFO</div>
+        <div class="plus-sign">+</div>
+      </div>
+      <div class="hashtags"># new-videos</div>
+      <div class="hashtags"># update</div>
+      <div class="hashtags"># faq</div>
+    </div>
+  </body>
+</html>
