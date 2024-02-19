@@ -12,3 +12,7 @@ console.log(firstName);
 // 3) cannot start with numbers
 // 4) cannot include space and hyphen
 
+// js-basics : constants
+// constants cannot be changed once its initialized
+const interestRates = 5;
+console.log(interestRates);
