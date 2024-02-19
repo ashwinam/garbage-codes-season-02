@@ -54,3 +54,9 @@ function greet(name){ // name here is parameter or a inputs for a function
 }// Function declaration
 
 greet('Ashwin'); // Function call
+
+function square(num) {
+    return num * num
+}
+
+console.log(square(4));
