@@ -1,0 +1,15 @@
+.site-navigation {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 60px;
+}
+
+.site-navigation li {
+  list-style: none;
+}
+
+.right-section {
+  flex: 0 1 250px;
+  display: flex;
+  justify-content: space-between;
+}
