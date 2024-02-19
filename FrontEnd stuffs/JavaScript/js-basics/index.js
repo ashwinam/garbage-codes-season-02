@@ -46,3 +46,11 @@ person['age'] = 55
 
 console.log(person.names);
 console.log(person.age);
+
+// js-basics: Functions
+
+function greet(name){ // name here is parameter or a inputs for a function
+    console.log('Hello ' + name);
+}// Function declaration
+
+greet('Ashwin'); // Function call
