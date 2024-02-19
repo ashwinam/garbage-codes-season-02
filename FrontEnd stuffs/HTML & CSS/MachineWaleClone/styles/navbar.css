@@ -6,6 +6,12 @@
 
 .site-navigation li {
   list-style: none;
+  font-size: 14px;
+  /* background-color: lightpink; */
+}
+
+.left-section img {
+  width: 144px;
 }
 
 .right-section {
