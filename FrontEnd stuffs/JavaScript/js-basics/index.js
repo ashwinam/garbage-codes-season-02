@@ -16,3 +16,11 @@ console.log(firstName);
 // constants cannot be changed once its initialized
 const interestRates = 5;
 console.log(interestRates);
+
+// js-basics: Primitive types / value types
+
+let name = 'Ashwin'; // String Literal
+let quantity = 10; // Number Literal
+let isValid = true; // Boolean Literal
+let first_name = undefined; // undefined Literal
+let selectedColor = null; // null Literal
