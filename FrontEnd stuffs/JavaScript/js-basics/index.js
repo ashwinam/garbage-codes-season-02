@@ -24,3 +24,25 @@ let quantity = 10; // Number Literal
 let isValid = true; // Boolean Literal
 let first_name = undefined; // undefined Literal
 let selectedColor = null; // null Literal
+
+
+// js-basics: object
+
+let person = {} // Object notation
+
+person = {
+    names: 'Ashwin',
+    age: 29
+}
+
+// For accessing properties of an we have two choices
+// 1. [Dot] notation
+
+person.names = 'Arun'
+
+// 2. using square brackets
+
+person['age'] = 55
+
+console.log(person.names);
+console.log(person.age);
