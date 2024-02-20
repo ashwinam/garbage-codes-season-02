@@ -98,7 +98,7 @@ z < 2;
 z <= 1;
 z === 1;
 
-// Equality operator
+// 4. Equality operator
 // Strict equality (Type + value)
 
 1 === 1; // true
@@ -108,3 +108,8 @@ z === 1;
 1 == 1; // true
 '1' == 1 // true
 true == 1; // true -- here it converts type of 2nd value
+
+// 5. Ternary operator
+let points = 110;
+let types = points > 100 ? 'gold' : 'silver';
+console.log(types);
