@@ -88,3 +88,13 @@ console.log(--x);
 x += 10;
 x++; // x = x+1;
 x *= 10
+
+
+// 3. Comparison operator
+let z = 1;
+z > 1;
+z >= 1;
+z < 2;
+z <= 1;
+z === 1;
+
