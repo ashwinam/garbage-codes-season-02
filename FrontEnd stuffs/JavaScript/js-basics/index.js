@@ -60,3 +60,26 @@ function square(num) {
 }
 
 console.log(square(4));
+
+// Operators
+// 1. Arithmatic Operators
+let x = 10;
+let y = 3;
+
+
+console.log(x + y);
+console.log(x - y);
+console.log(x * y);
+console.log(x / y);
+console.log(x % y);
+console.log(x ** y);
+
+// Increament
+console.log(++x);
+console.log(x++);
+console.log(x);
+
+
+// Decreament
+console.log(--x);
+console.log(--x);
