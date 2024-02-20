@@ -83,3 +83,8 @@ console.log(x);
 // Decreament
 console.log(--x);
 console.log(--x);
+
+// 2. Assignment Operator
+x += 10;
+x++; // x = x+1;
+x *= 10
