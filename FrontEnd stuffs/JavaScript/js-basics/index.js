@@ -98,3 +98,13 @@ z < 2;
 z <= 1;
 z === 1;
 
+// Equality operator
+// Strict equality (Type + value)
+
+1 === 1; // true
+'1' === 1; // false
+
+// Lose equality (value)
+1 == 1; // true
+'1' == 1 // true
+true == 1; // true -- here it converts type of 2nd value
