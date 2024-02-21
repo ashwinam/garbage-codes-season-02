@@ -17,16 +17,15 @@ function calculateGrade(arrayOfMarks) {
     let average = Math.floor(sumOfArray(arrayOfMarks) / arrayOfMarks.length)
 
 
-    if (average >= 0 && average <= 59)
+    if (average <= 59)
         return 'F'
-    if (average >= 60 && average <= 69)
+    if (average <= 69)
         return 'D'
-    if (average >= 70 && average <= 79)
+    if (average <= 79)
         return 'C'
-    if (average >= 80 && average <= 89)
+    if (average <= 89)
         return 'B'
-    if (average >= 90 && average <= 100)
-        return 'A'
+    return 'A'
 
 }
 
