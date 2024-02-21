@@ -3,9 +3,9 @@
 */
 
 function max_num(first_num, second_num) {
-    if (first_num > second_num) return first_num
-    else
-        return second_num
+    if (first_num > second_num)
+        return first_num
+    return second_num
 }
 
-console.log(max_num(20, 199));
+console.log(max_num(200, 199));
