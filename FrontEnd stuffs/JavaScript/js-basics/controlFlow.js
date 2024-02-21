@@ -28,3 +28,16 @@ switch (role){
     default:
         console.log('Unknown User');
 }
+
+// Loops
+// For loop
+
+/*
+    for(initialExpression; condition; IncreamentalExpressoion){
+        statement
+    }
+*/
+
+for(let i=0; i <= 5; i++) {
+    console.log('Hello World', i);
+}
