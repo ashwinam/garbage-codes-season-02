@@ -6,7 +6,7 @@
 
 let hour = 15;
 
-if (hour >= 6 && hour <= 12){
+if (hour >= 6 && hour <= 12) {
     console.log('Good Morning');
 }
 else if (hour >= 12 && hour <= 18) {
@@ -18,7 +18,7 @@ else console.log('Good evening');
 
 let role = 'Moderator';
 
-switch (role){
+switch (role) {
     case 'guest':
         console.log('guest user');
         break
@@ -38,7 +38,7 @@ switch (role){
     }
 */
 
-for(let i=0; i <= 5; i++) {
+for (let i = 0; i <= 5; i++) {
     console.log('Hello World', i);
 }
 
@@ -63,6 +63,23 @@ while (condition){
 
 let i = 9;
 do {
-    if (i%2!==0) console.log(i);
+    if (i % 2 !== 0) console.log(i);
     i++;
-} while (i<=5);
+} while (i <= 5);
+
+
+// for__in loop
+
+const person = {
+    names: 'ashwin',
+    age: 29
+}
+
+for (let key in person) {
+    console.log(key, person[key]);
+}
+
+
+const colors = ['red', 'green', 'blue']
+
+for (let index in colors) console.log(index, colors[index]);
