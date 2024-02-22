@@ -2,7 +2,7 @@
 
 // time between 6 am and 12pm : Good Morning
 // 12pm and 6pm : Good Afternoon
-// Good Evening
+// Good Evening.
 
 let hour = 15;
 
