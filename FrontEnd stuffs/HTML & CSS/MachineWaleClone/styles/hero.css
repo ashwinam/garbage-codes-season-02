@@ -3,3 +3,62 @@
   background-color: #eca93c;
   background-image: url("../images/home-bg-banner.png");
 }
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px;
+}
+
+.first-heading {
+  font-size: 33px;
+  line-height: 40px;
+  font-weight: 500;
+}
+
+.second-heading {
+  font-size: 45px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.app-store-container {
+  display: flex;
+}
+
+.apple-app-container,
+.android-app-container {
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: white;
+  border-radius: 10px;
+  margin-right: 30px;
+  display: flex;
+  align-items: center;
+  box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.apple-logo-image-container,
+.playstore-logo-image-container {
+  margin-right: 10px;
+  height: auto;
+}
+
+.apple-text-container,
+.playstore-text-container {
+  line-height: 12px;
+}
+
+.apple-text-container .first-subheading,
+.playstore-text-container .first-subheading {
+  font-size: 9px;
+  font-weight: 500;
+}
+
+.apple-app-container .second-subheading,
+.playstore-text-container .second-subheading {
+  font-size: 14px;
+  font-weight: bold;
+}
