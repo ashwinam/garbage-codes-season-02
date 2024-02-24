@@ -75,3 +75,7 @@ new Number(); // 1,2,3.5
 let x = {};
 // when we do this it simply means 
 // let x = new Object();
+
+
+// Primitive types are copied by values
+// objects are copied by their referrence
