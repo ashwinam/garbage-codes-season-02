@@ -79,3 +79,27 @@ let x = {};
 
 // Primitive types are copied by values
 // objects are copied by their referrence
+
+//Eumerating Properties of an object
+
+const someObject = {
+    name: 'ashwin',
+    age: 29
+}
+
+// using for...in loop
+
+for (let key in someObject)
+    console.log(key, someObject[key]);
+
+// using for...of loop
+
+for (let key of Object.keys(someObject))
+    console.log(key);
+
+for (let key of Object.entries(someObject))
+    console.log(key);
+
+//check property exists in object or not
+
+console.log('color' in someObject);
