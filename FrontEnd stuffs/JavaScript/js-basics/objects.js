@@ -32,7 +32,7 @@ function createCircle(radius) {
 }
 
 const circle1 = createCircle(1);
-console.log(circle1.draw());
+// console.log(circle1.draw());
 
 // Constructor Function --> are just same like init method from oop in python there we are using self here we use this for pointing the object
 
@@ -44,4 +44,22 @@ function Circle(radius) {
 }
 
 const circle10 = new Circle(1)
-console.log(circle10.draw());
+// console.log(circle10.draw());
+
+
+//Dynamic nature of objects
+
+const square = {
+    radius: 1
+}
+
+square.color = 'yellow'
+
+square.draw = function draw() {
+    console.log('square!');
+}
+
+delete square.radius;
+
+console.log(square);
+
