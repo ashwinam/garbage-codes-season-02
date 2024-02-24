@@ -103,3 +103,21 @@ for (let key of Object.entries(someObject))
 //check property exists in object or not
 
 console.log('color' in someObject);
+
+// cloning an object
+
+// using loop to copy object
+
+// let anotherObject = {};
+// for (let key in someObject) {
+//     anotherObject[key] = someObject[key]
+// }
+
+
+// using Object assign method
+
+// let anotherObject = Object.assign({}, someObject)
+
+// using spread operator
+
+let anotherObject = { ...someObject };
