@@ -33,3 +33,15 @@ function createCircle(radius) {
 
 const circle1 = createCircle(1);
 console.log(circle1.draw());
+
+// Constructor Function --> are just same like init method from oop in python there we are using self here we use this for pointing the object
+
+function Circle(radius) {
+    this.radius = radius;
+    this.draw = function draw() {
+        console.log('Constructor Function');
+    }
+}
+
+const circle10 = new Circle(1)
+console.log(circle10.draw());
