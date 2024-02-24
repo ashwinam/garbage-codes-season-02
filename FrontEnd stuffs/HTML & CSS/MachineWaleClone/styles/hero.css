@@ -76,6 +76,7 @@
   bottom: 30px;
   left: 400px;
   right: 400px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
 }
 
 .search-btn {
@@ -104,4 +105,5 @@
 
 .drop-down-arrow-img {
   width: 20px;
+  cursor: pointer;
 }
