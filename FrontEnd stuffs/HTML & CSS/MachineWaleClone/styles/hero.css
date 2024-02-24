@@ -1,5 +1,5 @@
 .hero-container {
-  height: 100vh;
+  height: 92vh;
   background-color: #eca93c;
   background-image: url("../images/home-bg-banner.png");
 }
@@ -61,4 +61,10 @@
 .playstore-text-container .second-subheading {
   font-size: 14px;
   font-weight: bold;
+}
+
+.search-area-container {
+  display: flex;
+  justify-content: center;
+  background-color: white;
 }
