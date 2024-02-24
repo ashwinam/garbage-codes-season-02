@@ -70,11 +70,12 @@
   align-items: center;
   background-color: white;
   padding: 5px;
+  padding-left: 25px;
   border-radius: 10px;
   position: absolute;
   bottom: 30px;
-  left: 500px;
-  right: 500px;
+  left: 400px;
+  right: 400px;
 }
 
 .search-btn {
@@ -86,4 +87,21 @@
   border: none;
   border-radius: 10px;
   cursor: pointer;
+}
+
+.flexbox {
+  display: flex;
+  align-items: center;
+}
+
+.flexbox div {
+  margin-right: 10px;
+}
+
+.search-area-container .mr {
+  margin-right: 10px;
+}
+
+.drop-down-arrow-img {
+  width: 20px;
 }
