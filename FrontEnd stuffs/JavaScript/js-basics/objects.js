@@ -63,3 +63,15 @@ delete square.radius;
 
 console.log(square);
 
+// Constructor property
+
+// In js everything is obects like in python
+
+new String(); // '', "", ``
+new Boolean(); // true, false
+new Number(); // 1,2,3.5
+
+
+let x = {};
+// when we do this it simply means 
+// let x = new Object();
