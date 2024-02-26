@@ -109,4 +109,20 @@ const slice = combined.slice()
 const combined2 = [...combined]
 
 
+// Iterating an array
+
+const iterArray = [1, 2, 3];
+
+for (let number of iterArray)
+    console.log(number);
+
+// forEach
+
+// iterArray.forEach(function (number) {
+//     console.log(number);
+// })
+
+iterArray.forEach((number, index) => console.log(index, number)
+);
+
 
