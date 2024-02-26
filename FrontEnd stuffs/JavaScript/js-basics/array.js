@@ -104,7 +104,9 @@ const slice = combined.slice()
 
 // with primitives it copies the value but with reference types like object & arrays is copied reference so if anything changes in reference types it also reflects everywhere
 
+// spread operator
 
+const combined2 = [...combined]
 
 
 
