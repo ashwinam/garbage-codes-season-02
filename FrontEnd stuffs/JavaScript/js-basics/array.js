@@ -14,3 +14,17 @@ numbers.unshift(1, 2);
 numbers.splice(2, 0, 'a', 'b');
 
 console.log(numbers);
+
+// Finding an element(Primitives)
+
+console.log(numbers.indexOf('a'));
+
+numbers.push(2)
+
+console.log(numbers.lastIndexOf(2));
+
+console.log(numbers.indexOf(4) !== -1);
+
+console.log(numbers.includes('b'));
+
+
