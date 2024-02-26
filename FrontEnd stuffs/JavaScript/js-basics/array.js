@@ -126,3 +126,15 @@ iterArray.forEach((number, index) => console.log(index, number)
 );
 
 
+// Joining an array
+
+const numbers4 = [1, 2, 3, 4, 5, 6];
+
+const joined = numbers4.join(',');
+
+
+const message = "This is my blog";
+
+const parts = message.split(" ");
+
+const combined5 = parts.join('*')
