@@ -169,3 +169,9 @@ const numbers5 = [1, 2, 3, -3]
 const allPositive = numbers5.every(value => value >= 0);
 
 const atLeastOnePositive = numbers5.some(value => value >= 0);
+
+// Filtering an array
+
+const numbers6 = [1, 2, 3, -3]
+
+const filtered = numbers6.filter(n => n >= 0);
