@@ -39,9 +39,21 @@ const course = courses.find(function (course) {
     return course.name === 'a';
 });
 
+// we can implement above code using arrow functions as well
+
+const course2 = courses.find(course =>
+    course.name === 'a'
+);
+
+// () => {<statement>};
+
+console.log(course2, 'course2');
+
 const course1 = courses.findIndex(function (course) {
     return course.name === 'a';
 });
+
+// predicate is a function that takes an input and return an Booleans
 
 console.log(course);
 console.log(course1);
