@@ -58,3 +58,18 @@ const course1 = courses.findIndex(function (course) {
 console.log(course);
 console.log(course1);
 
+// Removing an Element
+
+
+const marks = [10, 20, 30, 40]
+
+// End
+// console.log(marks.pop());
+
+// Beginning
+// console.log(marks.shift());
+
+// middle
+marks.splice(1, 1);
+
+console.log(marks);
