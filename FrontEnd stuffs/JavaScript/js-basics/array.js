@@ -87,3 +87,24 @@ let numbers3 = [1, 2, 3, 4, 5, 6];
 // Solution 3
 numbers3.splice(0, numbers3.length);
 
+
+// Combining and slicing
+
+const first = [1, 2, 3];
+const second = [4, 5, 6];
+
+first.push({ id: 1 })
+
+
+const combined = first.concat(second);
+
+console.log(combined.slice(2, 4));
+
+const slice = combined.slice()
+
+// with primitives it copies the value but with reference types like object & arrays is copied reference so if anything changes in reference types it also reflects everywhere
+
+
+
+
+
