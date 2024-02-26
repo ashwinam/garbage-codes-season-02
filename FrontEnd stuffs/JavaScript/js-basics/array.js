@@ -183,3 +183,31 @@ const items = filtered.map(n => ({ vaue: n }));
 const listItems = filtered.map(n => `<li>${n}</li>`);
 
 const html = `<ul>${listItems.join('')}</ul>`
+
+
+// Reduce method on array
+
+const numbers7 = [1, 2, 3, 4, 5];
+
+// let sm = 0;
+// for (let number of numbers7)
+//     sm += number
+
+// use an reduce method
+
+// how this reduce method work
+
+/*
+a = accumulator, c = currentValue
+a = 0, c = 1 => 0 + 1
+a = 1, c = 2 => 2 + 1
+a = 3, c = 3 => 3 + 3
+a = 6, c = 4 => 6 + 4
+a = 10, c = 5 => 10 + 5
+return 15
+*/
+
+const sm = numbers7.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue
+}, 0);
+
