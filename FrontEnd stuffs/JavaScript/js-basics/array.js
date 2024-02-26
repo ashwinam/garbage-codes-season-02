@@ -138,3 +138,26 @@ const message = "This is my blog";
 const parts = message.split(" ");
 
 const combined5 = parts.join('*')
+
+
+// Sorting an array
+
+const unsortedArray = [3, 4, 7, 6];
+
+unsortedArray.sort();
+
+unsortedArray.reverse();
+
+// how to sort if we have objects
+
+const carsModel = [
+    { id: 1, name: 'Yamaha' },
+    { id: 2, name: 'Suzuki' },
+];
+
+
+carsModel.sort((a, b) => {
+    if (a.name > b.name) return 1
+    if (a.name < b.name) return -1
+    return 0
+})
