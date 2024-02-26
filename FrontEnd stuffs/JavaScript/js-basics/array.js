@@ -73,3 +73,17 @@ const marks = [10, 20, 30, 40]
 marks.splice(1, 1);
 
 console.log(marks);
+
+// Emptying an array
+
+let numbers3 = [1, 2, 3, 4, 5, 6];
+
+// Solution 1
+// numbers3 = [];
+
+// Solution 2
+// numbers3.length = 0;
+
+// Solution 3
+numbers3.splice(0, numbers3.length);
+
