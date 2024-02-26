@@ -175,3 +175,11 @@ const atLeastOnePositive = numbers5.some(value => value >= 0);
 const numbers6 = [1, 2, 3, -3]
 
 const filtered = numbers6.filter(n => n >= 0);
+
+// Mapping an array
+
+const items = filtered.map(n => ({ vaue: n }));
+
+const listItems = filtered.map(n => `<li>${n}</li>`);
+
+const html = `<ul>${listItems.join('')}</ul>`
