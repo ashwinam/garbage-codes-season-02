@@ -27,4 +27,22 @@ console.log(numbers.indexOf(4) !== -1);
 
 console.log(numbers.includes('b'));
 
+// Finding an element(Reference types)
+
+const courses = [
+    { id: 1, name: 'a' },
+    { id: 1, name: 'b' }
+]
+
+
+const course = courses.find(function (course) {
+    return course.name === 'a';
+});
+
+const course1 = courses.findIndex(function (course) {
+    return course.name === 'a';
+});
+
+console.log(course);
+console.log(course1);
 
