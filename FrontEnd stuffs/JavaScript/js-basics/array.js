@@ -161,3 +161,11 @@ carsModel.sort((a, b) => {
     if (a.name < b.name) return -1
     return 0
 })
+
+// Testig the element
+
+const numbers5 = [1, 2, 3, -3]
+
+const allPositive = numbers5.every(value => value >= 0);
+
+const atLeastOnePositive = numbers5.some(value => value >= 0);
