@@ -44,7 +44,8 @@ const output = productTotal(0.1, 20, 30);
 
 // default parameter
 
+// with default parameters make sure that default params are last of the parameters
 
-function interest(principal, rate = 3.5, years) {
+function interest(principal, rate = 3.5, years = 5) {
     return principal * rate / 100 * years
 }
