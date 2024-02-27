@@ -18,3 +18,37 @@
   border-radius: 0.75rem;
   background-color: #eca93c;
 }
+
+.truck-list-container ul {
+  list-style: none;
+  display: flex;
+  margin-top: 48px;
+  padding: 8px;
+}
+
+.truck-list-container ul li {
+  margin-right: 8px;
+  background-color: rgb(244, 242, 242);
+  padding: 8px 12px;
+  border: none;
+  border-radius: 24px;
+  font-size: 13px;
+  color: rgb(107, 114, 128);
+  transition: background-color 0.15s, color 0.15s;
+  cursor: pointer;
+}
+
+.truck-list-container ul li:hover {
+  background-color: rgb(207, 206, 206);
+  color: rgb(24, 26, 30);
+}
+
+.truck-list-container ul li:first-child {
+  background-color: #eca93c;
+  color: white;
+  transition: color 0.15s;
+}
+
+.truck-list-container ul li:first-child:hover {
+  color: black;
+}
