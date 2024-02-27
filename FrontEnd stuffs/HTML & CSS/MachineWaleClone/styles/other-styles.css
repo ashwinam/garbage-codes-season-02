@@ -1,0 +1,20 @@
+.popular-models-container {
+  margin: 64px;
+}
+
+.heading-text {
+  font-weight: 500;
+  font-size: 30px;
+  position: relative;
+}
+
+.heading-text::after {
+  position: absolute;
+  content: "";
+  bottom: -2px;
+  left: 0;
+  width: 8rem;
+  height: 0.3125rem;
+  border-radius: 0.75rem;
+  background-color: #eca93c;
+}
