@@ -40,3 +40,11 @@ function productTotal(discount, ...prices) {
 }
 
 const output = productTotal(0.1, 20, 30);
+
+
+// default parameter
+
+
+function interest(principal, rate = 3.5, years) {
+    return principal * rate / 100 * years
+}
