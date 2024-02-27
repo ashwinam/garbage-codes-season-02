@@ -31,7 +31,7 @@ sum(1, 2, 3, 4, 5, 6);
 
 // Rest operator
 
-// in params "...args" this called rest operator that can hold the params in a list format, and you can pass n number of arguments
+// in params "...args" this called rest operator that can hold the params in a list format, and you can pass n number of arguments, after rest operator you cant pass any param it will throw error, so before you can pass it.
 
 
 function productTotal(discount, ...prices) {
