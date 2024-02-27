@@ -95,3 +95,11 @@ const message = 'Bye'; // Global scope
 {
     const message = 'hi'; // Local scope
 }
+
+
+// Let vs Var
+
+// var => Function scoped variable
+// let => block-scope variable
+
+// window object can access var type declared variables but let cant
