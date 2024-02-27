@@ -55,6 +55,9 @@ function interest(principal, rate = 3.5, years = 5) {
 
 // getters are treat function as a property inside an object and using setter you can set different different property as well
 
+// Try & Catch blocks
+
+
 const person = {
     firstName: "Ashwin",
     lastName: "Mandaokar",
@@ -63,12 +66,24 @@ const person = {
     },
 
     set fullName(value) {
+        if (typeof value !== 'string')
+            throw new Error('The value need to be string')
+
         const parts = value.split(" ");
+
+        if (parts.length !== 2)
+            throw new Error('Must Provide a First and Last Name.')
+
         this.firstName = parts[0]
         this.lastName = parts[1]
     }
 }
 
-person.fullName = "John Smith"
+try {
+    person.fullName = '';
+} catch (error) {
+    console.log(error);
+}
 
 console.log(person);
+
