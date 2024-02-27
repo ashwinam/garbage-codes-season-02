@@ -27,4 +27,16 @@ function sum() {
     console.log(arguments);
 }
 
-sum(1, 2, 3, 4, 5, 6); 
+sum(1, 2, 3, 4, 5, 6);
+
+// Rest operator
+
+// in params "...args" this called rest operator that can hold the params in a list format, and you can pass n number of arguments
+
+
+function productTotal(discount, ...prices) {
+    const total = prices.reduce((a, b) => a + b);
+    return total * (1 - discount);
+}
+
+const output = productTotal(0.1, 20, 30);
