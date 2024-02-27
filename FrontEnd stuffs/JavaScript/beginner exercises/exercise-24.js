@@ -3,7 +3,7 @@
 
 function sum(...param) {
     if (Array.isArray(param[0]))
-        param = param[0]
+        param = [...param[0]]
 
     return param.reduce((a, b) => a + b)
 }
