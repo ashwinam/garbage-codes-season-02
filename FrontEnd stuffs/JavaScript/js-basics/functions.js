@@ -113,3 +113,49 @@ function hi() {
 }
 
 hi();
+
+// The this Keyword ***
+
+// if its an object method then "this" keyword belongs to an object
+
+const car = {
+    title: 'porsche',
+    run() {
+        console.log(this);
+    }
+}
+
+console.log(car.run()); // oject method
+
+// if its an normal function then "this" keyword belongs to the global object i.e., window object
+
+function start() {
+    console.log(this);
+
+}
+
+start();
+
+// if its an constructor function then "this" keyword belongs to the object itself, because new keyword reference to the blank object
+
+function Video(title) {
+    this.title = title;
+    console.log(this);
+}
+
+const v = new Video('This Keyword'); // new {}
+
+
+// For ex if we have constructor function and inside that constructor function if we use any sort of callback normal function then this is belong to the window object like in below forEach loop. for the solution we can use second argument in forEach as a this keyword or else use the arrow function.
+
+function NewVideo(title) {
+    this.title = title;
+    this.colors = ['red', 'green', 'blue']
+    // this.showColor = this.colors.forEach(function (value) {
+    //     console.log(this.title, value);
+    // }, this)
+    this.showColor = this.colors.forEach(value => console.log(this.title, value));
+}
+
+const nv = new NewVideo('This again');
+
