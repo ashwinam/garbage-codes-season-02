@@ -87,3 +87,11 @@ try {
 
 console.log(person);
 
+
+// Global vs Local scope
+
+const message = 'Bye'; // Global scope
+
+{
+    const message = 'hi'; // Local scope
+}
