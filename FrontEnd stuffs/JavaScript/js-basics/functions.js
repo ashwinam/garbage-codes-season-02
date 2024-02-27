@@ -103,3 +103,13 @@ const message = 'Bye'; // Global scope
 // let => block-scope variable
 
 // window object can access var type declared variables but let cant
+
+function hi() {
+    for (var i = 0; i < 5; i++) {
+        console.log(i);
+    }
+    console.log(i); // if its let then its a undefined but its a var thats why it can be accessed anywhere in the function
+
+}
+
+hi();
