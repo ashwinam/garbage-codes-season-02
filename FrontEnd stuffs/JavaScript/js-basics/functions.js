@@ -49,3 +49,26 @@ const output = productTotal(0.1, 20, 30);
 function interest(principal, rate = 3.5, years = 5) {
     return principal * rate / 100 * years
 }
+
+
+// Getters and setters
+
+// getters are treat function as a property inside an object and using setter you can set different different property as well
+
+const person = {
+    firstName: "Ashwin",
+    lastName: "Mandaokar",
+    get fullName() {
+        return `${person.firstName} ${person.lastName}`
+    },
+
+    set fullName(value) {
+        const parts = value.split(" ");
+        this.firstName = parts[0]
+        this.lastName = parts[1]
+    }
+}
+
+person.fullName = "John Smith"
+
+console.log(person);
