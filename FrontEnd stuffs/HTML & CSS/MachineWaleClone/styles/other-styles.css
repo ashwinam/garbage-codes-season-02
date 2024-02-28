@@ -53,6 +53,36 @@
   color: black;
 }
 
+.vehicle-showcase-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .image-size {
   width: 40px;
+}
+
+.image-size svg {
+  fill: rgb(204, 201, 201);
+}
+
+.greater-sign-container,
+.lessthan-sign-container {
+  border: none;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.greater-sign-container:hover,
+.lessthan-sign-container:hover {
+  background-color: rgb(245, 243, 243);
+}
+
+.vehicle-cards-container {
+  border: 2px solid black;
+  flex: 1;
 }
