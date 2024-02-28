@@ -31,7 +31,7 @@ sum(1, 2, 3, 4, 5, 6);
 
 // Rest operator
 
-// in params "...args" this called rest operator that can hold the params in a list format, and you can pass n number of arguments, after rest operator you cant pass any param it will throw error, so before you can pass it.
+// in params "...args" this called rest operator that can hold the params in a array format, and you can pass n number of arguments, after rest operator you cant pass any param it will throw error, so before you can pass it.
 
 
 function productTotal(discount, ...prices) {
@@ -53,7 +53,7 @@ function interest(principal, rate = 3.5, years = 5) {
 
 // Getters and setters
 
-// getters are treat function as a property inside an object and using setter you can set different different property as well
+// getters are treat function as a property inside an object and using setter you can set value to the property as well
 
 // Try & Catch blocks
 

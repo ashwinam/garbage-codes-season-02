@@ -19,12 +19,11 @@ circle.draw(); // method
 
 // We have two other ways to creating objects 1. Factory function 2. Constructor
 
-// Factory Fnction
+// Factory Function
 
 function createCircle(radius) {
     return {
         radius,
-
         draw() {
             console.log('Factory function');
         }
