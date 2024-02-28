@@ -45,10 +45,10 @@ for (let i = 0; i <= 5; i++) {
 // While
 
 /*
-
+IntialExpression
 while (condition){
     statement
-    Icreament Expression
+    Icreament Expression;
 }
 */
 

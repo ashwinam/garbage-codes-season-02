@@ -3,7 +3,7 @@ console.log("Hello WOrld!");
 
 // js-basics : Variables & constants
 
-let firstName = "Ashwin" ;
+let firstName = "Ashwin";
 console.log(firstName);
 
 // variable rule
@@ -49,7 +49,7 @@ console.log(person.age);
 
 // js-basics: Functions
 
-function greet(name){ // name here is parameter or a inputs for a function
+function greet(name) { // name here is parameter or a inputs for a function
     console.log('Hello ' + name);
 }// Function declaration
 
@@ -111,5 +111,5 @@ true == 1; // true -- here it converts type of 2nd value
 
 // 5. Ternary operator
 let points = 110;
-let types = points > 100 ? 'gold' : 'silver';
+let types = (points > 100) ? 'gold' : 'silver';
 console.log(types);
