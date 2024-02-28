@@ -52,3 +52,7 @@
 .truck-list-container ul li:first-child:hover {
   color: black;
 }
+
+.image-size {
+  width: 40px;
+}
