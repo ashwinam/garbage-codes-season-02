@@ -1,8 +1,8 @@
-.popular-models-container {
-  margin: 64px;
-}
+/* .popular-models-container {
+} */
 
 .heading-text {
+  margin: 64px;
   font-weight: 500;
   font-size: 30px;
   position: relative;
@@ -24,6 +24,9 @@
   display: flex;
   margin-top: 48px;
   padding: 8px;
+  margin-top: 48px;
+  margin-right: 64px;
+  margin-left: 64px;
 }
 
 .truck-list-container ul li {
@@ -62,14 +65,9 @@
   width: 40px;
 }
 
-.image-size svg {
-  fill: rgb(204, 201, 201);
-}
-
 .greater-sign-container,
 .lessthan-sign-container {
   border: none;
-  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -77,12 +75,55 @@
   cursor: pointer;
 }
 
+.greater-sign-container {
+  margin-left: 10px;
+}
+
+.lessthan-sign-container {
+  margin-right: 10px;
+}
+
 .greater-sign-container:hover,
 .lessthan-sign-container:hover {
-  background-color: rgb(245, 243, 243);
+  background-color: rgb(250, 248, 248);
 }
 
 .vehicle-cards-container {
-  border: 2px solid black;
   flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.15s;
+  cursor: pointer;
+}
+
+.cards:hover {
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.15);
+}
+
+.vehicle-image {
+  width: 240px;
+}
+
+.vehicle-title {
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.contact-btn {
+  width: 208px;
+  padding: 8px;
+  border: none;
+  border-radius: 15px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 5px;
+  cursor: pointer;
 }
