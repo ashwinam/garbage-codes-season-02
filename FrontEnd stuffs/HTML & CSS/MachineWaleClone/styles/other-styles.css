@@ -103,7 +103,7 @@
 }
 
 .cards:hover {
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 50px rgba(177, 49, 49, 0.508);
 }
 
 .vehicle-image {
@@ -127,3 +127,5 @@
   margin-bottom: 5px;
   cursor: pointer;
 }
+
+/* till: Models section */
