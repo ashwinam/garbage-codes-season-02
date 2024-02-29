@@ -130,7 +130,7 @@
 
 /* till: Models section */
 
-/* Brads section */
+/* Brands section */
 
 .brand-images-slider {
   display: flex;
@@ -193,4 +193,54 @@
 
 .quality-text .title {
   font-weight: 700;
+}
+
+/* till: Brands section */
+
+/* Loan Offer */
+
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #eca93c;
+  margin: 0 64px;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.drop-down {
+  padding: 12px 17px;
+  font-size: 16px;
+  border-radius: 7px;
+  width: 440px;
+  border: none;
+  cursor: pointer;
+}
+
+.loan-offer-btn {
+  background-color: rgb(52, 73, 143);
+  color: white;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.loan-offer-btn:hover {
+  background-color: rgb(10, 30, 95);
+}
+
+.emi-calculator-btn {
+  background-color: transparent;
+  border: 1px solid rgb(10, 30, 95);
+  padding: 10px 30px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.emi-calculator-btn:hover {
+  background-color: rgb(52, 73, 143);
+  color: white;
+  border: none;
 }
