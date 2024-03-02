@@ -245,7 +245,7 @@
   cursor: pointer;
 }
 .emi-calculator-btn:hover {
-  background-color: rgb(103, 77, 11);
+  background-color: #d49b3f;
   color: white;
   border: none;
 }
