@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  background-color: lightgoldenrodyellow;
+}
+
+#counter {
+  /* background-color: lightgray; */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.up-arrow,
+.down-arrow {
+  width: 100px;
+  cursor: pointer;
+}
+
+#number {
+  font-size: 50px;
+  font-weight: 700;
+}
