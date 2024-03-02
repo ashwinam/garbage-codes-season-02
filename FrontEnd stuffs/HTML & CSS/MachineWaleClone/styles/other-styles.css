@@ -100,6 +100,8 @@
   align-items: center;
   transition: box-shadow 0.15s;
   cursor: pointer;
+  padding: 10px;
+  border-radius: 20px;
 }
 
 .cards:hover {
@@ -218,29 +220,32 @@
 }
 
 .loan-offer-btn {
-  background-color: rgb(52, 73, 143);
-  color: white;
+  background-color: #e9b96a;
+  color: rgb(0, 0, 0);
   padding: 10px 30px;
   border: none;
   border-radius: 10px;
   font-size: 16px;
   cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 }
 
 .loan-offer-btn:hover {
-  background-color: rgb(10, 30, 95);
+  background-color: #d49b3f;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  color: white;
 }
 
 .emi-calculator-btn {
   background-color: transparent;
-  border: 1px solid rgb(10, 30, 95);
+  border: 1px solid #ffffff;
   padding: 10px 30px;
   border-radius: 10px;
   font-size: 16px;
   cursor: pointer;
 }
 .emi-calculator-btn:hover {
-  background-color: rgb(52, 73, 143);
+  background-color: rgb(103, 77, 11);
   color: white;
   border: none;
 }
