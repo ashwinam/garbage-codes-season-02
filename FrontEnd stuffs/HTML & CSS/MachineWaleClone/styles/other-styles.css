@@ -249,3 +249,23 @@
   color: white;
   border: none;
 }
+
+/* till: loan offer */
+
+/* start: latest machinery */
+
+.flex-images {
+  display: flex;
+  justify-content: space-around;
+}
+
+.image-corner {
+  width: 241px;
+}
+
+.machinery-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 500;
+  margin-top: 15px;
+}
