@@ -1,6 +1,7 @@
 import ListGroup from "./components/ListGroup";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
+import { useState } from "react";
 
 function App() {
   let fruits = [
@@ -12,9 +13,14 @@ function App() {
     "Grapes",
   ];
 
+  const [showAlert, setShowAlert] = useState(false);
+
   const handleSelectedFruit = (fruit: string) => console.log(fruit);
 
-  const handleAlert = () => alert("I am clicked");
+  const handleAlertComponent = () => setShowAlert(true);
+
+  const handleAlertComponentOnClose = () => setShowAlert(false);
+
   return (
     <div>
       {/* <ListGroup
@@ -22,11 +28,15 @@ function App() {
         heading={"List Of Fruits"}
         onSelectFruit={handleSelectedFruit}
       /> */}
-      <Alert>
-        Hello <span>World</span>
-      </Alert>
+      {showAlert && (
+        <Alert onCloseClick={handleAlertComponentOnClose}>I am clicked</Alert>
+      )}
 
-      <Button btnName="Dislike" btnColor="danger" onAlertPost={handleAlert} />
+      <Button
+        btnName="Dislike"
+        btnColor="danger"
+        onAlertPost={handleAlertComponent}
+      />
     </div>
   );
 }

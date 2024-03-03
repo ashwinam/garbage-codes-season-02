@@ -1,6 +1,6 @@
 interface Props {
   btnName: string;
-  btnColor?: "primary" | "secondary" | "danger";
+  btnColor?: "primary" | "secondary" | "danger"; // Value from this values only
   onAlertPost: () => void;
 }
 
