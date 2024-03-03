@@ -1,4 +1,5 @@
 import ListGroup from "./components/ListGroup";
+import Alert from "./components/Alert";
 
 function App() {
   let fruits = [
@@ -14,11 +15,14 @@ function App() {
 
   return (
     <div>
-      <ListGroup
+      {/* <ListGroup
         fruits={fruits}
         heading={"List Of Fruits"}
         onSelectFruit={handleSelectedFruit}
-      />
+      /> */}
+      <Alert>
+        Hello <span>World</span>
+      </Alert>
     </div>
   );
 }

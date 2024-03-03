@@ -44,3 +44,12 @@ Add interface to existing Props interface `onSelectFruit: (fruit: string) => voi
 ### props vs state
 
 ![Difference between props vs state](image.png)
+
+### passing children
+
+Passing children to the component via props
+suppose if you have very length content to pass as a text or anything there we use this interface
+
+`interface Props {
+  children: ReactNode;
+}`
