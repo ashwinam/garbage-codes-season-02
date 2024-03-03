@@ -10,9 +10,15 @@ function App() {
     "Grapes",
   ];
 
+  const handleSelectedFruit = (fruit: string) => console.log(fruit);
+
   return (
     <div>
-      <ListGroup fruits={fruits} heading={"List Of Fruits"} />
+      <ListGroup
+        fruits={fruits}
+        heading={"List Of Fruits"}
+        onSelectFruit={handleSelectedFruit}
+      />
     </div>
   );
 }

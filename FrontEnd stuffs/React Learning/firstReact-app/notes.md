@@ -36,3 +36,7 @@ Note: Every component has different state, if i use same component also there be
 2. Pass the properties from where you call this component as a attribute or properties.
    This way you can pass the props
    `<ListGroup fruits={fruits} heading={"List Of Fruits"} />`
+
+### Passing function to props
+
+Add interface to existing Props interface `onSelectFruit: (fruit: string) => void;` its a props property and the pass to the component.

@@ -4,9 +4,10 @@ import { MouseEvent, useState } from "react";
 interface Props {
   fruits: string[];
   heading: string;
+  onSelectFruit: (fruit: string) => void;
 }
 
-function ListGroup({ fruits, heading }: Props) {
+function ListGroup({ fruits, heading, onSelectFruit }: Props) {
   // let selectedIndex = 0;
 
   // useState hook
@@ -34,7 +35,10 @@ function ListGroup({ fruits, heading }: Props) {
                 : "list-group-item"
             }
             key={fruit}
-            onClick={() => setSelectedIndex(index)} // here we pass reference
+            onClick={() => {
+              setSelectedIndex(index);
+              onSelectFruit(fruit);
+            }} // here we pass reference
           >
             {fruit}
           </li>
