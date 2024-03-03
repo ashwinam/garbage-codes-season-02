@@ -1,21 +1,17 @@
 import { Fragment } from "react/jsx-runtime";
 import { MouseEvent, useState } from "react";
 
-function ListGroup() {
-  let fruits = [
-    "Banana",
-    "Pineapple",
-    "Pomegranate",
-    "Apple",
-    "Orange",
-    "Grapes",
-  ];
+interface Props {
+  fruits: string[];
+  heading: string;
+}
 
+function ListGroup({ fruits, heading }: Props) {
   // let selectedIndex = 0;
 
   // useState hook
 
-  let [selectedIndex, setSelectedIndex] = useState(-1);
+  const [selectedIndex, setSelectedIndex] = useState(-1);
 
   // In tyescript we have to provide a type annotation, In react we have MouseEvent using `:`
   // Event handling
@@ -26,7 +22,7 @@ function ListGroup() {
   return (
     // fragments syntax
     <>
-      <h1>List</h1>
+      <h1>{heading}</h1>
       <ul className="list-group">
         {/* Here react ask for key attribute to track of whats going on here, or for good implementatio of dom */}
         {fruits.length === 0 && <p>No Fruits Available</p>}
@@ -38,7 +34,7 @@ function ListGroup() {
                 : "list-group-item"
             }
             key={fruit}
-            onClick={() => setSelectedIndex((selectedIndex = index))} // here we pass reference
+            onClick={() => setSelectedIndex(index)} // here we pass reference
           >
             {fruit}
           </li>
