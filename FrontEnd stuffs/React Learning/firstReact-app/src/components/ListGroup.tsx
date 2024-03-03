@@ -1,5 +1,5 @@
 import { Fragment } from "react/jsx-runtime";
-import { MouseEvent } from "react";
+import { MouseEvent, useState } from "react";
 
 function ListGroup() {
   let fruits = [
@@ -10,6 +10,12 @@ function ListGroup() {
     "Orange",
     "Grapes",
   ];
+
+  // let selectedIndex = 0;
+
+  // useState hook
+
+  let [selectedIndex, setSelectedIndex] = useState(-1);
 
   // In tyescript we have to provide a type annotation, In react we have MouseEvent using `:`
   // Event handling
@@ -26,9 +32,13 @@ function ListGroup() {
         {fruits.length === 0 && <p>No Fruits Available</p>}
         {fruits.map((fruit, index) => (
           <li
-            className="list-group-item"
+            className={
+              selectedIndex === index
+                ? "list-group-item active"
+                : "list-group-item"
+            }
             key={fruit}
-            onClick={handleClick} // here we pass reference
+            onClick={() => setSelectedIndex((selectedIndex = index))} // here we pass reference
           >
             {fruit}
           </li>
