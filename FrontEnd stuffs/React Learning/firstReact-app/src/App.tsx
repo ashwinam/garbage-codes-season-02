@@ -1,5 +1,6 @@
 import ListGroup from "./components/ListGroup";
 import Alert from "./components/Alert";
+import Button from "./components/Button";
 
 function App() {
   let fruits = [
@@ -13,6 +14,7 @@ function App() {
 
   const handleSelectedFruit = (fruit: string) => console.log(fruit);
 
+  const handleAlert = () => alert("I am clicked");
   return (
     <div>
       {/* <ListGroup
@@ -23,6 +25,8 @@ function App() {
       <Alert>
         Hello <span>World</span>
       </Alert>
+
+      <Button btnName="Dislike" btnColor="danger" onAlertPost={handleAlert} />
     </div>
   );
 }
