@@ -40,3 +40,7 @@ Note: Every component has different state, if i use same component also there be
 ### Passing function to props
 
 Add interface to existing Props interface `onSelectFruit: (fruit: string) => void;` its a props property and the pass to the component.
+
+### props vs state
+
+![Difference between props vs state](image.png)
