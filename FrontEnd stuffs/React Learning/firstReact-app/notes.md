@@ -139,3 +139,12 @@ By following these principles, you can create React components that are easier t
 ### Understanding the strict mode
 
 - From react 18, the strict mode by default is on, so in this mode react re-render the component twice, to catch the impure component.
+
+### updating objects
+
+- Treat the state object also as immutable i.e. only use for reading purpose.
+- For updating the state object, let see how we can do it:
+
+`const [drink, setDrink] = useState({title:'Americano'; price:5;}) // this would be the initial object`
+Lets update
+`setDrink({***drink, title:6})`
