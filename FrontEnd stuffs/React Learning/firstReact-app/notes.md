@@ -117,3 +117,21 @@ Using styling to the same file using styled-component library
 - Group related variables inside an object
   `const [person, setPerson] = useState({firstName: ''; lastName:'';})`
 - Avoid deeply nested structure
+
+### Keeping Components pure
+
+In the context of React, keeping components pure refers to adhering to the principles of functional programming by ensuring that components are stateless and do not have side effects. This means that given the same input, a pure component will always produce the same output, and it does not modify anything outside of its scope.
+
+Here are some key aspects of keeping components pure in React:
+
+1. Statelessness: Pure components do not manage their own state. They receive data and behavior as props from their parent components and simply render based on those props. This makes them easier to reason about and test because their output is solely determined by their input props.
+
+2. Immutability: Pure components should not mutate their props or any other external data. Instead, they should create new objects or arrays when modifications are needed. This helps prevent unintended side effects and makes it easier to track data changes.
+
+3. Avoiding Side Effects: Pure components should not perform any side effects, such as modifying global state, making API calls, or directly manipulating the DOM. Side effects should be handled in separate parts of the application, such as within useEffect hooks or in higher-level container components.
+
+4. Idempotence: Pure components should be idempotent, meaning that calling the component with the same props multiple times should always produce the same result. This ensures predictable behavior and makes components easier to reason about.
+
+5. Functional Composition: Pure components should be composed together to build more complex UIs. By keeping components pure, you can leverage functional composition to create reusable and composable UI elements.
+
+By following these principles, you can create React components that are easier to understand, maintain, and test. Additionally, adhering to functional programming principles can lead to more predictable and robust React applications.
