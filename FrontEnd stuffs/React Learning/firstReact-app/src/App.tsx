@@ -1,6 +1,7 @@
 import ListGroup from "./components/ListGroup";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
+import Like from "./components/Like";
 import { useState } from "react";
 import { IoIosCalendar } from "react-icons/io";
 
@@ -39,6 +40,7 @@ function App() {
         btnColor="danger"
         onAlertPost={handleAlertComponent}
       />
+      <Like onClick={() => console.log("Clicked")} />
     </div>
   );
 }
