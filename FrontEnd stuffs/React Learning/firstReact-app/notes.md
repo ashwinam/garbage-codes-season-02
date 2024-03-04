@@ -156,3 +156,17 @@ Lets update
 Lets update
 
 `setCustomer({***customer, address: {***customer.address, address:{zipCode: 94112}}})`
+
+### updating array
+
+`const [arr, setArray] = useState([1,2,3])
+
+// Add
+setArray([***arr, <new value>])
+
+// remove
+setArray(arr.filter(ele => ele !== 1)) // [2,3]
+
+// update
+setArray(arr.map(ele => (ele === 1) ? 0 : ele))
+`
