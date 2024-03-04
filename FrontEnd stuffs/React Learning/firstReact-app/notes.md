@@ -148,3 +148,11 @@ By following these principles, you can create React components that are easier t
 `const [drink, setDrink] = useState({title:'Americano'; price:5;}) // this would be the initial object`
 Lets update
 `setDrink({***drink, title:6})`
+
+### updating nested object
+
+- `const [customer, setCustomer] = useState({name: 'rohan', address: {city: 'San Fransisco'; zipCode: 94111}})`
+
+Lets update
+
+`setCustomer({***customer, address: {***customer.address, address:{zipCode: 94112}}})`
