@@ -58,3 +58,12 @@ suppose if you have very length content to pass as a text or anything there we u
 
 1. Create a .css file beside to component file(for best practice)
 2. import it to the component
+
+### CSS-Modules
+
+When writing vanilla css suppose we have two files with same class name , then there is chances for name clashes, So how do we make it local scope? `Using CSS modules`
+
+1. For making css modules add .module in a file Like: `example.module.css` here, try to use the camel casing
+2. Import like this `import style from './example.module.css'`
+3. in className : `style.cssSelector or style['css-selector']` its like accessing object
+4. optional, if you have more classes then use `[style.cssSelector, style.cssSelector].join(' ')`
