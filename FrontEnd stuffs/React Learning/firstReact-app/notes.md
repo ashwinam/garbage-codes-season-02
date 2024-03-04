@@ -79,3 +79,7 @@ Using styling to the same file using styled-component library
    `const List = style.ul 1 <Your Style> 1`
 4. then use it as a component
    `<List><Your Elements></List>`
+
+### Seperation of concerns
+
+- Divide a Programme into distinct section where each section handles a specific fuctionality, rather than having everything in one place.
