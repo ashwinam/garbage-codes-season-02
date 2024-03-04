@@ -53,3 +53,8 @@ suppose if you have very length content to pass as a text or anything there we u
 `interface Props {
   children: ReactNode;
 }`
+
+### Vanilla CSS
+
+1. Create a .css file beside to component file(for best practice)
+2. import it to the component
