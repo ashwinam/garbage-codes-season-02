@@ -87,3 +87,11 @@ Using styling to the same file using styled-component library
 ### inline styles
 
 1. use it as a prop like: `style={{backgroundColor='yellow'}}` This considered as bad practice.
+
+### Popular UI Libraries
+
+1. Bootstrap
+2. Material UI
+3. Shadcn/UI
+4. Chakra UI
+5. Tailwind CSS
