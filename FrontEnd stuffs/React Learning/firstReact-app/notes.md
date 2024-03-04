@@ -176,5 +176,14 @@ Lets update
 
 // update id 1 fixed:true
 
-updateBugs([bugs.map(bug => (bug.id === 1) ? {***bug; fixed: true}: bug)])
-`
+`updateBugs([bugs.map(bug => (bug.id === 1) ? {***bug; fixed: true}: bug)])`
+
+### sharing state between components
+
+So, states are the component scoped, so yo cant share state to another state
+Lets see real world example:
+
+- You are building a e-com site and you have navbar(Component) and cart(component), both are need to be notified when one take action like: if i add item in the cart so navbar also add one item to the cart.
+- Solution: We have to set one intermeditor that send signals to other component, So we have app component who can tell children of there action by props.
+
+- Note: who is the owner of the state, he have the rights to change the state(mutable, Immutable concept)
