@@ -83,3 +83,7 @@ Using styling to the same file using styled-component library
 ### Seperation of concerns
 
 - Divide a Programme into distinct section where each section handles a specific fuctionality, rather than having everything in one place.
+
+### inline styles
+
+1. use it as a prop like: `style={{backgroundColor='yellow'}}` This considered as bad practice.
