@@ -170,3 +170,13 @@ setArray(arr.filter(ele => ele !== 1)) // [2,3]
 // update
 setArray(arr.map(ele => (ele === 1) ? 0 : ele))
 `
+
+### updating array of objects
+
+`const [bugs, upadteBugs] = useState([{id:1; fixed: false}, {id:2; fixed: false}])
+
+update id 1 fixed:true
+
+updateBugs([bugs.map(bug => (bug.id === 1) ? {***bug; fixed: true}: bug)])
+
+`
