@@ -102,3 +102,11 @@ Using styling to the same file using styled-component library
 2. go to website [React Icons](https://react-icons.github.io/)
 3. import `import { IoIosCalendar } from "react-icons/io";`
 4. `<IoIosCalendar />`
+
+### understanding the state hook
+
+- React Updates state asynchronously, i.e Not immediately because every time state changed component is going to be re-render So for example: `suppose In a function we write the logic that change the 4 states on a click event, so if the upates are immediate then component will re-render 4 to 5 times, FOR THAT REASON ITS ASYNCHRONOUS.`
+
+- State is stored outside of a component, why? because if you think the scope of a variable in a js its a blocked scoped, for that reason it stored on memory until the component is on the screen.
+
+- Use hooks ar the top level of your component. This adheres to the React's guidelines for using hooks.
