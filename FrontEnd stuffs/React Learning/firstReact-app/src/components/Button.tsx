@@ -1,3 +1,5 @@
+import style from "./Button.module.css";
+
 interface Props {
   btnName: string;
   btnColor?: "primary" | "secondary" | "danger"; // Value from this values only
@@ -9,7 +11,7 @@ const Button = ({ btnName, btnColor = "primary", onAlertPost }: Props) => {
     <div>
       <button
         type="button"
-        className={"btn btn-" + btnColor}
+        className={[style.btn, style["btn-" + btnColor]].join(" ")}
         onClick={onAlertPost}
       >
         {btnName}

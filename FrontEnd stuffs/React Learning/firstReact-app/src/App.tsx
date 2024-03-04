@@ -2,6 +2,7 @@ import ListGroup from "./components/ListGroup";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
 import { useState } from "react";
+import { IoIosCalendar } from "react-icons/io";
 
 function App() {
   let fruits = [
@@ -28,6 +29,7 @@ function App() {
         heading={"List Of Fruits"}
         onSelectFruit={handleSelectedFruit}
       /> */}
+      <IoIosCalendar color="red" />
       {showAlert && (
         <Alert onCloseClick={handleAlertComponentOnClose}>I am clicked</Alert>
       )}

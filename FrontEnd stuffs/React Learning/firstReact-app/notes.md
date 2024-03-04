@@ -95,3 +95,10 @@ Using styling to the same file using styled-component library
 3. Shadcn/UI
 4. Chakra UI
 5. Tailwind CSS
+
+### Adding Icons
+
+1. install package `npm i react-icons@4.7.1`
+2. go to website [React Icons](https://react-icons.github.io/)
+3. import `import { IoIosCalendar } from "react-icons/io";`
+4. `<IoIosCalendar />`
