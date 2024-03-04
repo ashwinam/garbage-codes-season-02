@@ -135,3 +135,7 @@ Here are some key aspects of keeping components pure in React:
 5. Functional Composition: Pure components should be composed together to build more complex UIs. By keeping components pure, you can leverage functional composition to create reusable and composable UI elements.
 
 By following these principles, you can create React components that are easier to understand, maintain, and test. Additionally, adhering to functional programming principles can lead to more predictable and robust React applications.
+
+### Understanding the strict mode
+
+- From react 18, the strict mode by default is on, so in this mode react re-render the component twice, to catch the impure component.
