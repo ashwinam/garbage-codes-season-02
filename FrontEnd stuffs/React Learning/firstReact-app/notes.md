@@ -159,24 +159,22 @@ Lets update
 
 ### updating array
 
-`const [arr, setArray] = useState([1,2,3])
+`const [arr, setArray] = useState([1,2,3])`
 
 // Add
-setArray([***arr, <new value>])
+`setArray([***arr, <new value>])`
 
 // remove
-setArray(arr.filter(ele => ele !== 1)) // [2,3]
+`setArray(arr.filter(ele => ele !== 1)) // [2,3]`
 
 // update
-setArray(arr.map(ele => (ele === 1) ? 0 : ele))
-`
+`setArray(arr.map(ele => (ele === 1) ? 0 : ele))`
 
 ### updating array of objects
 
-`const [bugs, upadteBugs] = useState([{id:1; fixed: false}, {id:2; fixed: false}])
+`const [bugs, upadteBugs] = useState([{id:1; fixed: false}, {id:2; fixed: false}])`
 
-update id 1 fixed:true
+// update id 1 fixed:true
 
 updateBugs([bugs.map(bug => (bug.id === 1) ? {***bug; fixed: true}: bug)])
-
 `
