@@ -67,3 +67,15 @@ When writing vanilla css suppose we have two files with same class name , then t
 2. Import like this `import style from './example.module.css'`
 3. in className : `style.cssSelector or style['css-selector']` its like accessing object
 4. optional, if you have more classes then use `[style.cssSelector, style.cssSelector].join(' ')`
+
+### styles components
+
+Using styling to the same file using styled-component library
+
+1. Install `npm i styled-components` if compilation error is there from Typescript then install typed `npm i @typed/style-components`
+2. import `import style from 'style-components'`
+3. Create an style component object
+   Ex (11--> for this think as a backticks )
+   `const List = style.ul 1 <Your Style> 1`
+4. then use it as a component
+   `<List><Your Elements></List>`
