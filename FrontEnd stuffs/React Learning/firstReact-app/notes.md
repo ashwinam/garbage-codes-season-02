@@ -145,38 +145,44 @@ By following these principles, you can create React components that are easier t
 - Treat the state object also as immutable i.e. only use for reading purpose.
 - For updating the state object, let see how we can do it:
 
-`const [drink, setDrink] = useState({title:'Americano'; price:5;}) // this would be the initial object`
+```
+const [drink, setDrink] = useState({title:'Americano'; price:5;}) // this would be the initial object
 Lets update
-`setDrink({***drink, title:6})`
+setDrink({***drink, title:6})
+```
 
 ### updating nested object
 
-- `const [customer, setCustomer] = useState({name: 'rohan', address: {city: 'San Fransisco'; zipCode: 94111}})`
+```
+const [customer, setCustomer] = useState({name: 'rohan', address: {city: 'San Fransisco'; zipCode: 94111}})
 
 Lets update
 
-`setCustomer({***customer, address: {***customer.address, address:{zipCode: 94112}}})`
+setCustomer({***customer, address: {***customer.address, address:{zipCode: 94112}}})
+```
 
 ### updating array
 
-`const [arr, setArray] = useState([1,2,3])`
+```
+const [arr, setArray] = useState([1,2,3])
 
 // Add
-`setArray([***arr, <new value>])`
+setArray([***arr, <new value>])
 
 // remove
-`setArray(arr.filter(ele => ele !== 1)) // [2,3]`
+setArray(arr.filter(ele => ele !== 1)) // [2,3]
 
 // update
-`setArray(arr.map(ele => (ele === 1) ? 0 : ele))`
+setArray(arr.map(ele => (ele === 1) ? 0 : ele))
 
 ### updating array of objects
 
-`const [bugs, upadteBugs] = useState([{id:1; fixed: false}, {id:2; fixed: false}])`
+const [bugs, upadteBugs] = useState([{id:1; fixed: false}, {id:2; fixed: false}])
 
 // update id 1 fixed:true
 
-`updateBugs([bugs.map(bug => (bug.id === 1) ? {***bug; fixed: true}: bug)])`
+updateBugs([bugs.map(bug => (bug.id === 1) ? {***bug; fixed: true}: bug)])
+```
 
 ### sharing state between components
 
