@@ -23,6 +23,14 @@ function App() {
     toppings: ["Mushroom"],
   });
 
+  const [myCart, setCart] = useState({
+    discount: 0.1,
+    productList: [
+      { id: 1, title: "product1", quantity: 1 },
+      { id: 2, title: "product2", quantity: 1 },
+    ],
+  });
+
   let fruits = [
     "Banana",
     "Pineapple",
@@ -47,6 +55,16 @@ function App() {
       toppings: [...pizza.toppings, "Tomato", "Mozzarela"],
     });
 
+  const handleQuantity = () =>
+    setCart({
+      ...myCart,
+      productList: [
+        ...myCart.productList.map((product) =>
+          product.id === 1 ? { ...product, quantity: 2 } : product
+        ),
+      ],
+    });
+
   return (
     <div>
       {/* <ListGroup
@@ -67,14 +85,15 @@ function App() {
       <Like onClick={() => console.log("Clicked")} /> */}
       <Navbar cartItemCount={products.length} />
       <Cart cartItems={products} onClear={() => setProduct([])} />
+
       {/* Exercise 01 */}
-      <h4>Game Set</h4>
+      {/* <h4>Game Set</h4>
       <p>{game.player.name}</p>
-      <button onClick={handleSetGame}>changeName</button>
+      <button onClick={handleSetGame}>changeName</button> */}
 
       {/* Exercise 02 */}
 
-      <h4>Pizzawale</h4>
+      {/* <h4>Pizzawale</h4>
       <p>Name: {pizza.name}</p>
       <p>
         Toppings:{" "}
@@ -82,7 +101,19 @@ function App() {
           <li key={topping}>{topping}</li>
         ))}
       </p>
-      <button onClick={handlePizza}>Add toppings</button>
+      <button onClick={handlePizza}>Add toppings</button> */}
+
+      {/* Exercise 03 */}
+
+      <h4>My Product List and there quantity</h4>
+      <strong>Items: </strong>
+      {myCart.productList.map((myProduct) => (
+        <p key={myProduct.id}>
+          {myProduct.id} {myProduct.title} {myProduct.quantity}
+        </p>
+      ))}
+
+      <button onClick={handleQuantity}>Change Quantity</button>
     </div>
   );
 }
