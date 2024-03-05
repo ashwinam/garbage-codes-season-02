@@ -205,3 +205,16 @@ const handleForms = (event: FormEvent) => {
 
   ... <form action="" onSubmit={handleForms}> ...
 ```
+
+### Accepting input fields
+
+- To capturing the input field values we use useRef hook
+- what is useRef? useRef is used to access and manipulate the DOM elements directly, as well as to persist values between renders without causing re-renders.
+
+```
+const nameRef = useRef<HTMLInputElement>(null);
+const ageRef = useRef<HTMLInputElement>(null);
+
+if (nameRef.current !== null) person.name = nameRef.current.value;
+if (ageRef.current !== null) person.age = parseInt(ageRef.current.value);
+```
