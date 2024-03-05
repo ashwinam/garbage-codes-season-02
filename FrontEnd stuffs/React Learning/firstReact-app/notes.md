@@ -264,3 +264,48 @@ const [person, setPerson] = useState({
             </p>
           )}
 ```
+
+### schema based validation with zod
+
+[Zod](https://zod.dev/)
+
+- below is code reference
+
+```
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+const schema = z.object({
+    name: z.string().min(3, { message: "Name must be atleast 3 characters." }),
+    age: z
+      .number({ invalid_type_error: "Age field is required" })
+      .min(18, { message: "Age must be at least 18." }),
+  });
+
+type FormData = z.infer<typeof schema>;
+const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>({ resolver: zodResolver(schema) });
+
+<input
+         // register function second argument we can pass html attributes as a object
+         {...register("name")}
+         id="name"
+         type="text"
+         className="form-control"
+         />
+
+{errors.name && <p className="text-danger">{errors.name.message}</p>}
+
+
+<input
+{...register("age", { valueAsNumber: true })}
+id="age"
+type="number"
+className="form-control"
+/>
+{errors.age && <p className="text-danger">{errors.age.message}</p>}
+
+```
