@@ -191,3 +191,17 @@ Lets see real world example:
 ### Building forms
 
 - Use a `<form></form>` for defining forms
+
+### Handling form submissions
+
+- First we need to call the preventdefault method on onSubmmit event, because submit type has the default event so thats why we use preventDefault method
+
+```
+const handleForms = (event: FormEvent) => {
+    event.preventDefault();
+    console.log("submitted");
+  };
+
+
+  ... <form action="" onSubmit={handleForms}> ...
+```
