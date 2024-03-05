@@ -241,3 +241,26 @@ const [person, setPerson] = useState({
 <input id="age" onChange={setPerson({...person, age={(e) => e.target.value}})}>
 ...
 ```
+
+### applying validation
+
+- Below is the code using react-hook-form
+
+```
+<input
+            // register function second argument we can pass html attributes as a object
+            {...register("name", { required: true, minLength: 3 })}
+            id="name"
+            type="text"
+            className="form-control"
+          />
+
+          {errors.name?.type === "required" && (
+            <p className="text-danger">The Field is required</p>
+          )}
+          {errors.name?.type === "minLength" && (
+            <p className="text-danger">
+              The Charater at least 3 charactor long
+            </p>
+          )}
+```

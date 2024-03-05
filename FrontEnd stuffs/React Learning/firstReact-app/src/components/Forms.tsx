@@ -1,8 +1,18 @@
 import { FormEvent, useRef } from "react";
-import { useForm } from "react-hook-form";
+import { FieldValues, useForm } from "react-hook-form";
 
 const Forms = () => {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  console.log(errors);
+
+  const handleFormSubmit = (data: FieldValues) => {
+    console.log(data);
+  };
 
   //   const nameRef = useRef<HTMLInputElement>(null);
   //   const ageRef = useRef<HTMLInputElement>(null);
@@ -20,17 +30,27 @@ const Forms = () => {
 
   return (
     <>
-      <form action="" onSubmit={handleSubmit((data) => console.log(data))}>
+      <form action="" onSubmit={handleSubmit(handleFormSubmit)}>
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
             Name
           </label>
           <input
-            {...register("name")}
+            // register function second argument we can pass html attributes as a object
+            {...register("name", { required: true, minLength: 3 })}
             id="name"
             type="text"
             className="form-control"
           />
+
+          {errors.name?.type === "required" && (
+            <p className="text-danger">The Field is required</p>
+          )}
+          {errors.name?.type === "minLength" && (
+            <p className="text-danger">
+              The Charater at least 3 charactor long
+            </p>
+          )}
         </div>
 
         <div className="mb-3">
