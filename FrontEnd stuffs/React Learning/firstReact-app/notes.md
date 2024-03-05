@@ -224,3 +224,20 @@ const ageRef = useRef<HTMLInputElement>(null);
 if (nameRef.current !== null) person.name = nameRef.current.value;
 if (ageRef.current !== null) person.age = parseInt(ageRef.current.value);
 ```
+
+### Controlled component
+
+- How to get the input field value using useState hook?
+
+```
+// Create a useState hook
+const [person, setPerson] = useState({
+   name: '',
+   age: 0
+})
+
+...
+<input id="name" onChange={setPerson({...person, name={(e) => e.target.value}})}>
+<input id="age" onChange={setPerson({...person, age={(e) => e.target.value}})}>
+...
+```
