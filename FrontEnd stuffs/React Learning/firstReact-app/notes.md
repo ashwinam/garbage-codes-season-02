@@ -187,3 +187,7 @@ Lets see real world example:
 - Solution: We have to set one intermeditor that send signals to other component, So we have app component who can tell children of there action by props.
 
 - Note: who is the owner of the state, he have the rights to change the state(mutable, Immutable concept)
+
+### Building forms
+
+- Use a `<form></form>` for defining forms

@@ -1,12 +1,13 @@
-import ListGroup from "./components/ListGroup";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
-import Like from "./components/Like";
-import Navbar from "./components/Navbar";
 import Cart from "./components/Cart";
+import ExpandableText from "./components/ExpandableText";
+import Forms from "./components/Forms";
+import Like from "./components/Like";
+import ListGroup from "./components/ListGroup";
+import Navbar from "./components/Navbar";
 import { useState } from "react";
 import { IoIosCalendar } from "react-icons/io";
-import ExpandableText from "./components/ExpandableText";
 
 function App() {
   const [showAlert, setShowAlert] = useState(false);
@@ -114,29 +115,30 @@ function App() {
 
     //   <button onClick={handleQuantity}>Change Quantity</button>
     // </div>
-    <ExpandableText>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias tenetur
-      explicabo dolor voluptatem itaque maiores quibusdam neque ipsum doloribus
-      enim, in voluptate, fuga sed deserunt totam! Voluptatem corrupti numquam
-      deleniti ducimus quasi libero, maxime laborum provident voluptas,
-      obcaecati ullam ut ad, rerum cumque commodi aut unde architecto! Eveniet
-      consectetur nam sapiente officiis ipsum enim excepturi, ullam, rerum ad
-      iste dicta praesentium ut, itaque ab amet est. Numquam suscipit totam
-      dignissimos ut qui illum omnis obcaecati unde, temporibus reiciendis quo
-      commodi voluptate, iste itaque dicta similique ea fuga recusandae quas
-      nemo. Veniam distinctio accusamus illum maiores? Quae optio dolor
-      exercitationem fuga totam cumque corporis cum, veniam quisquam vel, sequi
-      nulla sit quia, ducimus assumenda sapiente autem eos molestias adipisci
-      eaque distinctio voluptas excepturi qui similique! Minima numquam
-      temporibus dolorum facilis molestias reprehenderit, iste maxime unde
-      facere, natus sequi itaque nobis a animi dolorem nesciunt nihil ex
-      perferendis voluptatem totam inventore ea hic, ducimus necessitatibus.
-      Laudantium soluta quasi dicta praesentium optio vitae reiciendis harum
-      explicabo minus illo commodi fugit quos sequi voluptates recusandae,
-      voluptatum exercitationem hic modi ducimus, temporibus dolorum, porro a
-      fugiat? Labore adipisci porro illo harum, vitae quam? Animi sunt id
-      suscipit autem porro dicta tenetur omnis eligendi eos ex!
-    </ExpandableText>
+    // <ExpandableText>
+    //   Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias tenetur
+    //   explicabo dolor voluptatem itaque maiores quibusdam neque ipsum doloribus
+    //   enim, in voluptate, fuga sed deserunt totam! Voluptatem corrupti numquam
+    //   deleniti ducimus quasi libero, maxime laborum provident voluptas,
+    //   obcaecati ullam ut ad, rerum cumque commodi aut unde architecto! Eveniet
+    //   consectetur nam sapiente officiis ipsum enim excepturi, ullam, rerum ad
+    //   iste dicta praesentium ut, itaque ab amet est. Numquam suscipit totam
+    //   dignissimos ut qui illum omnis obcaecati unde, temporibus reiciendis quo
+    //   commodi voluptate, iste itaque dicta similique ea fuga recusandae quas
+    //   nemo. Veniam distinctio accusamus illum maiores? Quae optio dolor
+    //   exercitationem fuga totam cumque corporis cum, veniam quisquam vel, sequi
+    //   nulla sit quia, ducimus assumenda sapiente autem eos molestias adipisci
+    //   eaque distinctio voluptas excepturi qui similique! Minima numquam
+    //   temporibus dolorum facilis molestias reprehenderit, iste maxime unde
+    //   facere, natus sequi itaque nobis a animi dolorem nesciunt nihil ex
+    //   perferendis voluptatem totam inventore ea hic, ducimus necessitatibus.
+    //   Laudantium soluta quasi dicta praesentium optio vitae reiciendis harum
+    //   explicabo minus illo commodi fugit quos sequi voluptates recusandae,
+    //   voluptatum exercitationem hic modi ducimus, temporibus dolorum, porro a
+    //   fugiat? Labore adipisci porro illo harum, vitae quam? Animi sunt id
+    //   suscipit autem porro dicta tenetur omnis eligendi eos ex!
+    // </ExpandableText>
+    <Forms></Forms>
   );
 }
 
