@@ -309,3 +309,19 @@ className="form-control"
 {errors.age && <p className="text-danger">{errors.age.message}</p>}
 
 ```
+
+### disabling submit button
+
+- Code Snippet
+
+```
+const {
+    register,
+    handleSubmit,
+    formState: { errors, isValid },
+  } = useForm<FormData>({ resolver: zodResolver(schema) });
+
+<button disabled={!isValid} type="submit" className="btn btn-primary">
+          Submit
+        </button>
+```
