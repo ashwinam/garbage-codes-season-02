@@ -11,6 +11,13 @@ function App() {
   const [showAlert, setShowAlert] = useState(false);
   const [products, setProduct] = useState(["product1", "product2"]);
 
+  const [game, setGame] = useState({
+    id: 1,
+    player: {
+      name: "John",
+    },
+  });
+
   let fruits = [
     "Banana",
     "Pineapple",
@@ -25,6 +32,9 @@ function App() {
   const handleAlertComponent = () => setShowAlert(true);
 
   const handleAlertComponentOnClose = () => setShowAlert(false);
+
+  const handleSetGame = () =>
+    setGame({ ...game, player: { ...game.player, name: "rahul" } });
 
   return (
     <div>
@@ -46,6 +56,10 @@ function App() {
       <Like onClick={() => console.log("Clicked")} /> */}
       <Navbar cartItemCount={products.length} />
       <Cart cartItems={products} onClear={() => setProduct([])} />
+
+      <h4>Game Set</h4>
+      <p>{game.player.name}</p>
+      <button onClick={handleSetGame}>changeName</button>
     </div>
   );
 }
