@@ -18,6 +18,11 @@ function App() {
     },
   });
 
+  const [pizza, setPizza] = useState({
+    name: "Spicy Pepperoni",
+    toppings: ["Mushroom"],
+  });
+
   let fruits = [
     "Banana",
     "Pineapple",
@@ -35,6 +40,12 @@ function App() {
 
   const handleSetGame = () =>
     setGame({ ...game, player: { ...game.player, name: "rahul" } });
+
+  const handlePizza = () =>
+    setPizza({
+      ...pizza,
+      toppings: [...pizza.toppings, "Tomato", "Mozzarela"],
+    });
 
   return (
     <div>
@@ -56,10 +67,22 @@ function App() {
       <Like onClick={() => console.log("Clicked")} /> */}
       <Navbar cartItemCount={products.length} />
       <Cart cartItems={products} onClear={() => setProduct([])} />
-
+      {/* Exercise 01 */}
       <h4>Game Set</h4>
       <p>{game.player.name}</p>
       <button onClick={handleSetGame}>changeName</button>
+
+      {/* Exercise 02 */}
+
+      <h4>Pizzawale</h4>
+      <p>Name: {pizza.name}</p>
+      <p>
+        Toppings:{" "}
+        {pizza.toppings.map((topping) => (
+          <li key={topping}>{topping}</li>
+        ))}
+      </p>
+      <button onClick={handlePizza}>Add toppings</button>
     </div>
   );
 }
