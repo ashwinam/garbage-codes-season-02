@@ -9,36 +9,44 @@ const Forms = () => {
         }}
       >
         <div className="mb-3">
-          <label htmlFor="description" className="form-label">
+          <label htmlFor="description" className="form-label fs-4">
             Description
           </label>
-          <input id="description" type="text" className="form-control" />
+          <input
+            id="description"
+            type="text"
+            className="form-control form-control-lg"
+          />
         </div>
         <div className="mb-3">
-          <label htmlFor="amount" className="form-label">
+          <label htmlFor="amount" className="form-label fs-4">
             Amount
           </label>
-          <input type="number" className="form-control" id="amount" />
+          <input
+            type="number"
+            className="form-control form-control-lg"
+            id="amount"
+          />
         </div>
         <div className="mb-3">
-          <label htmlFor="categories" className="form-label">
+          <label htmlFor="categories" className="form-label fs-4">
             Categories
           </label>
           <select
             id="categories"
-            className="form-select"
+            className="form-select form-select-lg"
             aria-label="Default select example"
             defaultValue={"default"}
           >
             <option value="default" disabled hidden>
               Select Category
             </option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            <option value="Utilities">Utilities</option>
+            <option value="Groceries">Groceries</option>
+            <option value="Entertainment">Entertainment</option>
           </select>
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-lg btn-primary">
           Submit
         </button>
       </form>
