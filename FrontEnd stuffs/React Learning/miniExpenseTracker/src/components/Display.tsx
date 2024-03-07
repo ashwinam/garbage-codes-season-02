@@ -42,7 +42,7 @@ function Display({ expenses, onDelete }: Props) {
           <tr>
             <td>Total</td>
             <td className="fs-5 fw-bold">
-              ${expenses.reduce((acc, expense) => acc + expense.amount, 0)}
+              ${expenses.reduce((acc, expense) => acc + +expense.amount, 0)}
             </td>
             <td></td>
             <td></td>

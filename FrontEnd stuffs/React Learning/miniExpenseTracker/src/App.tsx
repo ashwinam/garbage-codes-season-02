@@ -1,11 +1,9 @@
 import Forms from "./components/Forms";
 import Display from "./components/Display";
-import { useForm } from "react-hook-form";
 import { useState } from "react";
 import ExpenseFilter from "./components/ExpenseFilter";
 
 const App = () => {
-  const { register, handleSubmit, formState } = useForm();
   const [selectedCategory, setSelectedCategory] = useState("");
   const [expenses, setExpenses] = useState([
     { id: 1, description: "aa", amount: 10, category: "Groceries" },
@@ -21,9 +19,9 @@ const App = () => {
   return (
     <div className="container my-5">
       <Forms
-        register={register}
-        handleSubmit={handleSubmit}
-        formState={formState}
+        onDataSubmit={(expense) =>
+          setExpenses([...expenses, { ...expense, id: expenses.length + 1 }])
+        }
       />
       <div className="my-3">
         <ExpenseFilter

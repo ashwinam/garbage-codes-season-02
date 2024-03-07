@@ -1,20 +1,19 @@
-import {
-  FieldValues,
-  FormState,
-  UseFormHandleSubmit,
-  UseFormRegister,
-} from "react-hook-form";
+import { useForm } from "react-hook-form";
 
 interface Props {
-  register: UseFormRegister<FieldValues>;
-  handleSubmit: UseFormHandleSubmit<FieldValues, undefined>;
-  formState: FormState<FieldValues>;
+  onDataSubmit: (data: any) => void;
 }
 
-const Forms = ({ register, handleSubmit, formState: { errors } }: Props) => {
+const Forms = ({ onDataSubmit }: Props) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
   return (
     <>
-      <form action="" onSubmit={handleSubmit((data) => console.log(data))}>
+      <form action="" onSubmit={handleSubmit((data) => onDataSubmit(data))}>
         <div className="mb-3">
           <label htmlFor="description" className="form-label fs-4">
             Description
@@ -51,12 +50,12 @@ const Forms = ({ register, handleSubmit, formState: { errors } }: Props) => {
           )}
         </div>
         <div className="mb-3">
-          <label htmlFor="categories" className="form-label fs-4">
+          <label htmlFor="category" className="form-label fs-4">
             Categories
           </label>
           <select
-            id="categories"
-            {...register("categories", { required: true })}
+            id="category"
+            {...register("category", { required: true })}
             className="form-select form-select-lg"
             aria-label="Default select example"
             defaultValue={""}
