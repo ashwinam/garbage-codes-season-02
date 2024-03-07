@@ -325,3 +325,14 @@ const {
           Submit
         </button>
 ```
+
+### Understanding the effect hook
+
+- In react Components need to be pure means? When the component is rendered, no other action is performed along with it, at this time only JSX is rendered, after rendering all the things are performed.
+
+- thats when effect hook come to the picture
+
+```
+useEffect ( () => {})
+// To execute a piece of code after a component is rendered.
+```
