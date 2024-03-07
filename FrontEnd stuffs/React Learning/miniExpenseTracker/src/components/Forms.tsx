@@ -1,12 +1,17 @@
-import { useForm } from "react-hook-form";
+import {
+  FieldValues,
+  FormState,
+  UseFormHandleSubmit,
+  UseFormRegister,
+} from "react-hook-form";
 
-const Forms = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+interface Props {
+  register: UseFormRegister<FieldValues>;
+  handleSubmit: UseFormHandleSubmit<FieldValues, undefined>;
+  formState: FormState<FieldValues>;
+}
 
+const Forms = ({ register, handleSubmit, formState: { errors } }: Props) => {
   return (
     <>
       <form action="" onSubmit={handleSubmit((data) => console.log(data))}>
