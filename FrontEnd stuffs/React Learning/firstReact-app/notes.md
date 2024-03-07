@@ -336,3 +336,103 @@ const {
 useEffect ( () => {})
 // To execute a piece of code after a component is rendered.
 ```
+
+### effect dependencies
+
+The array of dependencies in the React `useEffect` hook is a crucial concept for managing side effects within functional components. It's an optional second argument passed to the hook, specifying which values the effect relies on. React uses this information to determine when to re-run the effect.
+
+Here's a breakdown of its functionality:
+
+**What it does:**
+
+- **Tracks changes:** The dependency array contains a list of state variables, props, or other values used within the `useEffect` callback function.
+- **Triggers re-runs:** Whenever any of the listed dependencies change between renders, React automatically re-executes the callback function in the effect.
+- **Optimizes performance:** By only running the effect when necessary, the dependency array helps optimize rendering performance and prevents unnecessary re-renders.
+
+**Examples:**
+
+1. **Fetching data on initial render:**
+
+```javascript
+useEffect(() => {
+  // Fetch data
+}, []); // Empty dependency array ensures it runs only once
+```
+
+2. **Updating UI based on state:**
+
+```javascript
+const [count, setCount] = useState(0);
+
+useEffect(() => {
+  // Update UI based on count
+}, [count]); // Runs whenever count changes
+```
+
+**Best practices:**
+
+- Include all necessary dependencies in the array to ensure the effect runs when expected.
+- Avoid leaving the array empty unless the effect truly has no dependencies and should only run once.
+- Use linters or code analysis tools to help identify missing or incorrect dependencies.
+
+By effectively using the dependency array, you can manage side effects efficiently and maintain optimal performance in your React applications.
+
+### CleanUp in useEffect
+
+In React's `useEffect` hook, **effect cleanup** refers to a mechanism for performing actions before an effect is unmounted or re-run with different dependencies. It's implemented through a function returned from the `useEffect` hook.
+
+Here's a deeper look into effect cleanup:
+
+**When it occurs:**
+
+- **Unmounting:** Primarily, the cleanup function runs **when the component unmounts** from the DOM. This allows you to clean up any resources the effect might be using, like event listeners, subscriptions, or timers, to prevent memory leaks and unexpected behavior.
+- **Before re-runs:** Interestingly, the cleanup function also runs **just before the effect is re-executed** due to a change in its dependencies. This ensures that the effect operates on the latest data and avoids potential issues like race conditions.
+
+**Common use cases:**
+
+- **Cancelling subscriptions:** If your effect fetches data using a subscription, the cleanup function is ideal for cancelling the subscription when the component unmounts or the dependency triggering the fetch changes, preventing unnecessary data updates.
+- **Clearing timers:** If the effect sets up a timer, the cleanup function helps clear it to avoid issues when the component unmounts or the dependency controlling the timer changes.
+- **Removing event listeners:** When the effect adds event listeners to the DOM, the cleanup function allows you to remove them to prevent memory leaks and unexpected event handling after the component unmounts or the dependency controlling the listener changes.
+
+**Example:**
+
+```javascript
+useEffect(
+  () => {
+    const subscription = fetchData(); // Example subscription
+
+    return () => {
+      subscription.unsubscribe(); // Cleanup function to cancel subscription
+    };
+  },
+  [
+    /* dependency array */
+  ]
+);
+```
+
+**Remember:**
+
+- The cleanup function is optional but highly recommended for any effect that interacts with external resources or needs to be stopped when the component unmounts or dependencies change.
+- It's crucial to properly handle cleanup to maintain a clean and performant React application.
+
+**Unmounting means**
+In the context of web development, particularly with frameworks like React, **unmounting from the DOM (Document Object Model)** refers to the process of removing a component from the browser's visual representation of the web page. Here's a breakdown of this concept:
+
+**What it means:**
+
+- **Removal from the page:** When a component is unmounted, its corresponding HTML elements and styles are no longer displayed on the web page. It effectively ceases to be part of the active user interface.
+- **Lifecycle event:** In frameworks like React, unmounting is considered part of a component's lifecycle. It's one of the stages a component goes through during its existence, alongside mounting (being added to the DOM) and updating (changes in state or props).
+- **Triggered by various events:** There are several scenarios that can trigger a component to unmount:
+  - **Component removal:** When a parent component that renders the unmounted component itself unmounts, all its child components are also removed from the DOM, including the one in question.
+  - **Conditional rendering:** If the logic controlling whether a component is displayed changes, and the component is no longer needed, it will be unmounted.
+  - **Navigation:** In single-page applications, navigating to a different route might lead to unmounting components associated with the previous view.
+
+**Importance:**
+
+- **Memory management:** Unmounting properly cleans up resources associated with the component, preventing memory leaks and potential performance issues.
+- **Component lifecycle:** Understanding unmounting is crucial for managing the lifecycle of components and ensuring they behave as expected under different scenarios in your application.
+
+**Example:**
+
+Imagine you have a React component representing a modal that appears when a button is clicked. Clicking the button again or navigating away from the modal would likely trigger the unmounting of the modal component, removing it from the DOM and freeing up resources.
