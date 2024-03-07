@@ -1,7 +1,24 @@
 import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+const schema = z.object({
+  description: z
+    .string()
+    .min(3, { message: "Description contain atleast 3 character[s]." })
+    .max(20),
+  amount: z.number({ invalid_type_error: "Amount is required." }).min(0.1),
+  category: z.enum(["Groceries", "Utilities", "Entertainment"], {
+    errorMap: () => ({
+      message: "Categories is required",
+    }),
+  }),
+});
+
+type ExpenseFormData = z.infer<typeof schema>;
 
 interface Props {
-  onDataSubmit: (data: any) => void;
+  onDataSubmit: (data: ExpenseFormData) => void;
 }
 
 const Forms = ({ onDataSubmit }: Props) => {
@@ -9,7 +26,7 @@ const Forms = ({ onDataSubmit }: Props) => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm<ExpenseFormData>({ resolver: zodResolver(schema) });
 
   return (
     <>
@@ -19,19 +36,14 @@ const Forms = ({ onDataSubmit }: Props) => {
             Description
           </label>
           <input
-            {...register("description", { required: true, minLength: 3 })}
+            {...register("description")}
             id="description"
             type="text"
             placeholder="Description"
             className="form-control form-control-lg"
           />
-          {errors.description?.type === "required" && (
-            <p className="text-danger">Description is required.</p>
-          )}
-          {errors.description?.type === "minLength" && (
-            <p className="text-danger">
-              Description is atleast 3 characters long.
-            </p>
+          {errors.description && (
+            <p className="text-danger">{errors.description.message}</p>
           )}
         </div>
         <div className="mb-3">
@@ -40,13 +52,13 @@ const Forms = ({ onDataSubmit }: Props) => {
           </label>
           <input
             type="number"
-            {...register("amount", { required: true })}
+            {...register("amount", { valueAsNumber: true })}
             placeholder="Enter Amount"
             className="form-control form-control-lg"
             id="amount"
           />
-          {errors.amount?.type === "required" && (
-            <p className="text-danger">Amount is required.</p>
+          {errors.amount && (
+            <p className="text-danger">{errors.amount.message}</p>
           )}
         </div>
         <div className="mb-3">
@@ -67,8 +79,8 @@ const Forms = ({ onDataSubmit }: Props) => {
             <option value="Groceries">Groceries</option>
             <option value="Entertainment">Entertainment</option>
           </select>
-          {errors.categories?.type === "required" && (
-            <p className="text-danger">Catoegories is required.</p>
+          {errors.category && (
+            <p className="text-danger">{errors.category.message}</p>
           )}
         </div>
         <button type="submit" className="btn btn-lg btn-primary">
