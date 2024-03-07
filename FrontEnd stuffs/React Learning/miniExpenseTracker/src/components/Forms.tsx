@@ -15,6 +15,7 @@ const Forms = () => {
           <input
             id="description"
             type="text"
+            placeholder="Description"
             className="form-control form-control-lg"
           />
         </div>
@@ -24,6 +25,7 @@ const Forms = () => {
           </label>
           <input
             type="number"
+            placeholder="Enter Amount"
             className="form-control form-control-lg"
             id="amount"
           />
