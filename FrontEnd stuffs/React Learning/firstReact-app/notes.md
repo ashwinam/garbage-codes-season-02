@@ -450,3 +450,11 @@ Imagine you have a React component representing a modal that appears when a butt
 - `javascript npm i axios`
 
 - **Promise** : An object that holds the eventual results or failure of an asynchronous operation.
+
+### Understanding http request
+
+- As the front-end developer, we shall know what is http(hypertext transfer protocol) and the way to communicate to the server.
+
+- Http is a way to communicate to the client and server
+- client send request and server send response
+- so http have set of rules how client and server can communicate
