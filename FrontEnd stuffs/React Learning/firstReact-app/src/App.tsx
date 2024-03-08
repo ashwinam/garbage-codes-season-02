@@ -50,10 +50,52 @@ const App = () => {
       });
   };
 
+  const updateUser = (user: User) => {
+    const originalUserState = [...users];
+    const updatedUser = { id: user.id, name: user.name + "!" };
+    setUser(users.map((obj) => (obj.id === user.id ? updatedUser : obj)));
+
+    axios
+      .patch(
+        "https://jsonplaceholder.typicode.com/users/" + user.id,
+        updateUser
+      )
+      .catch((err) => {
+        setUser(originalUserState);
+        setError((err as AxiosError).message);
+      });
+  };
+
+  const addUser = () => {
+    const originalUserState = [...users];
+    const newUser = { id: 0, name: "Ashwin Mandaokar" };
+    setUser([...users, newUser]);
+
+    axios
+      .post("https://jsonplaceholder.typicode.com/users/", newUser)
+      .then((res) => {
+        setUser([...users, res.data]);
+      })
+      .catch((err) => {
+        setUser(originalUserState);
+        setError((err as AxiosError).message);
+      });
+  };
+
   return (
     <>
       {isLoading && <div className="spinner-border"></div>}
       {error && <p className="text-danger">{error}</p>}
+
+      <div className="d-flex align-items-center justify-content-end">
+        <button
+          className="btn btn-primary mb-3 fw-bold"
+          onClick={() => addUser()}
+        >
+          Add User
+        </button>
+      </div>
+
       <ul className="list-group">
         {users &&
           users.map((obj) => (
@@ -62,12 +104,20 @@ const App = () => {
               key={obj.id}
             >
               {obj.name}
-              <button
-                className="btn btn-outline-danger"
-                onClick={() => deleteUser(obj)}
-              >
-                Delete
-              </button>
+              <div>
+                <button
+                  className="btn btn-outline-secondary mx-1"
+                  onClick={() => updateUser(obj)}
+                >
+                  Update
+                </button>
+                <button
+                  className="btn btn-outline-danger"
+                  onClick={() => deleteUser(obj)}
+                >
+                  Delete
+                </button>
+              </div>
             </li>
           ))}
       </ul>

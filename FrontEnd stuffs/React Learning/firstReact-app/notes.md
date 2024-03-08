@@ -506,3 +506,11 @@ useEffect(() => {
 ### Deleting User
 
 - ![Approach for deleting an object from user and ui side](image-1.png)
+
+### creating user
+
+- same approach
+
+### updating user
+
+- same approach
