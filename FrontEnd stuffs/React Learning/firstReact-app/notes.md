@@ -465,3 +465,34 @@ Imagine you have a React component representing a modal that appears when a butt
 - In axios, we have catch method for handling errors.
 
 ### using async and await for calling http request
+
+### cancelling a fecth request
+
+- using a clean up use effect function
+
+```javascript
+useEffect(() => {
+    const controller = new AbortController();
+    // axios
+    //   .get<User[]>("https://jsonplaceholder.typicode.com/users")
+    //   .then((res) => setUser(res.data))
+    //   .catch((err) => setError(err.message));
+
+    const fetchUser = async () => {
+      try {
+        const res = await axios.get(
+          "https://jsonplaceholder.typicode.com/users",
+          { signal: controller.signal }
+        );
+        setUser(res.data);
+      } catch (error) {
+        if (error instanceof CanceledError) return;
+        setError((error as AxiosError).message);
+      }
+    };
+
+    fetchUser();
+
+    return () => controller.abort();
+  }, []);
+```
