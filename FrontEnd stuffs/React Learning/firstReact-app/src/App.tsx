@@ -9,6 +9,7 @@ interface User {
 const App = () => {
   const [user, setUser] = useState<User[]>([]);
   const [error, setError] = useState("");
+  const [isLoading, setLoader] = useState(true);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -24,9 +25,11 @@ const App = () => {
           { signal: controller.signal }
         );
         setUser(res.data);
+        setLoader(false);
       } catch (error) {
         if (error instanceof CanceledError) return;
         setError((error as AxiosError).message);
+        setLoader(false);
       }
     };
 
@@ -37,6 +40,7 @@ const App = () => {
 
   return (
     <>
+      {isLoading && <div className="spinner-border"></div>}
       {error && <p className="text-danger">{error}</p>}
       <div>{user && user.map((obj) => <li key={obj.id}>{obj.name}</li>)}</div>
     </>

@@ -496,3 +496,9 @@ useEffect(() => {
     return () => controller.abort();
   }, []);
 ```
+
+### Showing a loading indicator
+
+- first set up the useState
+- In promise call set the loader i.e., tru or false
+- conditionally render it
