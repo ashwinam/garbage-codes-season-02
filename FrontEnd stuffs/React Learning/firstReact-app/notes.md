@@ -502,3 +502,7 @@ useEffect(() => {
 - first set up the useState
 - In promise call set the loader i.e., tru or false
 - conditionally render it
+
+### Deleting User
+
+- ![Approach for deleting an object from user and ui side](image-1.png)
