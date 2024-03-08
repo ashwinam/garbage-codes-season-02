@@ -417,6 +417,7 @@ useEffect(
 - It's crucial to properly handle cleanup to maintain a clean and performant React application.
 
 **Unmounting means**
+
 In the context of web development, particularly with frameworks like React, **unmounting from the DOM (Document Object Model)** refers to the process of removing a component from the browser's visual representation of the web page. Here's a breakdown of this concept:
 
 **What it means:**
