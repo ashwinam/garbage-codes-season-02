@@ -437,3 +437,16 @@ In the context of web development, particularly with frameworks like React, **un
 **Example:**
 
 Imagine you have a React component representing a modal that appears when a button is clicked. Clicking the button again or navigating away from the modal would likely trigger the unmounting of the modal component, removing it from the DOM and freeing up resources.
+
+### Fetching Data
+
+- We are using fake data generator called jsoplaceholder [JasonPlacholder](https://jsonplaceholder.typicode.com/)
+
+- For Sending http request we have following packages
+
+  - fetch
+  - axios
+
+- `javascript npm i axios`
+
+- **Promise** : An object that holds the eventual results or failure of an asynchronous operation.
