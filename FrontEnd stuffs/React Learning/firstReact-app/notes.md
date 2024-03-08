@@ -458,3 +458,10 @@ Imagine you have a React component representing a modal that appears when a butt
 - Http is a way to communicate to the client and server
 - client send request and server send response
 - so http have set of rules how client and server can communicate
+
+### handling errors
+
+- As a developer we must anticipate the errors and handle them properly
+- In axios, we have catch method for handling errors.
+
+### using async and await for calling http request
