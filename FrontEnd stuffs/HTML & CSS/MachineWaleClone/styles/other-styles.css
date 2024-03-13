@@ -19,7 +19,8 @@
   background-color: #eca93c;
 }
 
-.truck-list-container ul {
+.truck-list-container ul,
+.heavy-machinery-container ul {
   list-style: none;
   display: flex;
   margin-top: 48px;
@@ -29,7 +30,8 @@
   margin-left: 64px;
 }
 
-.truck-list-container ul li {
+.truck-list-container ul li,
+.heavy-machinery-container ul li {
   margin-right: 8px;
   background-color: rgb(244, 242, 242);
   padding: 8px 12px;
@@ -41,18 +43,21 @@
   cursor: pointer;
 }
 
-.truck-list-container ul li:hover {
+.truck-list-container ul li:hover,
+.heavy-machinery-container ul li:hover {
   background-color: rgb(207, 206, 206);
   color: rgb(24, 26, 30);
 }
 
-.truck-list-container ul li:first-child {
+.truck-list-container ul li:first-child,
+.heavy-machinery-container ul li:first-child {
   background-color: #eca93c;
   color: white;
   transition: color 0.15s;
 }
 
-.truck-list-container ul li:first-child:hover {
+.truck-list-container ul li:first-child:hover,
+.heavy-machinery-container ul li:first-child:hover {
   color: black;
 }
 
@@ -269,3 +274,7 @@
   font-weight: 500;
   margin-top: 15px;
 }
+
+/* till: loan offers */
+
+/* start: heavy-machinery */
