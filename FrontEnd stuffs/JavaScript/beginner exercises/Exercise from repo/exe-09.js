@@ -8,12 +8,19 @@ Trolls are attacking your comment section! A common way to deal with this situat
 
 const disemvowel = str => {
     const VOWELS = 'aAeEiIoOuU'
-    newStr = ''
+    let newStr = ''
     for (let char of str) {
         if (VOWELS.includes(char))
             continue;
         newStr += char;
     }
+
+    // Alternate way
+    const sNewStr = [...str]
+    let output = sNewStr.filter(char => !VOWELS.includes(char))
+    console.log(output.join(''));
+
+
     return newStr;
 };
 
