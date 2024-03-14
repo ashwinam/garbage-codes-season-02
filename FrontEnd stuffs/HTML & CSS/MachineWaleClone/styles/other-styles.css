@@ -362,3 +362,12 @@
 }
 
 /* till: Heavy machinery */
+
+/* start: download app  */
+
+.download-app-section {
+  background-color: #eca93c;
+  margin-top: 40px;
+  height: 480px;
+  background-image: url("../images/bg-img.png");
+}
