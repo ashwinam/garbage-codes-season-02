@@ -405,3 +405,79 @@
   line-height: 20px;
   margin-bottom: 30px;
 }
+
+/* till: download app */
+
+/* start: compare-machineries */
+
+.compare-machine-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.middle-container {
+  flex: 1;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.two-machines-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.f-machine-container {
+  justify-self: center;
+}
+
+.m-img {
+  height: 250px;
+  width: 250px;
+}
+
+.m-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.m-model-name {
+  font-size: 14px;
+}
+
+.m-price-range {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.p-15 {
+  padding: 25px;
+}
+
+.compare-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  background-color: rgb(24, 26, 30);
+  font-size: 25px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.seperator {
+  position: relative;
+  border-right: 2px solid black;
+}
+
+.seperator::after {
+  position: absolute;
+  content: "VS";
+  padding: 0.9rem;
+  bottom: 10px;
+  transform: translate(-50%, -50%);
+  background-color: #eca93c;
+  border-radius: 50%;
+  font-size: 14px;
+}
