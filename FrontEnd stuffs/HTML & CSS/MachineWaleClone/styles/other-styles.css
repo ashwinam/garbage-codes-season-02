@@ -96,7 +96,7 @@
 .vehicle-cards-container {
   flex: 1;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .cards {
@@ -110,7 +110,7 @@
 }
 
 .cards:hover {
-  box-shadow: 0 0 50px rgba(177, 49, 49, 0.508);
+  box-shadow: 0 0 50px rgb(236, 148, 5);
 }
 
 .vehicle-image {
@@ -360,3 +360,5 @@
 .text-container .data {
   font-weight: 700;
 }
+
+/* till: Heavy machinery */
