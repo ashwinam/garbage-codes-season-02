@@ -270,7 +270,7 @@
 
 .machinery-title {
   text-align: center;
-  font-size: 28px;
+  font-size: 20px;
   font-weight: 500;
   margin-top: 15px;
 }
@@ -367,7 +367,41 @@
 
 .download-app-section {
   background-color: #eca93c;
-  margin-top: 40px;
+  margin-top: 100px;
   height: 480px;
   background-image: url("../images/bg-img.png");
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  position: relative;
+}
+
+.mobile-logo-container {
+  position: absolute;
+  right: 400px;
+  bottom: -100px;
+}
+
+.mobile-logo {
+  height: 672px;
+}
+
+.download-app-container {
+  align-self: center;
+  justify-self: center;
+}
+
+.download-app-container .title,
+.download-app-container .subTitle {
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.download-app-container .headline {
+  color: white;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 30px;
 }
