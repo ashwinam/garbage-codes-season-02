@@ -11,6 +11,16 @@ const getMiddle = str => {
     return str.slice((str.length / 2) - 1, (str.length / 2) + 1);
 };
 
+// Author solution
+/*
+const getMiddle = str => {
+  const len = str.length;
+  const mid = len / 2;
+  // For an odd length, len % 2 equals 1 which is truthy
+  return len % 2 ? str[Math.floor(mid)] : str[mid - 1] + str[mid];
+};
+*/
+
 console.log(getMiddle('test')); // 'es'
 console.log(getMiddle('testing')); // 't'
 console.log(getMiddle('middle')); // 'dd'
