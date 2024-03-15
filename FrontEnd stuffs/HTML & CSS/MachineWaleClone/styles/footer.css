@@ -1,4 +1,4 @@
-footer {
+.links-footer {
   margin-top: 40px;
   padding: 20px 64px;
   background-color: #f6f6f6;
@@ -62,4 +62,16 @@ footer {
 
 .w-32px {
   width: 32px;
+}
+
+.copyright-footer {
+  background-color: black;
+  color: white;
+  padding: 20px 0;
+}
+
+.copyright-section {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 64px;
 }
