@@ -5,6 +5,10 @@ body {
   font-style: normal;
 }
 
+p {
+  margin: 0;
+}
+
 ul {
   padding-left: 0;
 }

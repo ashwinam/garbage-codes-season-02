@@ -1,0 +1,65 @@
+footer {
+  margin-top: 40px;
+  padding: 20px 64px;
+  background-color: #f6f6f6;
+}
+
+.important-links-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 2fr;
+  column-gap: 16px;
+}
+
+.logo {
+  width: 250px;
+}
+
+.footer-logo div {
+  font-size: 12px;
+}
+
+.flex-coln {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  justify-content: start;
+}
+
+.f-child {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.s-child {
+  font-size: 14px;
+}
+
+.app-section {
+  justify-self: center;
+}
+
+.dwn-app {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: -20px;
+}
+
+.heading-app {
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: -20px;
+}
+
+.follow-up {
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+.socials {
+  display: flex;
+  column-gap: 20px;
+}
+
+.w-32px {
+  width: 32px;
+}
