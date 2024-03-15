@@ -481,3 +481,38 @@
   border-radius: 50%;
   font-size: 14px;
 }
+
+/* till: compare machine */
+
+/* start: tools & services */
+
+.tools-services-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.service-image-container {
+  background-color: #f6f6f6;
+  height: 104px;
+  width: 104px;
+  padding: 12px;
+  margin: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 15px solid #e5e5e5;
+}
+
+.service-container .service-title {
+  text-align: center;
+  font-size: 14px;
+}
+
+.s-img {
+  width: 64px;
+  padding: 8px;
+  margin: auto 20px;
+}
+
+/* till: tools & services */
