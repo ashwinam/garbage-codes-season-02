@@ -5,10 +5,10 @@ function Calculator() {
     const [number, setNumber] = useState(0)
     const ref = useRef(null);
 
-    const isOverflowed = () => {
-        const textContent = ref.current;
-        return textContent.scrollHeight > textContent.clientHeight;
-    }
+    // const isOverflowed = () => {
+    //     const textContent = ref.current;
+    //     return textContent.scrollHeight > textContent.clientHeight;
+    // }
 
     function handleDelete() {
         if (typeof number == 'number') {
