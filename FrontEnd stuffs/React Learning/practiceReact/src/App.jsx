@@ -1,15 +1,11 @@
 import Background from "./components/Background"
-import Calculator from "./components/Calculator"
 
 function App() {
 
 
-  return (
-    <>
-      <Background />
-      <Calculator />
-    </>
-  )
+  return <div className="relative w-full h-screen bg-zinc-900">
+    <Background />
+  </div>
 }
 
 export default App
