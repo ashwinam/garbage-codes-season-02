@@ -13,6 +13,12 @@ const isSquare = n => {
     return false
 };
 
+// Author solution
+
+/*
+
+*/
+
 console.log(isSquare(0)); // true
 console.log(isSquare(4)); // true
 console.log(isSquare(25)); // true
