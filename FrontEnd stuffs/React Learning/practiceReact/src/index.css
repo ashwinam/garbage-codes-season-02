@@ -11,3 +11,10 @@ body {
 ::selection {
   color: rgb(233, 140, 52);
 }
+
+.progressBar::-webkit-progress-value {
+  /* WebKit browsers */
+  background-color: white;
+  appearance: none;
+  border-radius: 15px;
+}
