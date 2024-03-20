@@ -109,7 +109,7 @@ Using styling to the same file using styled-component library
 
 - State is stored outside of a component, why? because if you think the scope of a variable in a js its a blocked scoped, for that reason it stored on memory until the component is on the screen.
 
-- Use hooks ar the top level of your component. This adheres to the React's guidelines for using hooks.
+- Use hooks at the top level of your component. This adheres to the React's guidelines for using hooks.
 
 ### choosing the state structure(Best Practice)
 
