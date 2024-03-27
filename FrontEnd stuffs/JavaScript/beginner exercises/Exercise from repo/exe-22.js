@@ -8,7 +8,24 @@ const XO = str => {
     if (!str.includes('x'))
         if (!str.includes('o')) return true;
     return str.toLowerCase().includes('xo')
+}; // My solution is wrong maybe i did not understand the problem
+
+// Author Solution
+/*
+const XO = str => {
+  const lowerStr = str.toLowerCase();
+  let result = 0;
+  for (const letter of lowerStr) {
+    if (letter === 'x') {
+      result++;
+    } else if (letter === 'o') {
+      result--;
+    }
+  }
+
+  return !result;
 };
+*/
 
 console.log(XO('xo')); // true
 console.log(XO('Oo')); // false
