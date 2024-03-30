@@ -11,8 +11,17 @@ const findOutlier = arr => {
     arr.forEach(ele => (ele % 2 === 0) ? evens.push(ele) : odds.push(ele))
     let outlier = evens.length < odds.length ? evens[0] : odds[0];
     return outlier;
-
 };
+
+// Author solution
+
+/*
+const findOutlier = arr => {
+  const evenArray = arr.filter(ele => ele % 2 === 0);
+  const oddArray = arr.filter(ele => ele % 2 !== 0);
+  return evenArray.length === 1 ? evenArray[0] : oddArray[0];
+};
+*/
 
 console.log(findOutlier([0, 1, 2])); // 1
 console.log(findOutlier([1, 2, 3])); // 2
