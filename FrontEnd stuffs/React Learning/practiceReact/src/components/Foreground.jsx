@@ -36,8 +36,6 @@ function Foreground() {
         const filteredData = search ? originalData.filter((item) => item.desc.toLowerCase().includes(search.toLowerCase())) : originalData;
 
         setData(filteredData);
-
-
     }, [search])
 
     return (
