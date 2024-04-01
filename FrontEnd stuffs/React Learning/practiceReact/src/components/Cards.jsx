@@ -2,12 +2,11 @@
 import { FaRegFileLines } from "react-icons/fa6";
 import { RxCross2 } from "react-icons/rx";
 import { FiDownload } from "react-icons/fi";
-import { motion } from "framer-motion"
 
 
-function Cards({ data, reference }) {
+function Cards({ data }) {
     return (
-        <motion.div drag dragMomentum={true} dragTransition={{ bounceStiffness: 600, bounceDamping: 10 }} whileDrag={{ scale: 1.2 }} dragConstraints={reference} className="cards relative w-60 h-72 bg-zinc-800/10 mt-5 rounded-[35px] text-white px-8 py-10 overflow-hidden">
+        <div className="cards relative w-60 h-72 bg-zinc-800/10 mt-5 rounded-[35px] text-white px-8 py-10 overflow-hidden">
             <FaRegFileLines />
             <p className="text-lg mt-3 font-semibold">{data.desc}</p>
             <div className={`footer absolute bottom-0 left-0 w-full mb-10 flex items-center justify-between p-5 bg-zinc-800/10`}>
@@ -24,7 +23,7 @@ function Cards({ data, reference }) {
                 }}
                 /> : 'Click to open'}
             </div>
-        </motion.div>
+        </div>
     )
 }
 
