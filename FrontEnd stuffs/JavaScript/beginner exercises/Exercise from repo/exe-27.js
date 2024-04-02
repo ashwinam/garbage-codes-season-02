@@ -25,6 +25,19 @@ const DNAStrand = dna => {
     return output;
 };
 
+// Author solution
+/*
+const DNAStrand = dna => {
+  const dnaMap = {
+    A: 'T',
+    T: 'A',
+    G: 'C',
+    C: 'G',
+  };
+  return [...dna].map(ele => dnaMap[ele]).join('');
+};
+*/
+
 console.log(DNAStrand('AAAA')); // 'TTTT'
 console.log(DNAStrand('ATTGC')); // 'TAACG'
 console.log(DNAStrand('GTAT')); // 'CATA'
