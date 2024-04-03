@@ -18,6 +18,20 @@ const isIsogram = str => {
     return true
 };
 
+
+// Author Solution
+/*
+const isIsogram = str => {
+  const lowerStr = str.toLowerCase();
+
+  // Using Set
+  return str.length === new Set(lowerStr).size;
+
+  // Alternative solution using every()
+  // return [...lowerStr].every((ele, index) => lowerStr.indexOf(ele) === index);
+};
+*/
+
 console.log(isIsogram('Dermatoglyphics')); // true
 console.log(isIsogram('isIsogram')); // false
 console.log(isIsogram('isogram')); // true
