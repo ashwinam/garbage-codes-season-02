@@ -15,4 +15,17 @@ const fizzBuzz = () => {
     }
 };
 
+// Author Solution
+/*
+const fizzBuzz = () => {
+  let output;
+  for (let num = 1; num <= 100; num++) {
+    output = '';
+    if (num % 3 === 0) output += 'Fizz';
+    if (num % 5 === 0) output += 'Buzz';
+    console.log(output || num);
+  }
+};
+*/
+
 fizzBuzz(); // 1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, ...
