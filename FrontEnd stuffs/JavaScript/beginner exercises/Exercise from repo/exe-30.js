@@ -18,6 +18,22 @@ const duplicateCount = text => {
     return Object.keys(outputObject).length
 };
 
+// Author Solution
+
+/*
+const duplicateCount = text => {
+  const lowercaseText = text.toLowerCase();
+  let frequency = {};
+  let count = 0;
+
+  for (const letter of lowercaseText) {
+    frequency[letter] = (frequency[letter] || 0) + 1;
+    if (frequency[letter] === 2) count++;
+  }
+  return count;
+};
+*/
+
 console.log(duplicateCount('')); // 0
 console.log(duplicateCount('abcde')); // 0
 console.log(duplicateCount('abA11')); // 2
