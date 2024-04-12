@@ -24,6 +24,20 @@ const duplicateEncode = word => {
     }
     return output;
   };
+
+  // Author solution
+  /*
+const duplicateEncode = word => {
+  const lowerWord = word.toLowerCase();
+  let result = '';
+  for (const char of lowerWord) {
+    lowerWord.indexOf(char) !== lowerWord.lastIndexOf(char)
+      ? (result += ')')
+      : (result += '(');
+  }
+  return result;
+};
+  */
   
   console.log(duplicateEncode('din')); // '((('
   console.log(duplicateEncode('(( @')); // '))(('
