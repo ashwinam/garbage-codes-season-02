@@ -12,6 +12,18 @@ const reverseString = str => {
     return reversed_string;
 };
 
+// Author Solution
+
+/*
+const reverseString = str => {
+  let result = '';
+  for (let char of str) {
+    result = char + result;
+  }
+  return result;
+};
+*/
+
 console.log(reverseString('hello')); // 'olleh'
 console.log(reverseString('world')); // 'dlrow'
 console.log(reverseString('')); // ''
