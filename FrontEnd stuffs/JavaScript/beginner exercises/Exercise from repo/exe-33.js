@@ -18,6 +18,22 @@ const persistence = num => {
     return count;
 };
 
+// Author solution
+/*
+const persistence = num => {
+  if (num < 10) return 0;
+
+  let product = 1;
+  while (num >= 10) {
+    product *= num % 10;
+    num = Math.floor(num / 10);
+  }
+
+  // Using recursion
+  return 1 + persistence(product * num);
+};
+*/
+
 console.log(persistence(999)); // 4
 // because 9*9*9=729, 7*2*9=126, 1*2*6=12, and finally 1*2=2
 
