@@ -18,6 +18,16 @@ const fib = steps => {
     return sum;
 };
 
+
+// Author solution
+/*
+// Recursive solution
+const fib = steps => {
+  if (steps < 2) return steps;
+  return fib(steps - 2) + fib(steps - 1);
+};
+*/
+
 console.log(fib(0)); // 0
 console.log(fib(4)); // 3
 console.log(fib(17)); // 1597
