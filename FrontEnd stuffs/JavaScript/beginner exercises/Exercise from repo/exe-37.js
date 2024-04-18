@@ -14,6 +14,15 @@ const uniqueInOrder = iterable => {
     return output
 };
 
+// Author solution
+
+/*
+const uniqueInOrder = iterable => {
+  const arr = [...iterable];
+  return arr.filter((ele, index) => ele !== arr[index - 1]);
+};
+*/
+
 console.log(uniqueInOrder([1, 2, 2, 3, 3])); // [1, 2, 3]
 console.log(uniqueInOrder('ABBCcAD')); // ['A', 'B', 'C', 'c', 'A', 'D']
 console.log(uniqueInOrder('AAAABBBCCDAABBB')); // ['A', 'B', 'C', 'D', 'A', 'B']
