@@ -26,5 +26,21 @@ const maxProfit = prices => {
     return profit;
 };
 
+// Author Solution
+/*
+const maxProfit = prices => {
+  let min = Number.MAX_SAFE_INTEGER;
+  let profit = 0;
+
+  for (let i = 0; i < prices.length; i++) {
+    min = Math.min(prices[i], min);
+    if (prices[i] - min > profit) {
+      profit = prices[i] - min;
+    }
+  }
+  return profit;
+};
+*/
+
 console.log(maxProfit([7, 1, 5, 3, 6, 4])); // 5
 console.log(maxProfit([7, 6, 4, 3, 1])); // 0
