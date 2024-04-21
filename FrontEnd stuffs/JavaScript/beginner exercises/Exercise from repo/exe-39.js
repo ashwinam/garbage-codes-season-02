@@ -17,6 +17,16 @@ const songDecoder = song => {
     return list_of_song.filter(ele => ele).join(" ")
 };
 
+// Author Solution
+/*
+const songDecoder = song => {
+  return song.replace(/(WUB)+/g, ' ').trim();
+
+  // Alternative solution
+  // return song.split('WUB').filter(Boolean).join(' ');
+};
+*/
+
 console.log(songDecoder('AWUBBWUBC'));
 // 'A B C' (WUB should be replaced by 1 space)
 console.log(songDecoder('AWUBWUBWUBBWUBWUBWUBC'));
