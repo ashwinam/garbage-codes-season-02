@@ -19,6 +19,17 @@ const reverse = x => {
     return isNaN(output) ? output : Number(output)
 };
 
+// Author Solution
+/*
+const reverse = x => {
+  const MAX = Math.pow(2, 31) - 1;
+  const MIN = -1 * Math.pow(2, 31);
+  const arr = Math.abs(x).toString().split('');
+  const reversed = Math.sign(x) * Number(arr.reverse().join(''));
+  return reversed < MIN || reversed > MAX ? 0 : reversed;
+};
+*/
+
 console.log(reverse(0)); // 0
 console.log(reverse(120)); // 21
 console.log(reverse(123)); // 321
