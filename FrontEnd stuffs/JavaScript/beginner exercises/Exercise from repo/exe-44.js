@@ -24,6 +24,18 @@ const rot13 = str => {
     }
     return output;
   };
+
+//   Author Solution
+/*
+const rot13 = str => {
+  return str.replace(/[a-z]/gi, letter =>
+    String.fromCharCode(
+      letter.charCodeAt() + (letter.toLowerCase() <= 'm' ? 13 : -13)
+    )
+  );
+};
+*/
+
   
   console.log(rot13('az AZ')); // nm NM
   console.log(rot13('10+2 is twelve.')); // 10+2 vf gjryir.
