@@ -19,6 +19,15 @@ const maximumWealth = accounts => {
     accounts.forEach(element => arr.push(element.reduce((acc,ele) => acc + ele)));
     return Math.max(...arr)
   };
+
+// Author solution
+/*
+const maximumWealth = accounts => {
+  return Math.max(
+    ...accounts.map(customer => customer.reduce((a, b) => a + b))
+  );
+};
+*/
   
   console.log(
     maximumWealth([
