@@ -18,6 +18,28 @@ const generateHashtag = str => {
     const output = newArr.join("");
     return output.length > 140 ? false : output;
   };
+
+//   Author solution
+/*
+const generateHashtag = str => {
+  const hashtag = str
+    .split(' ')
+    .reduce(
+      (tag, word) => tag + word.charAt(0).toUpperCase() + word.slice(1),
+      '#'
+    );
+
+  // Alternative solution
+  // const hashtag =
+  //   '#' +
+  //   str
+  //     .split(' ')
+  //     .map(ele => ele.charAt(0).toUpperCase() + ele.substring(1))
+  //     .join('');
+
+  return hashtag.length === 1 || hashtag.length > 140 ? false : hashtag;
+};
+*/
   
   console.log(generateHashtag('JavaScript')); // #JavaScript
   console.log(generateHashtag('Do we have a Hashtag')); // #DoWeHaveAHashtag
