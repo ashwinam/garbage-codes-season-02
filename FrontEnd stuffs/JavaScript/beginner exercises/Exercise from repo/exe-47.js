@@ -18,6 +18,23 @@ const cakes = (recipe, available) => {
     }
     return parseInt(Math.min(...temp_space))
   };
+
+  // Author solution
+
+  /*
+const cakes = (recipe, available) => {
+  let num_cakes = Infinity;
+  for (let ingredient in recipe) {
+    if (!available[ingredient] || recipe[ingredient] > available[ingredient])
+      return 0;
+    num_cakes = Math.min(
+      num_cakes,
+      Math.floor(available[ingredient] / recipe[ingredient])
+    );
+  }
+  return num_cakes;
+};
+  */
   
   let recipe = { flour: 500, sugar: 200, eggs: 1 };
   let available = { flour: 1200, sugar: 1200, eggs: 5, milk: 200 };
