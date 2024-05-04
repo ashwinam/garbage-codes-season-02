@@ -11,6 +11,17 @@ const count = string => {
 
     return output;
   };
+
+//   Author Solution
+/*
+const count = string => {
+  const frequency = {};
+  for (const char of string) {
+    frequency[char] = (frequency[char] || 0) + 1;
+  }
+  return frequency;
+};
+*/
   
   console.log(count('')); // {}
   console.log(count('aba')); // { a: 2, b: 1 }
