@@ -26,7 +26,14 @@ const solution = str => {
 
     }
     return output.join(" ");
-  };
+  }; // implementation is wrong
+
+//   Author solution
+/*
+const solution = str => {
+  return str.replace(/([a-z])([A-Z])/g, '$1 $2');
+};
+*/
   
   console.log(solution('camelCasingHere')); // camel Casing Here
   
