@@ -24,6 +24,27 @@ const isSumEqual = (firstWord, secondWord, targetWord) => {
     return firstWordNumber + secondWordNumber === targetWordNumber;
 
   };
+
+//   Author solution
+/*
+const getNumericValue = str => {
+  const offset = 'a'.charCodeAt();
+  const arr = [];
+
+  for (const char of str) {
+    arr.push(char.charCodeAt() - offset);
+  }
+
+  return parseInt(arr.join(''));
+};
+
+const isSumEqual = (firstWord, secondWord, targetWord) => {
+  return (
+    getNumericValue(firstWord) + getNumericValue(secondWord) ===
+    getNumericValue(targetWord)
+  );
+};
+*/
   
   console.log(isSumEqual('acb', 'cba', 'cdb')); // true
   // The numerical value of firstWord 'acb' is '021' -> 21
