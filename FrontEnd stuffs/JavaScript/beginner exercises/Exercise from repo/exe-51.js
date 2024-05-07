@@ -16,9 +16,16 @@ const domainName = url => {
     }
 
   };
+
+//   Author Solution
+/*const domainName = url => {
+    return url.replace(/(www\.|.*\/\/|\..+)/g, '');
+  };
+  */
+  // Alternative solution with no regex
+  // const domainName = url => url.replace('http://', '').replace('https://', '').replace('www.', '').split('.')[0];
   
   console.log(domainName('www.google.ca')); // google
-
   console.log(domainName('http://google.com')); // google
   console.log(domainName('https://google.com')); // google
   console.log(domainName('http://google.co.jp')); // google
