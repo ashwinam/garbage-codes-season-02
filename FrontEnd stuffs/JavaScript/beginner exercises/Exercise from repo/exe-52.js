@@ -13,6 +13,23 @@ const firstNonRepeatingLetter = str => {
         }
     }
   };
+
+//   Author solution
+/*
+const firstNonRepeatingLetter = str => {
+  const strToLower = str.toLowerCase();
+  for (let char of str) {
+    if (
+      strToLower.indexOf(char.toLowerCase()) ===
+      strToLower.lastIndexOf(char.toLowerCase())
+    ) {
+      return char;
+    }
+  }
+  return '';
+};
+*/
+
   
   console.log(firstNonRepeatingLetter('a')); // 'a'
   console.log(firstNonRepeatingLetter('stress')); // 't'
