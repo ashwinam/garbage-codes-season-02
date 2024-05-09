@@ -79,6 +79,25 @@ const convertToRoman = number => {
     }
   };
   
+// Author solution
+/*
+const convertToRoman = number => {
+  const decimals = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+  // prettier-ignore
+  const romans = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'];
+  let result = '';
+
+  decimals.map((value, index) => {
+    while (number >= value) {
+      result += romans[index];
+      number -= value;
+    }
+  });
+
+  return result;
+};
+*/
+
   console.log(convertToRoman(4)); // IV
   console.log(convertToRoman(9)); // IX
   console.log(convertToRoman(11)); // XI
