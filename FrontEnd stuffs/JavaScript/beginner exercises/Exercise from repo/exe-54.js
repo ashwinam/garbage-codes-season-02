@@ -22,6 +22,29 @@ const scramble = (str1, str2) => {
     }
     return output_str === str2;
   };
+
+
+//   Author solution
+
+/*
+const scramble = (str1, str2) => {
+  return [...str2].every(
+    letter => str2.split(letter).length <= str1.split(letter).length
+  );
+
+  // Alternative solution
+  // const freq = {};
+  // for (const letter of str1) {
+  //   freq[letter] = (freq[letter] ?? 0) + 1;
+  // }
+
+  // for (const letter of str2) {
+  //   if (!freq[letter] || freq[letter] < 0) return false;
+  //   freq[letter]--;
+  // }
+  // return true;
+};
+*/
   
   console.log(scramble('scriptjava', 'javascript')); // true
   console.log(scramble('scriptingjava', 'javascript')); // true
