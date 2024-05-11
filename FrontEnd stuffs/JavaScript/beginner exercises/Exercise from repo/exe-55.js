@@ -21,6 +21,22 @@ const wave = str => {
     }
     return output;
   };
+
+  // Author Solution
+  const wave1 = str => {
+    const result = [];
+    const len = str.length;
+    for (let i = 0; i < len; i++) {
+      if (str[i] !== ' ') {
+        const word =
+          str.substring(0, i).toLowerCase() +
+          str[i].toUpperCase() +
+          str.substring(i + 1).toLowerCase();
+        result.push(word);
+      }
+    }
+    return result;
+  };
   
   console.log(wave('hello')); // ['Hello', 'hEllo', 'heLlo', 'helLo', 'hellO'];
   console.log(wave(' gap ')); // [' Gap ', ' gAp ', ' gaP '];
