@@ -19,6 +19,21 @@ const toCamel = obj => {
     }
     return output;
   };
+
+  // Author Solution
+  /*
+const toCamel = obj => {
+  const result = {};
+  for (const [key, value] of Object.entries(obj)) {
+    // Let's use regex capture groups
+    const camelKey = key.replace(/(_[a-z])/gi, $1 =>
+      $1.replace('_', '').toUpperCase()
+    );
+    result[camelKey] = value;
+  }
+  return result;
+};
+  */
   
   console.log(
     toCamel({
