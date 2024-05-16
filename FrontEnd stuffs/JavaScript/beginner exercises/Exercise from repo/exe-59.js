@@ -18,6 +18,26 @@ const isPalindrome = str => {
     let reversedString = [...string].reverse().join("")
     return string === reversedString;
   };
+
+//   Author solution
+/*
+const isPalindrome = s => {
+  const str = s.toLowerCase().replace(/[^a-z0-9]/g, '');
+  let start = 0;
+  let end = str.length - 1;
+
+  while (start < end) {
+    if (str[start] !== str[end]) return false;
+    start++;
+    end--;
+  }
+  return true;
+
+  // Alternative solution using built-in reverse() method
+  // const str = s.toLowerCase().replace(/[^a-z0-9]/g, '');
+  // return str === [...str].reverse().join('');
+};
+*/
   
   console.log(isPalindrome('A man, a plan, a canal: Panama')); // true
   // Explanation: "amanaplanacanalpanama" is a palindrome.
